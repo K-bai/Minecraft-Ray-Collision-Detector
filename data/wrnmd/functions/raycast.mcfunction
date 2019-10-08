@@ -14,11 +14,11 @@ execute anchored eyes positioned ^ ^ ^ run tp @e[tag=wrnmd_mark,limit=1] ~ ~ ~ ~
 
 # recurse and return
 execute as @e[tag=wrnmd_mark,limit=1] at @s run function wrnmd:generic/start
-execute if entity @e[tag=wrnmd_mark,tag=wrnmd_touch_x_plus] at @s run say touched x+
-execute if entity @e[tag=wrnmd_mark,tag=wrnmd_touch_x_minus] at @s run say touched x-
-execute if entity @e[tag=wrnmd_mark,tag=wrnmd_touch_y_plus] at @s run say touched y+
-execute if entity @e[tag=wrnmd_mark,tag=wrnmd_touch_y_minus] at @s run say touched y-
-execute if entity @e[tag=wrnmd_mark,tag=wrnmd_touch_z_plus] at @s run say touched z+
-execute if entity @e[tag=wrnmd_mark,tag=wrnmd_touch_z_minus] at @s run say touched z-
+execute if entity @e[tag=wrnmd_mark,tag=wrnmd_touch_edge,tag=wrnmd_touch_x_plus] at @s run say touched x+
+execute if entity @e[tag=wrnmd_mark,tag=wrnmd_touch_edge,tag=wrnmd_touch_x_minus] at @s run say touched x-
+execute if entity @e[tag=wrnmd_mark,tag=wrnmd_touch_edge,tag=wrnmd_touch_y_plus] at @s run say touched y+
+execute if entity @e[tag=wrnmd_mark,tag=wrnmd_touch_edge,tag=wrnmd_touch_y_minus] at @s run say touched y-
+execute if entity @e[tag=wrnmd_mark,tag=wrnmd_touch_edge,tag=wrnmd_touch_z_plus] at @s run say touched z+
+execute if entity @e[tag=wrnmd_mark,tag=wrnmd_touch_edge,tag=wrnmd_touch_z_minus] at @s run say touched z-
 # clear tag
 tag @e[tag=wrnmd_mark] remove wrnmd_mark
