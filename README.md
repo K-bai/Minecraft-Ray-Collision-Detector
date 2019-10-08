@@ -1,10 +1,12 @@
 # Intro
-Super precious raycast system in  vanilla minecraft! This datapack solved the raycast problem perfectly with minimal command cost. 
+Super precious raycast system in  vanilla minecraft! This datapack solved the raycast problem perfectly with minimal command cost. It defines the hitbox of most blocks and does some calculations to judge which surface will be touched. 
+
+Current version: 1.0
 
 # How to use
-Set scoreboard `wrnmd_x0`, `wrnmd_y0`, `wrnmd_z0` for any area effect cloud. These three scoreboards stand for how many milliblocks that the area effect cloud fly in a tick in three dimensions respectively. Then execute `function wrnmd:generic/start` as the area effect cloud. If it touched a block, it will have tag named `wrnmd_touch_edge` and `wrnmd_touch_DIRECTION`. You can recognize which surface it touched from those tag.
+Set scoreboard `wrnmd_x0`, `wrnmd_y0`, `wrnmd_z0` for any area effect cloud. These three scoreboards stand for how many milliblocks that the area effect cloud can fly in a tick in three dimensions respectively. Then execute `function wrnmd:generic/start` as the area effect cloud. If it touched a block, it will have tags named `wrnmd_touch_edge` and `wrnmd_touch_DIRECTION`. You can recognize which surface it touched from those tags.
 
-If you want an area effect cloud that can pass those blocks that players can pass, you should tag the area effect cloud `wrnmd_bullet`.
+If you want an area effect cloud that can pass those blocks that a player can pass, you should tag the area effect cloud `wrnmd_bullet`.
 
 Details are listed in function `wrnmd:raycast` and `wrnmd:bullet`. 
 
