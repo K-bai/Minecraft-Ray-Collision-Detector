@@ -1,5 +1,5 @@
 # create marker
-execute positioned ^ ^ ^.1 run summon area_effect_cloud ~ ~ ~ {Tags:["wrnmd_mark","wrnmd_bullet"],Duration:100}
+execute positioned ^ ^ ^5 run summon area_effect_cloud ~ ~ ~ {Tags:["wrnmd_mark","wrnmd_bullet"],Duration:100}
 # save speed and direction
 execute as @e[tag=wrnmd_mark] store result score @s wrnmd_x0 run data get entity @s Pos[0] 1000
 execute as @e[tag=wrnmd_mark] store result score @s wrnmd_y0 run data get entity @s Pos[1] 1000

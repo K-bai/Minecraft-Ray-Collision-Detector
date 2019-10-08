@@ -46,6 +46,7 @@ Flowers, bamboos and bamboo saplings are not supported due to random hitbox in m
     * minecraft:kelp
     * minecraft:lever
     * minecraft:tripwire_hook
+    * minecraft:tripwire
     * minecraft:daylight_detector
     * minecraft:enchanting_table
     * minecraft:stonecutter
@@ -53,6 +54,7 @@ Flowers, bamboos and bamboo saplings are not supported due to random hitbox in m
     * minecraft:end_portal_frame
     * minecraft:ladder
     * minecraft:lily_pad
+    * minecraft:sweet_berry_bush
     * minecraft:wheat
     * minecraft:snow
     * minecraft:cactus
@@ -63,6 +65,7 @@ Flowers, bamboos and bamboo saplings are not supported due to random hitbox in m
     * #minecraft:flower_pots
     * #minecraft:buttons
     * #minecraft:doors
+    * #minecraft:trapdoors
     * #minecraft:rails
     * #minecraft:carpets
     * #wrnmd:standing_sign_like

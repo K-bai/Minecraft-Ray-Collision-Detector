@@ -1,7 +1,4 @@
 {"values":[
-    "minecraft:bamboo",
-    "minecraft:bamboo_sapling",
-    "#minecraft:small_flowers",
     "minecraft:vine",
     "minecraft:redstone_wire",
     "minecraft:beetroots",
@@ -9,6 +6,7 @@
     "minecraft:kelp",
     "minecraft:lever",
     "minecraft:tripwire_hook",
+    "minecraft:tripwire",
     "minecraft:lily_pad",
     "minecraft:wheat",
     "minecraft:sugar_cane",
@@ -27,5 +25,26 @@
     "#wrnmd:sapling_like",
     "#wrnmd:wall_banner_like",
     "#wrnmd:carrots_like",
-    "#wrnmd:pressure_plate_like"
+    "#wrnmd:pressure_plate_like",
+
+	"minecraft:red_mushroom",
+    "minecraft:brown_mushroom",
+    "#minecraft:small_flowers",
+    "minecraft:bamboo_sapling",
+    "minecraft:bamboo",
+
+    "minecraft:tall_grass",
+	"minecraft:tall_seagrass",
+    "minecraft:large_fern",
+    "minecraft:sunflower",
+    "minecraft:lilac",
+    "minecraft:peony",
+    "minecraft:rose_bush",
+    "minecraft:bubble_column",
+    "minecraft:end_gateway",
+    "minecraft:kelp_plant",
+    "minecraft:lava",
+    "minecraft:water",
+    "minecraft:nether_portal"
+
 ]}

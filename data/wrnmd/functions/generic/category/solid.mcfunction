@@ -29,6 +29,7 @@ execute if entity @s[tag=!wrnmd_detected] if block ~ ~ ~ minecraft:cactus run fu
 execute if entity @s[tag=!wrnmd_detected] if block ~ ~ ~ minecraft:cake run function wrnmd:generic/types/cake
 execute if entity @s[tag=!wrnmd_detected] if block ~ ~ ~ minecraft:ender_chest run function wrnmd:generic/types/chest
 execute if entity @s[tag=!wrnmd_detected] if block ~ ~ ~ #minecraft:slabs run function wrnmd:generic/types/slab
+execute if entity @s[tag=!wrnmd_detected] if block ~ ~ ~ #minecraft:trapdoors run function wrnmd:generic/types/trapdoor
 execute if entity @s[tag=!wrnmd_detected] if block ~ ~ ~ #minecraft:flower_pots run function wrnmd:generic/types/flower_pot
 execute if entity @s[tag=!wrnmd_detected] if block ~ ~ ~ #minecraft:doors run function wrnmd:generic/types/door
 execute if entity @s[tag=!wrnmd_detected] if block ~ ~ ~ #minecraft:carpets run function wrnmd:generic/types/carpet

@@ -12,10 +12,13 @@ execute store result score #block_z wrnmd_system run data get entity @s Pos[2] 1
 scoreboard players operation #block_x wrnmd_system %= #const_1000 wrnmd_system
 scoreboard players operation #block_y wrnmd_system %= #const_1000 wrnmd_system
 scoreboard players operation #block_z wrnmd_system %= #const_1000 wrnmd_system
+execute if score #block_x wrnmd_system matches 999 run scoreboard players set #block_x wrnmd_system 1000
+execute if score #block_y wrnmd_system matches 999 run scoreboard players set #block_y wrnmd_system 1000
+execute if score #block_z wrnmd_system matches 999 run scoreboard players set #block_z wrnmd_system 1000
 
 # 方块碰撞判定
 ## 当前是空气类方块，跳过
-execute if block ~ ~ ~ air run tag @s add wrnmd_detected
+execute if block ~ ~ ~ #wrnmd:air_like run tag @s add wrnmd_detected
 ## 当前是子弹可穿过方块，跳过
 execute if entity @s[tag=!wrnmd_detected,tag=wrnmd_bullet] if block ~ ~ ~ #wrnmd:player_can_pass run tag @s add wrnmd_detected
 ## 玩家不可穿过方块碰撞
@@ -39,9 +42,21 @@ scoreboard players operation #target_z wrnmd_system -= #block_z wrnmd_system
 scoreboard players set #const_minus_1 wrnmd_system -1
 execute store result score #var0 wrnmd_system run scoreboard players get #total_x wrnmd_system
 execute store result score #var1 wrnmd_system run scoreboard players get #target_x wrnmd_system
+execute store result score #var2 wrnmd_system run scoreboard players get #total_y wrnmd_system
+execute store result score #var3 wrnmd_system run scoreboard players get #target_y wrnmd_system
+execute store result score #var4 wrnmd_system run scoreboard players get #total_z wrnmd_system
+execute store result score #var5 wrnmd_system run scoreboard players get #target_z wrnmd_system
 execute if score #var0 wrnmd_system matches ..-1 run scoreboard players operation #var0 wrnmd_system *= #const_minus_1 wrnmd_system
 execute if score #var1 wrnmd_system matches ..-1 run scoreboard players operation #var1 wrnmd_system *= #const_minus_1 wrnmd_system
+execute if score #var2 wrnmd_system matches ..-1 run scoreboard players operation #var2 wrnmd_system *= #const_minus_1 wrnmd_system
+execute if score #var3 wrnmd_system matches ..-1 run scoreboard players operation #var3 wrnmd_system *= #const_minus_1 wrnmd_system
+execute if score #var4 wrnmd_system matches ..-1 run scoreboard players operation #var4 wrnmd_system *= #const_minus_1 wrnmd_system
+execute if score #var5 wrnmd_system matches ..-1 run scoreboard players operation #var5 wrnmd_system *= #const_minus_1 wrnmd_system
 scoreboard players operation #var0 wrnmd_system -= #var1 wrnmd_system
+scoreboard players operation #var2 wrnmd_system -= #var3 wrnmd_system
+scoreboard players operation #var4 wrnmd_system -= #var5 wrnmd_system
+execute if score #var0 wrnmd_system matches ..0 if score #var2 wrnmd_system matches ..0 if score #var4 wrnmd_system matches ..0 run scoreboard players set #var0 wrnmd_system -1
+execute if score #var0 wrnmd_system matches 0.. if score #var2 wrnmd_system matches 0.. if score #var4 wrnmd_system matches 0.. run scoreboard players set #var0 wrnmd_system 1
 ### 如果总距离小于等于目标距离，把目标距离修改为总距离
 execute if score #var0 wrnmd_system matches ..0 run scoreboard players operation #target_x wrnmd_system = #total_x wrnmd_system
 execute if score #var0 wrnmd_system matches ..0 run scoreboard players operation #target_y wrnmd_system = #total_y wrnmd_system
