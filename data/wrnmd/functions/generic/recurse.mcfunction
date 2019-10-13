@@ -4,17 +4,24 @@ tag @s[tag=wrnmd_touch_edge_air] remove wrnmd_touch_edge_air
 tag @s[tag=wrnmd_touch_edge_complex] remove wrnmd_touch_edge_complex
 tag @s[tag=wrnmd_detected] remove wrnmd_detected
 
-# 获取在方块内的坐标
+# 获取在方块内的坐标和方块角落坐标
 scoreboard players set #const_1000 wrnmd_system 1000
 execute store result score #block_x wrnmd_system run data get entity @s Pos[0] 1000
 execute store result score #block_y wrnmd_system run data get entity @s Pos[1] 1000
 execute store result score #block_z wrnmd_system run data get entity @s Pos[2] 1000
+execute store result score #block_corner_x wrnmd_system run scoreboard players get #block_x wrnmd_system
+execute store result score #block_corner_y wrnmd_system run scoreboard players get #block_y wrnmd_system
+execute store result score #block_corner_z wrnmd_system run scoreboard players get #block_z wrnmd_system
 scoreboard players operation #block_x wrnmd_system %= #const_1000 wrnmd_system
 scoreboard players operation #block_y wrnmd_system %= #const_1000 wrnmd_system
 scoreboard players operation #block_z wrnmd_system %= #const_1000 wrnmd_system
+scoreboard players operation #block_corner_x wrnmd_system -= #block_x wrnmd_system
+scoreboard players operation #block_corner_y wrnmd_system -= #block_y wrnmd_system
+scoreboard players operation #block_corner_z wrnmd_system -= #block_z wrnmd_system
 execute if score #block_x wrnmd_system matches 999 run scoreboard players set #block_x wrnmd_system 1000
 execute if score #block_y wrnmd_system matches 999 run scoreboard players set #block_y wrnmd_system 1000
 execute if score #block_z wrnmd_system matches 999 run scoreboard players set #block_z wrnmd_system 1000
+
 
 # 方块碰撞判定
 ## 当前是空气类方块，跳过
@@ -32,6 +39,12 @@ execute if entity @s[tag=!wrnmd_touch_edge] run function wrnmd:generic/types/air
 
 # 把复杂方块的实体转化为坐标
 execute if entity @s[tag=wrnmd_touch_edge_complex] run function wrnmd:generic/convert
+
+# 实体碰撞判定 本格内有目标生物则执行 此处有dxdydz bug
+execute at @s[tag=wrnmd_entity] align xyz if entity @e[type=#wrnmd:target,dx=0,dy=0,dz=0] run function wrnmd:generic/entity
+
+
+
 
 # 移动位置相关
 ## 修改为相对当前坐标的位置

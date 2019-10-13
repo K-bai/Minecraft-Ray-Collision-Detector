@@ -1,13 +1,4 @@
 # 移动到下一个方块处
-execute store result score #block_corner_x wrnmd_system run data get entity @s Pos[0] 1000
-execute store result score #block_corner_y wrnmd_system run data get entity @s Pos[1] 1000
-execute store result score #block_corner_z wrnmd_system run data get entity @s Pos[2] 1000
-scoreboard players operation #block_corner_x wrnmd_system /= #const_1000 wrnmd_system
-scoreboard players operation #block_corner_y wrnmd_system /= #const_1000 wrnmd_system
-scoreboard players operation #block_corner_z wrnmd_system /= #const_1000 wrnmd_system
-scoreboard players operation #block_corner_x wrnmd_system *= #const_1000 wrnmd_system
-scoreboard players operation #block_corner_y wrnmd_system *= #const_1000 wrnmd_system
-scoreboard players operation #block_corner_z wrnmd_system *= #const_1000 wrnmd_system
 execute store result score #target_temp_x wrnmd_system run scoreboard players get #target_x wrnmd_system
 execute store result score #target_temp_y wrnmd_system run scoreboard players get #target_y wrnmd_system
 execute store result score #target_temp_z wrnmd_system run scoreboard players get #target_z wrnmd_system
