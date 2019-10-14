@@ -4,11 +4,11 @@ Super precious raycast system in  vanilla minecraft! This datapack solved the ra
 Current version: 1.2
 
 # How to use
-Set scoreboard `wrnmd_x0`, `wrnmd_y0`, `wrnmd_z0` for any area effect cloud. These three scoreboards stand for how many milliblocks that the area effect cloud can fly in a tick in three dimensions respectively. Then execute `function wrnmd:generic/start` as the area effect cloud. If it touched a block, it will have tags named `wrnmd_touch_edge` and `wrnmd_touch_DIRECTION`. You can recognize which surface it touched from those tags.
+Set scoreboard `wrnmd_x0`, `wrnmd_y0`, `wrnmd_z0` for any area effect cloud. These three scoreboards stand for how many milliblocks that the area effect cloud can fly in a tick in three dimensions respectively. Then execute `function wrnmd:generic/start` as the area effect cloud. If it **touched a block**, it will have tags named `wrnmd_touch_edge` and `wrnmd_touch_DIRECTION`. You can recognize which surface it touched from those tags.
 
-If you want an area effect cloud that can pass those blocks that a player can pass, you should tag the area effect cloud `wrnmd_bullet`.
+If you want an area effect cloud that can **pass those blocks** that a player can pass, you should tag the area effect cloud `wrnmd_bullet`.
 
-If you want an area effect cloud that can touch entities, you should tag the area effect cloud `wrnmd_entity`. If it touched an entity, it will have a tag named `wrnmd_touch_entity`, and the target entity will be tagged `wrnmd_target_entity`. Note that players are ignored by default. You can add `minecraft:player` in entity types tag (`#wrnmd:target`) to change it.
+If you want an area effect cloud that can **touch entities**, you should tag the area effect cloud `wrnmd_entity` and **rotate the AEC as the speed direction**. If it touched an entity, it will have a tag named `wrnmd_touch_entity`, and the target entity will be tagged `wrnmd_target_entity`. Note that players are ignored by default. You can add `minecraft:player` in entity types tag (`#wrnmd:target`) to change it.
 
 Details are listed in function `wrnmd:raycast`, `wrnmd:bullet` and `wrnmd:entity`. 
 

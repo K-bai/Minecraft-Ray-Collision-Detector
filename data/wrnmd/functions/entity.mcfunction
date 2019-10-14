@@ -10,6 +10,7 @@ execute store result score #var2 wrnmd_system run data get entity @s Pos[2] 1000
 scoreboard players operation @e[tag=wrnmd_mark,limit=1] wrnmd_x0 -= #var0 wrnmd_system
 scoreboard players operation @e[tag=wrnmd_mark,limit=1] wrnmd_y0 -= #var1 wrnmd_system
 scoreboard players operation @e[tag=wrnmd_mark,limit=1] wrnmd_z0 -= #var2 wrnmd_system
+# Rotating is really necessary for entity detection
 execute anchored eyes positioned ^ ^ ^ run tp @e[tag=wrnmd_mark,limit=1] ~ ~ ~ ~ ~
 
 # recurse and return
