@@ -82,7 +82,7 @@ execute if score #var0 wrnmd_system matches 1.. run scoreboard players operation
 scoreboard players operation #target_x wrnmd_system += #block_x wrnmd_system
 scoreboard players operation #target_y wrnmd_system += #block_y wrnmd_system
 scoreboard players operation #target_z wrnmd_system += #block_z wrnmd_system
-function wrnmd:generic/move
+execute if entity @s[tag=!wrnmd_touch_entity] run function wrnmd:generic/move
 ## 如果总距离小于等于目标距离，清除碰撞tag
 execute if score #var0 wrnmd_system matches ..0 run tag @s[tag=wrnmd_touch_edge] remove wrnmd_touch_edge
 ## 如果总距离大于目标距离且没碰撞，继续递归
