@@ -13,3 +13,7 @@ execute store result entity @s Pos[2] double 0.001 run scoreboard players get #t
 execute if score #target_temp_x wrnmd_system matches -1 at @s run tp @s ~0.0009 ~ ~ ~ ~
 execute if score #target_temp_y wrnmd_system matches -1 at @s run tp @s ~ ~0.0009 ~ ~ ~
 execute if score #target_temp_z wrnmd_system matches -1 at @s run tp @s ~ ~ ~0.0009 ~ ~
+# 如果碰到方块了，并且还在1000的边界，为了让AEC在被碰撞的方块内，要轻微移动一下
+execute if entity @s[tag=wrnmd_touch_edge] if score #target_temp_x wrnmd_system matches 1000 at @s run tp @s ~-0.00001 ~ ~ ~ ~
+execute if entity @s[tag=wrnmd_touch_edge] if score #target_temp_y wrnmd_system matches 1000 at @s run tp @s ~ ~-0.00001 ~ ~ ~
+execute if entity @s[tag=wrnmd_touch_edge] if score #target_temp_z wrnmd_system matches 1000 at @s run tp @s ~ ~ ~-0.00001 ~ ~

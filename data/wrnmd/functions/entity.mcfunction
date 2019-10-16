@@ -1,5 +1,5 @@
 # create marker
-execute positioned ^ ^ ^5 run summon area_effect_cloud ~ ~ ~ {Tags:["wrnmd_mark","wrnmd_entity"],Duration:100}
+execute at @s positioned ^ ^ ^5 run summon area_effect_cloud ~ ~ ~ {Tags:["wrnmd_mark","wrnmd_entity"],Duration:100}
 # save speed and direction
 execute as @e[tag=wrnmd_mark] store result score @s wrnmd_x0 run data get entity @s Pos[0] 1000
 execute as @e[tag=wrnmd_mark] store result score @s wrnmd_y0 run data get entity @s Pos[1] 1000
@@ -11,7 +11,7 @@ scoreboard players operation @e[tag=wrnmd_mark,limit=1] wrnmd_x0 -= #var0 wrnmd_
 scoreboard players operation @e[tag=wrnmd_mark,limit=1] wrnmd_y0 -= #var1 wrnmd_system
 scoreboard players operation @e[tag=wrnmd_mark,limit=1] wrnmd_z0 -= #var2 wrnmd_system
 # Rotating is really necessary for entity detection
-execute anchored eyes positioned ^ ^ ^ run tp @e[tag=wrnmd_mark,limit=1] ~ ~ ~ ~ ~
+execute at @s anchored eyes positioned ^ ^ ^ run tp @e[tag=wrnmd_mark,limit=1] ~ ~ ~ ~ ~
 
 # recurse and return
 execute as @e[tag=wrnmd_mark,limit=1] at @s run function wrnmd:generic/start
