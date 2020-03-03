@@ -3,6 +3,8 @@ Super precious raycast system in  vanilla minecraft! This datapack solved the ra
 
 Current version: 1.2.2
 
+Supported minecraft version: 1.14.4, 1.15.2
+
 # How to use
 Set scoreboard `wrnmd_x0`, `wrnmd_y0`, `wrnmd_z0` for any area effect cloud. These three scoreboards stand for how many milliblocks that the area effect cloud can fly in a tick in three dimensions respectively. Then execute `function wrnmd:generic/start` as the area effect cloud. If it **touched a block**, it will have tags named `wrnmd_touch_edge` and `wrnmd_touch_DIRECTION`. You can recognize which surface it touched from those tags.
 
