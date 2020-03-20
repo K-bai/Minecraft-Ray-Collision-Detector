@@ -1,34 +1,33 @@
 # Intro
-Super precious raycast system in  vanilla minecraft! This datapack solved the raycast problem perfectly with minimal command cost. It defines the hitbox of most blocks and does some calculations to judge which surface will be touched. 
+Minecraft Ray Collision Detector is a super precious raycast system in vanilla minecraft! This datapack solved the raycast problem perfectly with minimal command cost. It defines the hitbox of most blocks and does some calculations to judge which surface will be touched. 
 
-Current version: 1.2.2
+Current datapack version: 1.3
 
 Supported minecraft version: 1.14.4, 1.15.2
 
 # How to use
-Set scoreboard `wrnmd_x0`, `wrnmd_y0`, `wrnmd_z0` for any area effect cloud. These three scoreboards stand for how many milliblocks that the area effect cloud can fly in a tick in three dimensions respectively. Then execute `function wrnmd:generic/start` as the area effect cloud. If it **touched a block**, it will have tags named `wrnmd_touch_edge` and `wrnmd_touch_DIRECTION`. You can recognize which surface it touched from those tags.
+Set scoreboard `mrcd_x0`, `mrcd_y0`, `mrcd_z0` for any area effect cloud. These three scoreboards stand for how many milliblocks that the area effect cloud can fly in a tick in three dimensions respectively. Then execute `function mrcd:generic/start` as the area effect cloud. If it **touched a block**, it will have tags named `mrcd_touch_edge` and `mrcd_touch_DIRECTION`. You can recognize which surface it touched from those tags.
 
-If you want an area effect cloud that can **pass those blocks** that a player can pass, you should tag the area effect cloud `wrnmd_bullet`.
+If you want an area effect cloud that can **pass those blocks** that a player can pass, you should tag the area effect cloud `mrcd_bullet`.
 
-If you want an area effect cloud that can **touch entities**, you should tag the area effect cloud `wrnmd_entity` and **rotate the AEC as the speed direction**. If it touched an entity, it will have a tag named `wrnmd_touch_entity`, and the target entity will be tagged `wrnmd_target_entity`. Note that players are ignored by default. You can add `minecraft:player` in entity types tag (`#wrnmd:target`) to change it.
+If you want an area effect cloud that can **touch entities**, you should tag the area effect cloud `mrcd_entity` and **rotate the AEC as the speed direction**. If it touched an entity, it will have a tag named `mrcd_touch_entity`, and the target entity will be tagged `mrcd_target_entity`. Note that players are ignored by default. You can add `minecraft:player` in entity types tag (`#mrcd:target`) to change it.
 
-Details are listed in function `wrnmd:raycast`, `wrnmd:bullet` and `wrnmd:entity`. 
+Details are listed in function `mrcd:raycast`, `mrcd:bullet` and `mrcd:entity`. 
 
 # Block Support
 
 These blocks listed below are supported in is datapack. Please post an issue if you find some unsupported blocks and bugs.
 
-Flowers, bamboos and bamboo saplings are not supported due to random hitbox in minecraft. They are treated as full blocks. 
 
 * complex blocks
     * #minecraft:walls
-    * #wrnmd:glass_pane_like
+    * #mrcd:glass_pane_like
         * glass pane, stained glass pane and iron bars
     * #minecraft:fences
     * minecraft:vine
     * minecraft:scaffolding
     * #minecraft:beds
-    * #wrnmd:piston
+    * #mrcd:piston
         * sticky piston and normal piston
     * minecraft:piston_head
     * minecraft:brewing_stand
@@ -64,6 +63,8 @@ Flowers, bamboos and bamboo saplings are not supported due to random hitbox in m
     * minecraft:cactus
     * minecraft:cake
     * minecraft:ender_chest
+    * minecraft:bamboo
+    * minecraft:bamboo_sapling
     * #minecraft:slabs
     * #minecraft:wall_signs
     * #minecraft:flower_pots
@@ -72,43 +73,44 @@ Flowers, bamboos and bamboo saplings are not supported due to random hitbox in m
     * #minecraft:trapdoors
     * #minecraft:rails
     * #minecraft:carpets
-    * #wrnmd:standing_sign_like
+    * #minecraft:small_flowers
+    * #mrcd:standing_sign_like
         * standing sign and standing banner
-    * #wrnmd:pressure_plate_like
+    * #mrcd:pressure_plate_like
         * all kinds of pressure plates
-    * #wrnmd:repeater_like
+    * #mrcd:repeater_like
         * repeater and comparator
-    * #wrnmd:attached_melon_stem_like
+    * #mrcd:attached_melon_stem_like
         * attached melon stem and attached pumpkin stem
-    * #wrnmd:melon_stem_like
+    * #mrcd:melon_stem_like
         * melon stem and pumpkin stem
-    * #wrnmd:carrots_like
+    * #mrcd:carrots_like
         * carrot and potato
-    * #wrnmd:big_chest
+    * #mrcd:big_chest
         * normal chest and trapped chest
-    * #wrnmd:fence_gate_like
+    * #mrcd:fence_gate_like
         * all kinds of fence gates
-    * #wrnmd:skull_like
+    * #mrcd:skull_like
         * all kinds of skulls, including dragon head
-    * #wrnmd:wall_skull_like
+    * #mrcd:wall_skull_like
         * all kinds of skulls, including dragon head
-    * #wrnmd:wall_torch_like
+    * #mrcd:wall_torch_like
         * torch and redstone torch
-    * #wrnmd:grass_path_like
+    * #mrcd:grass_path_like
         * grass path and farmland
-    * #wrnmd:torch_like
+    * #mrcd:torch_like
         * torch and redstone torch
-    * #wrnmd:wall_coral_like
+    * #mrcd:wall_coral_like
         * all kinds of corals
-    * #wrnmd:coral_plant_like
+    * #mrcd:coral_plant_like
         * all kinds of corals
-    * #wrnmd:coral_fan_like
+    * #mrcd:coral_fan_like
         * all kinds of corals
-    * #wrnmd:grass_like
+    * #mrcd:grass_like
         * grass, fern and dead bush
-    * #wrnmd:sapling_like
+    * #mrcd:sapling_like
         * all kinds of saplings and seagrass
-    * #wrnmd:wall_banner_like
+    * #mrcd:wall_banner_like
         * wall banner
 * special blocks
     * #minecraft:stairs
@@ -126,4 +128,11 @@ Flowers, bamboos and bamboo saplings are not supported due to random hitbox in m
     * AECs can teleport to the edge of hitboxes of entities.
 * v1.2.2
     * bugfix: AECs that touch x+, y+ and z+ of full blocks will stay in the previous block.
-    * some changes in examples.
+    * Some changes in examples.
+* v1.3
+    * Change the name to MRCD (Minecraft Ray Collision Detector).
+    * bugfix: mushrooms are treated as full blocks.
+    * bugfix: bullets can pass bamboo.
+    * Add all flowers support.
+    * Add bamboo and bamboo saplings support.
+    * Flowers, bamboos and bamboo saplings are now fully supported. Our datapack calculates the random hitbox in different position when bullets pass them.
