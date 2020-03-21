@@ -1,4 +1,4 @@
-# 复杂方块
+# 复杂方块 Complex blocks
 execute if entity @s[tag=!mrcd_detected] if block ~ ~ ~ #minecraft:walls run function mrcd:generic/types/wall
 execute if entity @s[tag=!mrcd_detected] if block ~ ~ ~ #mrcd:glass_pane_like run function mrcd:generic/types/glass_pane
 execute if entity @s[tag=!mrcd_detected] if block ~ ~ ~ #minecraft:fences run function mrcd:generic/types/fence
@@ -15,7 +15,7 @@ execute if entity @s[tag=!mrcd_detected] if block ~ ~ ~ #minecraft:anvil run fun
 execute if entity @s[tag=!mrcd_detected] if block ~ ~ ~ minecraft:hopper run function mrcd:generic/types/hopper
 execute if entity @s[tag=!mrcd_detected] if block ~ ~ ~ minecraft:lectern run function mrcd:generic/types/lectern
 execute if entity @s[tag=!mrcd_detected] if block ~ ~ ~ minecraft:chorus_plant run function mrcd:generic/types/chorus_plant
-# 简单方块
+# 简单方块 Simple blocks
 execute if entity @s[tag=!mrcd_detected] if block ~ ~ ~ minecraft:conduit run function mrcd:generic/types/conduit
 execute if entity @s[tag=!mrcd_detected] if block ~ ~ ~ minecraft:cocoa run function mrcd:generic/types/cocoa
 execute if entity @s[tag=!mrcd_detected] if block ~ ~ ~ minecraft:daylight_detector run function mrcd:generic/types/daylight_detector
@@ -41,5 +41,5 @@ execute if entity @s[tag=!mrcd_detected] if block ~ ~ ~ #mrcd:skull_like run fun
 execute if entity @s[tag=!mrcd_detected] if block ~ ~ ~ #mrcd:wall_skull_like run function mrcd:generic/types/wall_skull
 execute if entity @s[tag=!mrcd_detected] if block ~ ~ ~ #mrcd:grass_path_like run function mrcd:generic/types/grass_path
 
-# 特殊
+# 特殊 Special blocks
 execute if entity @s[tag=!mrcd_detected] if block ~ ~ ~ #minecraft:stairs run function mrcd:generic/types/stair/main

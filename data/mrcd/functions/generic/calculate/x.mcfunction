@@ -7,6 +7,15 @@
 ### 方程整理得 z=(#target_x-x1)z0/x0+z1
 ## 若x0=0，无交点
 
+## Line equation: (x-x1)/x0=(y-y1)/y0=(z-z1)/z0
+## Plane equation: x=#target_x
+# Calculate the intersection point coordinate
+## if x0!=0
+### The equation can be arranged to: y=(#target_x-x1)y0/x0+y1
+### The equation can be arranged to: z=(#target_x-x1)z0/x0+z1
+## if x0=0, no intersection point
+
+
 # x
 
 

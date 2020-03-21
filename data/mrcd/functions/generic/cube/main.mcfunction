@@ -1,3 +1,5 @@
+# 根据朝向决定检测哪个面
+# Choose a side to detect based on direction
 execute if score @s[tag=!mrcd_touch_edge] mrcd_x0 matches 1.. if score #block_x mrcd_system <= #box_x0 mrcd_system run function mrcd:generic/cube/x0
 tag @s[tag=mrcd_touch_x_minus] add mrcd_touch_edge
 execute if score @s[tag=!mrcd_touch_edge] mrcd_x0 matches ..-1 if score #block_x mrcd_system >= #box_x1 mrcd_system run function mrcd:generic/cube/x1

@@ -1,9 +1,9 @@
 # Intro
 Minecraft Ray Collision Detector is a super precious raycast system in vanilla minecraft! This datapack solved the raycast problem perfectly with minimal command cost. It defines the hitbox of most blocks and does some calculations to judge which surface will be touched. 
 
-Current datapack version: 1.3
+Current datapack version: 2.0
 
-Supported minecraft version: 1.14.4, 1.15.2
+Supported minecraft version: 1.14.4, 1.15.2. Datapack workes with 1.16, however all the new blocks in 1.16 are treated as full blocks.
 
 # How to use
 Set scoreboard `mrcd_x0`, `mrcd_y0`, `mrcd_z0` for any area effect cloud. These three scoreboards stand for how many milliblocks that the area effect cloud can fly in a tick in three dimensions respectively. Then execute `function mrcd:generic/start` as the area effect cloud. If it **touched a block**, it will have tags named `mrcd_touch_edge` and `mrcd_touch_DIRECTION`. You can recognize which surface it touched from those tags.
@@ -13,6 +13,15 @@ If you want an area effect cloud that can **pass those blocks** that a player ca
 If you want an area effect cloud that can **touch entities**, you should tag the area effect cloud `mrcd_entity` and **rotate the AEC as the speed direction**. If it touched an entity, it will have a tag named `mrcd_touch_entity`, and the target entity will be tagged `mrcd_target_entity`. Note that players are ignored by default. You can add `minecraft:player` in entity types tag (`#mrcd:target`) to change it.
 
 Details are listed in function `mrcd:raycast`, `mrcd:bullet` and `mrcd:entity`. 
+
+# How it works
+Firstly, we get the direction vector of the marker, saved as #total_x,y,z. Besides, get the position of the marker in a block, saved as #block_x,y,z. These two vector can make a line, represant the moving route of the marker.
+
+Secondly, we defines the hitboxes of all blocks that are not full (See `mrcd:generic/types/slab` as an simple example). All the hitboxes in Minecraft are cuboid, so we can use 2 vectors(#box_x,y,z0 and #box_x,y,z1) to define them. 
+
+Thirdly, find which block the marker is in, and determine which plane of the block it will collide (See `mrcd:generic/cube/main`). Calculate the intersection point of the plane and the moving line of the marker, and determine if it can collide by boundary condition (See `mrcd:generic/cube/x0,x1,y0,y1,z0,z1` and `mrcd:generic/calculate/x,y,z`). Save the collision point as #target_x,y,z
+
+Finally, move the marker to #targetx,y,z!
 
 # Block Support
 
@@ -129,7 +138,7 @@ These blocks listed below are supported in is datapack. Please post an issue if 
 * v1.2.2
     * bugfix: AECs that touch x+, y+ and z+ of full blocks will stay in the previous block.
     * Some changes in examples.
-* v1.3
+* v2.0
     * Change the name to MRCD (Minecraft Ray Collision Detector).
     * bugfix: mushrooms are treated as full blocks.
     * bugfix: bullets can pass bamboo.

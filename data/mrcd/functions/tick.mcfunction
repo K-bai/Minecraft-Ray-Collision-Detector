@@ -1,4 +1,4 @@
-# bullet ticks
+# 子弹飞行 bullet ticks
 execute as @e[tag=mrcd_bullet] at @s run function mrcd:generic/start
 execute as @e[tag=mrcd_bullet,tag=mrcd_touch_edge,tag=mrcd_touch_x_plus] at @s run say touched x+
 execute as @e[tag=mrcd_bullet,tag=mrcd_touch_edge,tag=mrcd_touch_x_minus] at @s run say touched x-

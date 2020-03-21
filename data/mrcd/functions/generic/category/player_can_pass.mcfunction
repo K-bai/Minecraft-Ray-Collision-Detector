@@ -1,6 +1,6 @@
-# 复杂方块
+# 复杂方块 Complex blocks
 execute if entity @s[tag=!mrcd_detected] if block ~ ~ ~ minecraft:vine run function mrcd:generic/types/vine
-# 简单方块
+# 简单方块 Simple blocks
 execute if entity @s[tag=!mrcd_detected] if block ~ ~ ~ minecraft:redstone_wire run function mrcd:generic/types/redstone_wire
 execute if entity @s[tag=!mrcd_detected] if block ~ ~ ~ minecraft:beetroots run function mrcd:generic/types/beetroots
 execute if entity @s[tag=!mrcd_detected] if block ~ ~ ~ minecraft:nether_wart run function mrcd:generic/types/nether_wart
