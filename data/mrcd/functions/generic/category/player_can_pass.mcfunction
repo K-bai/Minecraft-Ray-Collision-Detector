@@ -1,7 +1,7 @@
 # 复杂方块 Complex blocks
-execute if entity @s[tag=!mrcd_detected] if block ~ ~ ~ minecraft:vine run function mrcd:generic/types/vine
-# 简单方块 Simple blocks
+execute if entity @s[tag=!mrcd_detected] if block ~ ~ ~ #mrcd:vine_like run function mrcd:generic/types/vine_like
 execute if entity @s[tag=!mrcd_detected] if block ~ ~ ~ minecraft:redstone_wire run function mrcd:generic/types/redstone_wire
+# 简单方块 Simple blocks
 execute if entity @s[tag=!mrcd_detected] if block ~ ~ ~ minecraft:beetroots run function mrcd:generic/types/beetroots
 execute if entity @s[tag=!mrcd_detected] if block ~ ~ ~ minecraft:nether_wart run function mrcd:generic/types/nether_wart
 execute if entity @s[tag=!mrcd_detected] if block ~ ~ ~ minecraft:kelp run function mrcd:generic/types/kelp
@@ -13,6 +13,12 @@ execute if entity @s[tag=!mrcd_detected] if block ~ ~ ~ minecraft:sugar_cane run
 execute if entity @s[tag=!mrcd_detected] if block ~ ~ ~ minecraft:sweet_berry_bush run function mrcd:generic/types/sweet_berry_bush
 execute if entity @s[tag=!mrcd_detected] if block ~ ~ ~ minecraft:tripwire run function mrcd:generic/types/tripwire
 execute if entity @s[tag=!mrcd_detected] if block ~ ~ ~ minecraft:bamboo_sapling run function mrcd:generic/types/bamboo_sapling
+execute if entity @s[tag=!mrcd_detected] if block ~ ~ ~ minecraft:twisting_vines run function mrcd:generic/types/twisting_vines
+execute if entity @s[tag=!mrcd_detected] if block ~ ~ ~ minecraft:twisting_vines_plant run function mrcd:generic/types/twisting_vines_plant
+execute if entity @s[tag=!mrcd_detected] if block ~ ~ ~ minecraft:weeping_vines run function mrcd:generic/types/weeping_vines
+execute if entity @s[tag=!mrcd_detected] if block ~ ~ ~ minecraft:weeping_vines_plant run function mrcd:generic/types/weeping_vines_plant
+execute if entity @s[tag=!mrcd_detected] if block ~ ~ ~ minecraft:nether_sprouts run function mrcd:generic/types/sprouts
+execute if entity @s[tag=!mrcd_detected] if block ~ ~ ~ minecraft:soul_fire run function mrcd:generic/types/soul_fire
 execute if entity @s[tag=!mrcd_detected] if block ~ ~ ~ #minecraft:wall_signs run function mrcd:generic/types/wall_sign
 execute if entity @s[tag=!mrcd_detected] if block ~ ~ ~ #minecraft:buttons run function mrcd:generic/types/button
 execute if entity @s[tag=!mrcd_detected] if block ~ ~ ~ #minecraft:rails run function mrcd:generic/types/rail
@@ -31,6 +37,8 @@ execute if entity @s[tag=!mrcd_detected] if block ~ ~ ~ #mrcd:wall_banner_like r
 execute if entity @s[tag=!mrcd_detected] if block ~ ~ ~ #mrcd:carrots_like run function mrcd:generic/types/carrots
 execute if entity @s[tag=!mrcd_detected] if block ~ ~ ~ #mrcd:pressure_plate_like run function mrcd:generic/types/pressure_plate
 execute if entity @s[tag=!mrcd_detected] if block ~ ~ ~ #mrcd:mushroom run function mrcd:generic/types/mushroom
+execute if entity @s[tag=!mrcd_detected] if block ~ ~ ~ #mrcd:fungus run function mrcd:generic/types/fungus
+execute if entity @s[tag=!mrcd_detected] if block ~ ~ ~ #mrcd:roots run function mrcd:generic/types/roots
 
 
 

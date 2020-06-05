@@ -1,9 +1,9 @@
 # Intro
 Minecraft Ray Collision Detector is a super precise raycast system in vanilla minecraft! This datapack solved the raycast problem perfectly with minimal command cost. It defines the hitbox of most blocks and does some calculations to judge which surface will be touched. 
 
-Current datapack version: 2.0
+Current datapack version: 2.1
 
-Supported minecraft version: 1.14.4, 1.15.2. Datapack workes with 1.16, however all the new blocks in 1.16 are treated as full blocks.
+Supported minecraft version: 1.16
 
 # How to use
 Set scoreboard `mrcd_x0`, `mrcd_y0`, `mrcd_z0` for any area effect cloud. These three scoreboards stand for how many milliblocks that the area effect cloud can fly in a tick in three dimensions respectively. Then execute `function mrcd:generic/start` as the area effect cloud. If it **touched a block**, it will have tags named `mrcd_touch_edge` and `mrcd_touch_DIRECTION`. You can recognize which surface it touched from those tags.
@@ -33,7 +33,8 @@ These blocks listed below are supported in is datapack. Please post an issue if 
     * #mrcd:glass_pane_like
         * glass pane, stained glass pane and iron bars
     * #minecraft:fences
-    * minecraft:vine
+    * #mrcd:vine_like
+        * vine and fire (what????)
     * minecraft:scaffolding
     * #minecraft:beds
     * #mrcd:piston
@@ -43,7 +44,8 @@ These blocks listed below are supported in is datapack. Please post an issue if 
     * minecraft:cauldron
     * minecraft:grindstone
     * minecraft:bell
-    * minecraft:lantern
+    * #mrcd:lanterns
+        * lantern and soul lantern
     * #minecraft:anvil
     * minecraft:hopper
     * minecraft:lectern
@@ -62,7 +64,6 @@ These blocks listed below are supported in is datapack. Please post an issue if 
     * minecraft:daylight_detector
     * minecraft:enchanting_table
     * minecraft:stonecutter
-    * minecraft:campfire
     * minecraft:end_portal_frame
     * minecraft:ladder
     * minecraft:lily_pad
@@ -74,6 +75,13 @@ These blocks listed below are supported in is datapack. Please post an issue if 
     * minecraft:ender_chest
     * minecraft:bamboo
     * minecraft:bamboo_sapling
+    * minecraft:chain
+    * minecraft:twisting_vines
+    * minecraft:twisting_vines_plant
+    * minecraft:weeping_vines
+    * minecraft:weeping_vines_plant
+    * minecraft:nether_sprouts
+    * minecraft:soul_fire
     * #minecraft:slabs
     * #minecraft:wall_signs
     * #minecraft:flower_pots
@@ -83,6 +91,7 @@ These blocks listed below are supported in is datapack. Please post an issue if 
     * #minecraft:rails
     * #minecraft:carpets
     * #minecraft:small_flowers
+    * #minecraft:campfires
     * #mrcd:standing_sign_like
         * standing sign and standing banner
     * #mrcd:pressure_plate_like
@@ -104,11 +113,11 @@ These blocks listed below are supported in is datapack. Please post an issue if 
     * #mrcd:wall_skull_like
         * all kinds of skulls, including dragon head
     * #mrcd:wall_torch_like
-        * torch and redstone torch
+        * torch, soul torch and redstone torch
     * #mrcd:grass_path_like
         * grass path and farmland
     * #mrcd:torch_like
-        * torch and redstone torch
+        * torch, soul torch and redstone torch
     * #mrcd:wall_coral_like
         * all kinds of corals
     * #mrcd:coral_plant_like
@@ -121,6 +130,10 @@ These blocks listed below are supported in is datapack. Please post an issue if 
         * all kinds of saplings and seagrass
     * #mrcd:wall_banner_like
         * wall banner
+    * #mrcd:fungus
+        * crimson and warped fungus
+    * #mrcd:roots
+        * crimson and warped roots
 * special blocks
     * #minecraft:stairs
 
@@ -139,9 +152,13 @@ These blocks listed below are supported in is datapack. Please post an issue if 
     * bugfix: AECs that touch x+, y+ and z+ of full blocks will stay in the previous block.
     * Some changes in examples.
 * v2.0
-    * Change the name to MRCD (Minecraft Ray Collision Detector).
+    * Change name to MRCD (Minecraft Ray Collision Detector).
     * bugfix: mushrooms are treated as full blocks.
     * bugfix: bullets can pass bamboo.
-    * Add all flowers support.
-    * Add bamboo and bamboo saplings support.
-    * Flowers, bamboos and bamboo saplings are now fully supported. Our datapack calculates the random hitbox in different position when bullets pass them.
+    * Add all flowers, bamboo and bamboo saplings support.
+        * Flowers, bamboos and bamboo saplings are now fully supported. Our datapack calculates the random hitbox in different position when bullets pass them.
+* v2.1
+    * Support 1.16
+    * Support fire, soul_fire, soul lantern, soul torch, soul campfire, chain block, nether vines, nether sprouts, fungus and nether roots.
+    * Add new properties for walls and redstone wire.
+    * bugfix: vines are treated as full blocks.

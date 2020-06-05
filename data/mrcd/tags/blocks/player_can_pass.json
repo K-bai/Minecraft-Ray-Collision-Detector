@@ -1,19 +1,23 @@
 {"values":[
-    "minecraft:vine",
     "minecraft:redstone_wire",
+
     "minecraft:beetroots",
     "minecraft:nether_wart",
     "minecraft:kelp",
+
     "minecraft:lever",
     "minecraft:tripwire_hook",
     "minecraft:tripwire",
+
     "minecraft:lily_pad",
     "minecraft:wheat",
     "minecraft:sugar_cane",
     "minecraft:sweet_berry_bush",
+
     "#minecraft:wall_signs",
     "#minecraft:buttons",
     "#minecraft:rails",
+
     "#mrcd:standing_sign_like",
     "#mrcd:attached_melon_stem_like",
     "#mrcd:melon_stem_like",
@@ -27,11 +31,21 @@
     "#mrcd:wall_banner_like",
     "#mrcd:carrots_like",
     "#mrcd:pressure_plate_like",
+    "#mrcd:vine_like",
+    "#mrcd:fungus",
+    "#mrcd:roots",
 
 	"minecraft:red_mushroom",
     "minecraft:brown_mushroom",
     "#minecraft:small_flowers",
     "minecraft:bamboo_sapling",
+
+    "minecraft:twisting_vines",
+    "minecraft:twisting_vines_plant",
+    "minecraft:weeping_vines",
+    "minecraft:weeping_vines_plant",
+    "minecraft:nether_sprouts",
+    "minecraft:soul_fire",
 
     "minecraft:tall_grass",
 	"minecraft:tall_seagrass",
