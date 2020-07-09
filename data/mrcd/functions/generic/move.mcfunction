@@ -1,4 +1,4 @@
-# 移动到下一个方块处 Move to #targetx,y,z
+# 移动到目标处 Move to #targetx,y,z
 execute store result score #target_temp_x mrcd_system run scoreboard players get #target_x mrcd_system
 execute store result score #target_temp_y mrcd_system run scoreboard players get #target_y mrcd_system
 execute store result score #target_temp_z mrcd_system run scoreboard players get #target_z mrcd_system

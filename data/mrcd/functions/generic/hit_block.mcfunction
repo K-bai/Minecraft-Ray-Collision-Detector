@@ -1,0 +1,5 @@
+# 直接传送到#target的位置 Tp to #target position
+execute if entity @s[tag=!mrcd_touch_entity] run function mrcd:generic/move
+scoreboard players set #target_x mrcd_system 0
+scoreboard players set #target_y mrcd_system 0
+scoreboard players set #target_z mrcd_system 0

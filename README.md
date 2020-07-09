@@ -162,3 +162,5 @@ These blocks listed below are supported in is datapack. Please post an issue if 
     * Support fire, soul_fire, soul lantern, soul torch, soul campfire, chain block, nether vines, nether sprouts, fungus and nether roots.
     * Add new properties for walls and redstone wire.
     * bugfix: vines are treated as full blocks.
+* v2.2-pre1
+    * Optimize commands usage (~10% less).

@@ -11,5 +11,5 @@ execute store result score #target_x mrcd_system run scoreboard players get #box
 function mrcd:generic/calculate/x
 execute if score #target_y mrcd_system >= #box_y0 mrcd_system if score #target_y mrcd_system <= #box_y1 mrcd_system if score #target_z mrcd_system >= #box_z0 mrcd_system if score #target_z mrcd_system <= #box_z1 mrcd_system run summon area_effect_cloud ~ ~ ~ {Duration:999,Tags:["mrcd_touch_mark","mrcd_touch_cube_edge","mrcd_touch_mark_new","mrcd_touch_x_plus"]}
 
-execute as @e[tag=mrcd_touch_mark_new] run function mrcd:generic/move
+execute as @e[tag=mrcd_touch_mark_new] run function mrcd:generic/complex_cube/move
 tag @e[tag=mrcd_touch_mark_new] remove mrcd_touch_mark_new
