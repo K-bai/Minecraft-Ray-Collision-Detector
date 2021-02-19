@@ -1,0 +1,20 @@
+{
+	"description": "All entities",
+	"values": [
+		"#mrcd:projectiles",
+		"minecraft:area_effect_cloud",
+		"minecraft:evoker_fangs",
+		"minecraft:experience_orb",
+		"minecraft:eye_of_ender",
+		"minecraft:falling_block",
+		"minecraft:firework_rocket",
+		"minecraft:fishing_bobber",
+		"minecraft:item",
+		"minecraft:item_frame",
+		"minecraft:glow_item_frame",
+		"minecraft:leash_knot",
+		"minecraft:lightning_bolt",
+		"minecraft:player",
+		"minecraft:tnt"
+	]
+}

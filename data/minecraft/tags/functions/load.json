@@ -1,3 +1,6 @@
-{"replace": false,"values": [
-    "mrcd:init"
-]}
+{
+  "replace": false,
+  "values": [
+    "mrcd:private/init"
+  ]
+}

@@ -1,25 +1,27 @@
 # Intro
-Minecraft Ray Collision Detector is a super precise raycast system in vanilla minecraft! This datapack solved the raycast problem perfectly with minimal command cost. It defines the hitbox of most blocks and does some calculations to judge which surface will be touched. 
+Minecraft Ray Collision Detector is a super precise raycast system in vanilla minecraft! This datapack solved the raycast problem perfectly with minimal command cost. It defines the hitbox of most blocks and does some calculations to judge which surface will be touched.
 
-Current datapack version: 2.1
+Current datapack version: 2.2
 
-Supported minecraft version: 1.16
+Supported minecraft version: 21w05b
 
 # How to use
-Set scoreboard `mrcd_x0`, `mrcd_y0`, `mrcd_z0` for any area effect cloud. These three scoreboards stand for how many milliblocks that the area effect cloud can fly in a tick in three dimensions respectively. Then execute `function mrcd:generic/start` as the area effect cloud. If it **touched a block**, it will have tags named `mrcd_touch_edge` and `mrcd_touch_DIRECTION`. You can recognize which surface it touched from those tags.
+Set scoreboard `mrcd_x0`, `mrcd_y0`, `mrcd_z0` for any area effect cloud. These three scoreboards stand for how many milliblocks that the area effect cloud can fly in three dimensions respectively each time you call `function mrcd:ray_tick` as the area effect cloud. If it **touches a block**, it will have the tags `mrcd_touch_edge` and `mrcd_touch_DIRECTION`. You can recognize which surface it touched from those tags.
 
 If you want an area effect cloud that can **pass those blocks** that a player can pass, you should tag the area effect cloud `mrcd_bullet`.
 
-If you want an area effect cloud that can **touch entities**, you should tag the area effect cloud `mrcd_entity` and **rotate the AEC as the speed direction**. If it touched an entity, it will have a tag named `mrcd_touch_entity`, and the target entity will be tagged `mrcd_target_entity`. Note that players are ignored by default. You can add `minecraft:player` in entity types tag (`#mrcd:target`) to change it.
+If you want an area effect cloud that can **touch entities**, you should tag the area effect cloud `mrcd_entity` and **rotate the AEC as the speed direction**. If it touched an entity, it will have a tag named `mrcd_touch_entity`, and the target entity will be tagged `mrcd_target_entity`. Note that some entities like player and projectiles are ignored by default. You can remove them in entity types tag (`#mrcd:ignore`) to change it.
 
-Details are listed in function `mrcd:raycast`, `mrcd:bullet` and `mrcd:entity`. 
+If you want an area effect cloud that can **touch a specific entity or group of entities**, you should tag it/them with `mrcd_target`, the area effect cloud `mrcd_entity_targeted` and **rotate the AEC as the speed direction**. If it touched a tagged entity, it will have a tag named `mrcd_touch_entity`, and the target entity will be tagged `mrcd_target_entity`. Any other non tagged entity that hits, will be ignored and the ray will pass through. This method can target any entity, even those that are in the `#mrcd:ignore` tag list.
+
+Details are listed in function `mrcd:examples/raycast`, `mrcd:examples/bullet` and `mrcd:examples/entity`.
 
 # How it works
 Firstly, we get the direction vector of the marker, saved as #total_x,y,z. Besides, get the position of the marker in a block, saved as #block_x,y,z. These two vector can make a line, represant the moving route of the marker.
 
-Secondly, we defines the hitboxes of all blocks that are not full (See `mrcd:generic/types/slab` as an simple example). All the hitboxes in Minecraft are cuboid, so we can use 2 vectors(#box_x,y,z0 and #box_x,y,z1) to define them. 
+Secondly, we defines the hitboxes of all blocks that are not full (See `mrcd:private/types/slab` as an simple example). All the hitboxes in Minecraft are cuboid, so we can use 2 vectors(#box_x,y,z0 and #box_x,y,z1) to define them.
 
-Thirdly, find which block the marker is in, and determine which plane of the block it will collide (See `mrcd:generic/cube/main`). Calculate the intersection point of the plane and the moving line of the marker, and determine if it can collide by boundary condition (See `mrcd:generic/cube/x0,x1,y0,y1,z0,z1` and `mrcd:generic/calculate/x,y,z`). Save the collision point as #target_x,y,z
+Thirdly, find which block the marker is in, and determine which plane of the block it will collide (See `mrcd:private/cube/main`). Calculate the intersection point of the plane and the moving line of the marker, and determine if it can collide by boundary condition (See `mrcd:private/cube/x0,x1,y0,y1,z0,z1` and `mrcd:private/calculate/x,y,z`). Save the collision point as #target_x,y,z
 
 Finally, move the marker to #targetx,y,z!
 
@@ -27,31 +29,8 @@ Finally, move the marker to #targetx,y,z!
 
 These blocks listed below are supported in is datapack. Please post an issue if you find some unsupported blocks and bugs.
 
-
-* complex blocks
-    * #minecraft:walls
-    * #mrcd:glass_pane_like
-        * glass pane, stained glass pane and iron bars
-    * #minecraft:fences
-    * #mrcd:vine_like
-        * vine and fire (what????)
-    * minecraft:scaffolding
-    * #minecraft:beds
-    * #mrcd:piston
-        * sticky piston and normal piston
-    * minecraft:piston_head
-    * minecraft:brewing_stand
-    * minecraft:cauldron
-    * minecraft:grindstone
-    * minecraft:bell
-    * #mrcd:lanterns
-        * lantern and soul lantern
-    * #minecraft:anvil
-    * minecraft:hopper
-    * minecraft:lectern
-    * minecraft:chorus_plant
+* any full block
 * simple blocks
-    * minecraft:redstone_wire
     * minecraft:conduit
     * minecraft:sugar_cane
     * minecraft:cocoa
@@ -78,10 +57,17 @@ These blocks listed below are supported in is datapack. Please post an issue if 
     * minecraft:chain
     * minecraft:twisting_vines
     * minecraft:twisting_vines_plant
-    * minecraft:weeping_vines
-    * minecraft:weeping_vines_plant
     * minecraft:nether_sprouts
     * minecraft:soul_fire
+    * minecraft:small_dripleaf
+    * minecraft:spore_blossom
+    * minecraft:big_dripleaf_stem
+    * minecraft:small_amethyst_bud
+    * minecraft:medium_amethyst_bud
+    * minecraft:large_amethyst_bud
+    * minecraft:amethyst_cluster
+    * minecraft:pointed_dripstone
+    * minecraft:turtle_egg
     * #minecraft:slabs
     * #minecraft:wall_signs
     * #minecraft:flower_pots
@@ -92,6 +78,9 @@ These blocks listed below are supported in is datapack. Please post an issue if 
     * #minecraft:carpets
     * #minecraft:small_flowers
     * #minecraft:campfires
+    * #minecraft:candles
+    * #mrcd:mushroom
+        * red mushroom and brown mushroom
     * #mrcd:standing_sign_like
         * standing sign and standing banner
     * #mrcd:pressure_plate_like
@@ -134,8 +123,39 @@ These blocks listed below are supported in is datapack. Please post an issue if 
         * crimson and warped fungus
     * #mrcd:roots
         * crimson and warped roots
-* special blocks
+    * #mrcd:hanging_roots_like
+        * hanging root and weeping vines
+    * #mrcd:rod_like
+        * end rod and lightning rod
+    * #mrcd:weeping_like
+        * weeping_vines plant and cave vine head
+
+* complex blocks
+    * minecraft:redstone_wire
+    * minecraft:piston_head
+    * minecraft:brewing_stand
+    * minecraft:cauldron
+    * minecraft:grindstone
+    * minecraft:bell
+    * minecraft:hopper
+    * minecraft:lectern
+    * minecraft:chorus_plant
+    * minecraft:scaffolding
+    * minecraft:big_dripleaf
+    * minecraft:candle_cake
+    * #minecraft:anvil
     * #minecraft:stairs
+    * #minecraft:walls
+    * #mrcd:glass_pane_like
+        * glass pane, stained glass pane and iron bars
+    * #minecraft:fences
+    * #minecraft:beds
+    * #mrcd:vine_like
+        * vine, glow lichen and fire (what????)
+    * #mrcd:piston
+        * sticky piston and normal piston
+    * #mrcd:lanterns
+        * lantern and soul lantern
 
 
 # Change Log
@@ -164,3 +184,20 @@ These blocks listed below are supported in is datapack. Please post an issue if 
     * bugfix: vines are treated as full blocks.
 * v2.2-pre1
     * Optimize commands usage (~10% less).
+* v2.2
+    * Updates
+        * Support for 1.17 snapshot 21w05b.
+        * Added a new type ray (mrcd_entity_targeted) used to only detect a specific group of entities.
+        * Remade the example to be more complete.
+    * Changes
+        * No longer uses mrcd:target entity_type tag, instead uses mrcd:ignore. This makes it easier to update and customize.
+        * Changed some name folders and distribution to be more self explanatory.
+            * 'generic' folder is now named 'private'
+            * 'generic/start' file is now located at the same level as init and is called 'ray_tick'
+            * 'init' file is now located inside private folder 'private/init'
+    * Fixes
+        * Stairs missing the straight variant.
+        * Bed not working
+        * Turtle eggs where missing
+    * Know bugs
+        * Pointed_dripstone offset not calculated well
