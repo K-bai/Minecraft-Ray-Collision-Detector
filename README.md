@@ -14,7 +14,7 @@ If you want an area effect cloud that can **touch entities**, you should tag the
 
 If you want an area effect cloud that can **touch a specific entity or group of entities**, you should tag it/them with `mrcd_target`, the area effect cloud `mrcd_entity_targeted` and **rotate the AEC as the speed direction**. If it touched a tagged entity, it will have a tag named `mrcd_touch_entity`, and the target entity will be tagged `mrcd_target_entity`. Any other non tagged entity that hits, will be ignored and the ray will pass through. This method can target any entity, even those that are in the `#mrcd:ignore` tag list.
 
-Details are listed in function `mrcd:examples/raycast`, `mrcd:examples/bullet` and `mrcd:examples/entity`.
+To see a working example, check the folder 'example'. You simply need to run each tick the function `mrcd:example/tick` and give yourself the needed items with the function `mrcd:example/give`.
 
 # How it works
 Firstly, we get the direction vector of the marker, saved as #total_x,y,z. Besides, get the position of the marker in a block, saved as #block_x,y,z. These two vector can make a line, represant the moving route of the marker.
