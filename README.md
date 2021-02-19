@@ -200,4 +200,4 @@ These blocks listed below are supported in is datapack. Please post an issue if 
         * Bed not working
         * Turtle eggs where missing
     * Know bugs
-        * Pointed_dripstone offset not calculated well
+        * Pointed_dripstone offset not calculated well (so it's currently not calculated)
