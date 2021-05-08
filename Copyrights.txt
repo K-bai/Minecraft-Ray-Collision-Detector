@@ -5,3 +5,5 @@ Copyrights of the content of this folder:
 All rights reserved.
 
 Please, do not sell it, if sharing this datapack attribute the work to the team, and if possible add a link.
+
+Current XOR algorithm is provided by xwjcool.

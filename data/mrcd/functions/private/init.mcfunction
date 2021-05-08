@@ -7,35 +7,13 @@ scoreboard players set #installed mrcd_system 1
 
 
 scoreboard players set #n2 mrcd_system 2
-scoreboard players set #n4 mrcd_system 4
-scoreboard players set #n8 mrcd_system 8
 scoreboard players set #n16 mrcd_system 16
-scoreboard players set #n32 mrcd_system 32
-scoreboard players set #n64 mrcd_system 64
-scoreboard players set #n128 mrcd_system 128
 scoreboard players set #n256 mrcd_system 256
-scoreboard players set #n512 mrcd_system 512
-scoreboard players set #n1024 mrcd_system 1024
-scoreboard players set #n2048 mrcd_system 2048
-scoreboard players set #n4096 mrcd_system 4096
-scoreboard players set #n8192 mrcd_system 8192
-scoreboard players set #n16384 mrcd_system 16384
-scoreboard players set #n32768 mrcd_system 32768
 scoreboard players set #n65536 mrcd_system 65536
-scoreboard players set #n131072 mrcd_system 131072
-scoreboard players set #n262144 mrcd_system 262144
-scoreboard players set #n524288 mrcd_system 524288
-scoreboard players set #n1048576 mrcd_system 1048576
-scoreboard players set #n2097152 mrcd_system 2097152
-scoreboard players set #n4194304 mrcd_system 4194304
-scoreboard players set #n8388608 mrcd_system 8388608
-scoreboard players set #n16777216 mrcd_system 16777216
-scoreboard players set #n33554432 mrcd_system 33554432
-scoreboard players set #n67108864 mrcd_system 67108864
-scoreboard players set #n134217728 mrcd_system 134217728
-scoreboard players set #n268435456 mrcd_system 268435456
-scoreboard players set #n536870912 mrcd_system 536870912
-scoreboard players set #n1073741824 mrcd_system 1073741824
+
+# 符号位参与运算。关于异或我只要求这么多，只要不做除法就不会有事。
+# Use the sign bit in calculation. This is the only one more thing I need for XOR. It wont matter as long as no division happens.
+scoreboard players set #n2147483648 mrcd_system -2147483648
 
 scoreboard players set #nm1 mrcd_system -1
 scoreboard players set #n11 mrcd_system 11
