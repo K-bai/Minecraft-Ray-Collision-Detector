@@ -3,7 +3,7 @@ Minecraft Ray Collision Detector is a super precise raycast system in vanilla mi
 
 Current datapack version: 2.2
 
-Supported minecraft version: 1.17 (21w08b)
+Supported minecraft version: 1.17 (21w18a)
 
 # How to use
 Set scoreboard `mrcd_x0`, `mrcd_y0`, `mrcd_z0` for any area effect cloud. These three scoreboards stand for how many milliblocks that the area effect cloud can fly in three dimensions respectively each time you call `function mrcd:ray_tick` as the area effect cloud. If it **touches a block**, it will have the tags `mrcd_touch_edge` and `mrcd_touch_DIRECTION`. You can recognize which surface it touched from those tags.
@@ -186,7 +186,7 @@ These blocks listed below are supported in is datapack. Please post an issue if 
     * Optimize commands usage (~10% less).
 * v2.2
     * Updates
-        * Support for 1.17 snapshot 21w05b.
+        * Support for 1.17 snapshot 21w18a.
         * Added a new type ray (mrcd_entity_targeted) used to only detect a specific group of entities.
         * Remade the example to be more complete.
     * Changes
@@ -195,9 +195,11 @@ These blocks listed below are supported in is datapack. Please post an issue if 
             * 'generic' folder is now named 'private'
             * 'generic/start' file is now located at the same level as init and is called 'ray_tick'
             * 'init' file is now located inside private folder 'private/init'
+        * Some new block tag entries are now optional. This makes it compatible all the way back to 1.16.2.
     * Fixes
         * Stairs missing the straight variant.
         * Bed not working
         * Turtle eggs where missing
+        * Duplicate entries of copper stairs/slab variants causing tags fail above 21w13a.
     * Know bugs
         * Pointed_dripstone offset not calculated well (so it's currently not calculated)
