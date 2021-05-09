@@ -11,7 +11,7 @@
 		"minecraft:fishing_bobber",
 		"minecraft:item",
 		"minecraft:item_frame",
-		"minecraft:glow_item_frame",
+		{"id": "minecraft:glow_item_frame", "required": false},
 		"minecraft:leash_knot",
 		"minecraft:lightning_bolt",
 		"minecraft:player",
