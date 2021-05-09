@@ -1,6 +1,6 @@
 {
   "values": [
     "minecraft:weeping_vines",
-    "minecraft:hanging_roots"
+    {"id": "minecraft:hanging_roots", "required": false}
     ]
 }

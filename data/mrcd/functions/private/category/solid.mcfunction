@@ -8,8 +8,6 @@ execute if entity @s[tag=!mrcd_detected] if block ~ ~ ~ bell run function mrcd:p
 execute if entity @s[tag=!mrcd_detected] if block ~ ~ ~ hopper run function mrcd:private/types/hopper
 execute if entity @s[tag=!mrcd_detected] if block ~ ~ ~ lectern run function mrcd:private/types/lectern
 execute if entity @s[tag=!mrcd_detected] if block ~ ~ ~ chorus_plant run function mrcd:private/types/chorus_plant
-execute if entity @s[tag=!mrcd_detected] if block ~ ~ ~ big_dripleaf run function mrcd:private/types/big_dripleaf/main
-execute if entity @s[tag=!mrcd_detected] if block ~ ~ ~ candle_cake run function mrcd:private/types/candle_cake
 
 execute if entity @s[tag=!mrcd_detected] if block ~ ~ ~ #walls run function mrcd:private/types/wall
 execute if entity @s[tag=!mrcd_detected] if block ~ ~ ~ #fences run function mrcd:private/types/fence
@@ -35,11 +33,6 @@ execute if entity @s[tag=!mrcd_detected] if block ~ ~ ~ cake run function mrcd:p
 execute if entity @s[tag=!mrcd_detected] if block ~ ~ ~ ender_chest run function mrcd:private/types/chest
 execute if entity @s[tag=!mrcd_detected] if block ~ ~ ~ bamboo run function mrcd:private/types/bamboo
 execute if entity @s[tag=!mrcd_detected] if block ~ ~ ~ chain run function mrcd:private/types/chain
-execute if entity @s[tag=!mrcd_detected] if block ~ ~ ~ small_amethyst_bud run function mrcd:private/types/small_amethyst_bud/main
-execute if entity @s[tag=!mrcd_detected] if block ~ ~ ~ medium_amethyst_bud run function mrcd:private/types/medium_amethyst_bud/main
-execute if entity @s[tag=!mrcd_detected] if block ~ ~ ~ large_amethyst_bud run function mrcd:private/types/large_amethyst_bud/main
-execute if entity @s[tag=!mrcd_detected] if block ~ ~ ~ amethyst_cluster run function mrcd:private/types/amethyst_cluster/main
-execute if entity @s[tag=!mrcd_detected] if block ~ ~ ~ pointed_dripstone run function mrcd:private/types/pointed_dripstone/main
 execute if entity @s[tag=!mrcd_detected] if block ~ ~ ~ turtle_egg run function mrcd:private/types/turtle_egg/main
 
 execute if entity @s[tag=!mrcd_detected] if block ~ ~ ~ #campfires run function mrcd:private/types/campfires
@@ -57,3 +50,5 @@ execute if entity @s[tag=!mrcd_detected] if block ~ ~ ~ #mrcd:skull_like run fun
 execute if entity @s[tag=!mrcd_detected] if block ~ ~ ~ #mrcd:wall_skull_like run function mrcd:private/types/wall_skull
 execute if entity @s[tag=!mrcd_detected] if block ~ ~ ~ #mrcd:grass_path_like run function mrcd:private/types/grass_path
 execute if entity @s[tag=!mrcd_detected] if block ~ ~ ~ #mrcd:rod_like run function mrcd:private/types/rod/main
+
+function mrcd:private/category/solid_117
