@@ -41,6 +41,7 @@
 	  "minecraft:red_mushroom",
     "minecraft:brown_mushroom",
     "#minecraft:small_flowers",
+    "#minecraft:tall_flowers",
     "minecraft:bamboo_sapling",
 
     "minecraft:twisting_vines",
@@ -51,10 +52,6 @@
     "minecraft:tall_grass",
     "minecraft:tall_seagrass",
     "minecraft:large_fern",
-    "minecraft:sunflower",
-    "minecraft:lilac",
-    "minecraft:peony",
-    "minecraft:rose_bush",
     "minecraft:bubble_column",
     "minecraft:end_gateway",
     "minecraft:kelp_plant",
@@ -64,6 +61,7 @@
 
     "minecraft:small_dripleaf",
     "minecraft:big_dripleaf_stem",
-    "minecraft:spore_blossom"
-
-]}
+    "minecraft:spore_blossom",
+    "minecraft:powder_snow"
+  ]
+}

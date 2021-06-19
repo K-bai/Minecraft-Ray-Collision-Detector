@@ -15,11 +15,12 @@ execute if entity @s[tag=!mrcd_detected] if block ~ ~ ~ #walls run function mrcd
 execute if entity @s[tag=!mrcd_detected] if block ~ ~ ~ #fences run function mrcd:private/types/fence
 execute if entity @s[tag=!mrcd_detected] if block ~ ~ ~ #beds run function mrcd:private/types/bed
 execute if entity @s[tag=!mrcd_detected] if block ~ ~ ~ #anvil run function mrcd:private/types/anvil/main
+execute if entity @s[tag=!mrcd_detected] if block ~ ~ ~ #stairs run function mrcd:private/types/stair/main
 
-execute if entity @s[tag=!mrcd_detected] if block ~ ~ ~ #mrcd:stair_like run function mrcd:private/types/stair/main
 execute if entity @s[tag=!mrcd_detected] if block ~ ~ ~ #mrcd:glass_pane_like run function mrcd:private/types/glass_pane
 execute if entity @s[tag=!mrcd_detected] if block ~ ~ ~ #mrcd:piston run function mrcd:private/types/piston
 execute if entity @s[tag=!mrcd_detected] if block ~ ~ ~ #mrcd:lanterns run function mrcd:private/types/lanterns
+execute if entity @s[tag=!mrcd_detected] if block ~ ~ ~ #mrcd:azalea run function mrcd:private/types/azalea
 
 # Simple blocks
 execute if entity @s[tag=!mrcd_detected] if block ~ ~ ~ conduit run function mrcd:private/types/conduit
@@ -41,14 +42,15 @@ execute if entity @s[tag=!mrcd_detected] if block ~ ~ ~ large_amethyst_bud run f
 execute if entity @s[tag=!mrcd_detected] if block ~ ~ ~ amethyst_cluster run function mrcd:private/types/amethyst_cluster/main
 execute if entity @s[tag=!mrcd_detected] if block ~ ~ ~ pointed_dripstone run function mrcd:private/types/pointed_dripstone/main
 execute if entity @s[tag=!mrcd_detected] if block ~ ~ ~ turtle_egg run function mrcd:private/types/turtle_egg/main
+execute if entity @s[tag=!mrcd_detected] if block ~ ~ ~ sculk_sensor run function mrcd:private/types/sculk_sensor
 
 execute if entity @s[tag=!mrcd_detected] if block ~ ~ ~ #campfires run function mrcd:private/types/campfires
 execute if entity @s[tag=!mrcd_detected] if block ~ ~ ~ #trapdoors run function mrcd:private/types/trapdoor
 execute if entity @s[tag=!mrcd_detected] if block ~ ~ ~ #flower_pots run function mrcd:private/types/flower_pot
 execute if entity @s[tag=!mrcd_detected] if block ~ ~ ~ #doors run function mrcd:private/types/door
 execute if entity @s[tag=!mrcd_detected] if block ~ ~ ~ #candles run function mrcd:private/types/candle/main
+execute if entity @s[tag=!mrcd_detected] if block ~ ~ ~ #slabs run function mrcd:private/types/slab
 
-execute if entity @s[tag=!mrcd_detected] if block ~ ~ ~ #mrcd:slab_like run function mrcd:private/types/slab
 execute if entity @s[tag=!mrcd_detected] if block ~ ~ ~ #mrcd:carpet_like run function mrcd:private/types/carpet
 execute if entity @s[tag=!mrcd_detected] if block ~ ~ ~ #mrcd:repeater_like run function mrcd:private/types/repeater
 execute if entity @s[tag=!mrcd_detected] if block ~ ~ ~ #mrcd:big_chest run function mrcd:private/types/chest

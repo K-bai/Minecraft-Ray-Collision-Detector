@@ -1,9 +1,9 @@
 # Intro
 Minecraft Ray Collision Detector is a super precise raycast system in vanilla minecraft! This datapack solved the raycast problem perfectly with minimal command cost. It defines the hitbox of most blocks and does some calculations to judge which surface will be touched.
 
-Current datapack version: 2.2
+Current datapack version: 2.3
 
-Supported minecraft version: 1.17 (21w08b)
+Supported minecraft version: 1.17
 
 # How to use
 Set scoreboard `mrcd_x0`, `mrcd_y0`, `mrcd_z0` for any area effect cloud. These three scoreboards stand for how many milliblocks that the area effect cloud can fly in three dimensions respectively each time you call `function mrcd:ray_tick` as the area effect cloud. If it **touches a block**, it will have the tags `mrcd_touch_edge` and `mrcd_touch_DIRECTION`. You can recognize which surface it touched from those tags.
@@ -68,6 +68,8 @@ These blocks listed below are supported in is datapack. Please post an issue if 
     * minecraft:amethyst_cluster
     * minecraft:pointed_dripstone
     * minecraft:turtle_egg
+    * minecraft:light
+    * minecraft:sculk_sensor
     * #minecraft:slabs
     * #minecraft:wall_signs
     * #minecraft:flower_pots
@@ -150,6 +152,8 @@ These blocks listed below are supported in is datapack. Please post an issue if 
         * glass pane, stained glass pane and iron bars
     * #minecraft:fences
     * #minecraft:beds
+    * #mrcd:azalea
+        * azalea and flower_azalea
     * #mrcd:vine_like
         * vine, glow lichen and fire (what????)
     * #mrcd:piston
@@ -201,3 +205,11 @@ These blocks listed below are supported in is datapack. Please post an issue if 
         * Turtle eggs where missing
     * Know bugs
         * Pointed_dripstone offset not calculated well (so it's currently not calculated)
+  * v2.3
+    * Updates
+        * Support for 1.17.
+    * Changes
+        * Added #mrcd:azalea, sculk_sensor and powder_snow
+        * Light block treated as air
+    * Fixes
+        * Dripstone offset wasn't considered (seems more presice than previous version)
