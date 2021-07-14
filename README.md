@@ -220,6 +220,6 @@ These blocks listed below are supported in is datapack. Please post an issue if 
         * Light block treated as air
     * Fixes
         * Dripstone offset wasn't considered (seems more presice than previous version)
-    * v2.3
-      * Updates
-          * Added new type of ray `mrcd_entity_bullet`
+ * v2.4
+   * Updates
+       * Added new type of ray `mrcd_entity_bullet`
