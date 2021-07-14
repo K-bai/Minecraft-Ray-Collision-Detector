@@ -1,20 +1,27 @@
-# Intro
+a ray # Intro
 Minecraft Ray Collision Detector is a super precise raycast system in vanilla minecraft! This datapack solved the raycast problem perfectly with minimal command cost. It defines the hitbox of most blocks and does some calculations to judge which surface will be touched.
 
-Current datapack version: 2.3
+Current datapack version: 2.4
 
 Supported minecraft version: 1.17
 
 # How to use
-Set scoreboard `mrcd_x0`, `mrcd_y0`, `mrcd_z0` for any area effect cloud. These three scoreboards stand for how many milliblocks that the area effect cloud can fly in three dimensions respectively each time you call `function mrcd:ray_tick` as the area effect cloud. If it **touches a block**, it will have the tags `mrcd_touch_edge` and `mrcd_touch_DIRECTION`. You can recognize which surface it touched from those tags.
+Set scoreboard `mrcd_x0`, `mrcd_y0`, `mrcd_z0` for any ray (entity used as the ray marker, usually area_effect_cloud or markers). These three scoreboards stand for how many milliblocks that the ray can fly in three dimensions respectively each time you call `function mrcd:ray_tick` as the ray. If it **touches a block**, it will have the tags `mrcd_touch_edge` and `mrcd_touch_DIRECTION`. You can recognize which surface it touched from those tags.
 
-If you want an area effect cloud that can **pass those blocks** that a player can pass, you should tag the area effect cloud `mrcd_bullet`.
+If you want a ray that can **pass those blocks** that a player can pass, you should tag the ray `mrcd_bullet`.
 
-If you want an area effect cloud that can **touch entities**, you should tag the area effect cloud `mrcd_entity` and **rotate the AEC as the speed direction**. If it touched an entity, it will have a tag named `mrcd_touch_entity`, and the target entity will be tagged `mrcd_target_entity`. Note that some entities like player and projectiles are ignored by default. You can remove them in entity types tag (`#mrcd:ignore`) to change it.
+If you want a ray that can **touch entities** (stops after one found), you should tag the ray `mrcd_entity` and **rotate the AEC as the speed direction**. If it touched an entity, it will have a tag named `mrcd_touch_entity`, and the target entity will be tagged `mrcd_target_entity`. Note that some entities like player and projectiles are ignored by default. You can remove them in entity types tag (`#mrcd:ignore`) to change it.
 
-If you want an area effect cloud that can **touch a specific entity or group of entities**, you should tag it/them with `mrcd_target`, the area effect cloud `mrcd_entity_targeted` and **rotate the AEC as the speed direction**. If it touched a tagged entity, it will have a tag named `mrcd_touch_entity`, and the target entity will be tagged `mrcd_target_entity`. Any other non tagged entity that hits, will be ignored and the ray will pass through. This method can target any entity, even those that are in the `#mrcd:ignore` tag list.
+If you want a ray that can **touch a specific entity or group of entities** (stops after one found), you should tag it/them with `mrcd_target`, the ray `mrcd_entity_targeted` and **rotate the AEC as the speed direction**. If it touched a tagged entity, it will have a tag named `mrcd_touch_entity`, and the target entity will be tagged `mrcd_target_entity`. Any other non tagged entity that hits, will be ignored and the ray will pass through. This method can target any entity, even those that are in the `#mrcd:ignore` tag list.
 
-To see a working example, check the folder 'example'. You simply need to run each tick the function `mrcd:example/tick` and give yourself the needed items with the function `mrcd:example/give`.
+If you want a ray that can **touch multiple entities** (doesn't stops after one found), you should tag the ray `mrcd_entity` and `mrcd_entity_bullet` and **rotate the AEC as the speed direction** (this is also works with `mrcd_entity_targeted`). If it touched an entity, it will have a tag named `mrcd_touch_entity`, and the target entity will be tagged `mrcd_target_entity`.
+
+Logically tags can be combined following this strucuture: <block_handling>,<entity_handeling>,<entity_extra>
+* block_handling: none or mrcd_bullet
+* entity_handeling: none or mrcd_entity or mrcd_entity_targeted
+* entity_extra: none or mrcd_entity_bullet
+
+To see some basic working examples, check the folder 'example'. You simply need to run each tick the function `mrcd:example/tick` and give yourself the needed items with the function `mrcd:example/give`.
 
 # How it works
 Firstly, we get the direction vector of the marker, saved as #total_x,y,z. Besides, get the position of the marker in a block, saved as #block_x,y,z. These two vector can make a line, represant the moving route of the marker.
@@ -213,3 +220,6 @@ These blocks listed below are supported in is datapack. Please post an issue if 
         * Light block treated as air
     * Fixes
         * Dripstone offset wasn't considered (seems more presice than previous version)
+    * v2.3
+      * Updates
+          * Added new type of ray `mrcd_entity_bullet`

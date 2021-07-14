@@ -6,13 +6,15 @@ execute as @e[nbt={SelectedItem:{id:"minecraft:blaze_rod"}}] at @s run function 
 execute as @e[nbt={SelectedItem:{id:"minecraft:bone"}}] at @s run function mrcd:example/entity
 execute as @e[nbt={SelectedItem:{id:"minecraft:bamboo"}}] at @s run tag @e[type=armor_stand] add mrcd_target
 execute as @e[nbt={SelectedItem:{id:"minecraft:bamboo"}}] at @s run function mrcd:example/entity_targeted
-execute as @e[nbt={SelectedItem:{id:"minecraft:arrow"}}] at @s run function mrcd:example/bullet_and_entity
+execute as @e[nbt={SelectedItem:{id:"minecraft:arrow"}}] at @s run function mrcd:example/bullet_entity
+execute as @e[nbt={SelectedItem:{id:"minecraft:spectral_arrow"}}] at @s run function mrcd:example/bullet_and_entity
 
 # Do something at the ray (trace ray path)
 execute at @e[tag=test_mark] run particle mycelium ~ ~ ~ 0 0 0 0 1 force
-# execute at @e[tag=mrcd_bullet] run particle flame ~ ~ ~ 0 0 0 0 1 force
-# execute at @e[tag=mrcd_entity] run particle end_rod ~ ~ ~ 0 0 0 0 1 force
-# execute at @e[tag=mrcd_entity_targeted] run particle enchanted_hit ~ ~ ~ 0 0 0 0 1 force
+# execute at @e[tag=mrcd_bullet] run particle wax_on ~ ~ ~ 0 0 0 0 1 force
+# execute at @e[tag=mrcd_entity] run particle wax_off ~ ~ ~ 0 0 0 0 1 force
+# execute at @e[tag=mrcd_entity_targeted] run particle scrape ~ ~ ~ 0 0 0 0 1 force
+# execute at @e[tag=mrcd_entity_bullet] run particle enchanted_hit ~ ~ ~ 0 0 0 0 1 force
 
 # Bullet ticks
 execute as @e[tag=test_mark] at @s run function mrcd:ray_tick

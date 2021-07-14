@@ -27,8 +27,9 @@ execute if entity @s[tag=mrcd_touch_edge_complex] run function mrcd:private/comp
 # Entity collision test. Executed if there are any entities in this block. Exist dxdydz bug.
 execute at @s[tag=mrcd_entity] align xyz if entity @e[type=!#mrcd:ignore,dx=0,dy=0,dz=0] run function mrcd:private/entity
 execute at @s[tag=mrcd_entity_targeted] align xyz if entity @e[tag=mrcd_target,dx=0,dy=0,dz=0] run function mrcd:private/entity_targeted
-
-
+# If mrcd_entity_bullet, pass through entities
+tag @s[tag=mrcd_entity_bullet] remove mrcd_touch_entity
+tag @s[tag=mrcd_entity_bullet] remove mrcd_touch_edge
 
 
 # 移动位置相关 Move marker
