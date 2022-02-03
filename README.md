@@ -3,7 +3,7 @@ Minecraft Ray Collision Detector is a super precise raycast system in vanilla mi
 
 Current datapack version: 2.4
 
-Supported minecraft version: 1.17
+Supported minecraft version: 1.18
 
 # How to use
 Set scoreboard `mrcd_x0`, `mrcd_y0`, `mrcd_z0` for any ray (entity used as the ray marker, usually area_effect_cloud or markers). These three scoreboards stand for how many milliblocks that the ray can fly in three dimensions respectively each time you call `function mrcd:ray_tick` as the ray. If it **touches a block**, it will have the tags `mrcd_touch_edge` and `mrcd_touch_DIRECTION`. You can recognize which surface it touched from those tags.
