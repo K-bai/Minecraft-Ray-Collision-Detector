@@ -212,7 +212,7 @@ These blocks listed below are supported in is datapack. Please post an issue if 
         * Turtle eggs where missing
     * Know bugs
         * Pointed_dripstone offset not calculated well (so it's currently not calculated)
-  * v2.3
+* v2.3
     * Updates
         * Support for 1.17.
     * Changes
