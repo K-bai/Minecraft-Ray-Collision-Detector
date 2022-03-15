@@ -1,4 +1,4 @@
-# 移动到碰撞点 Move to #targetx,y,z
+# Move to #targetx,y,z
 scoreboard players operation #target_x mrcd_system += #block_corner_x mrcd_system
 scoreboard players operation #target_y mrcd_system += #block_corner_y mrcd_system
 scoreboard players operation #target_z mrcd_system += #block_corner_z mrcd_system

@@ -11,7 +11,6 @@ scoreboard players set #n16 mrcd_system 16
 scoreboard players set #n256 mrcd_system 256
 scoreboard players set #n65536 mrcd_system 65536
 
-# 符号位参与运算。关于异或我只要求这么多，只要不做除法就不会有事。
 # Use the sign bit in calculation. This is the only one more thing I need for XOR. It wont matter as long as no division happens.
 scoreboard players set #n2147483648 mrcd_system -2147483648
 

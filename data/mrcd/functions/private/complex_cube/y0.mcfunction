@@ -1,10 +1,6 @@
-# 计算线面交点
-## 平面方程 y=#box_y0
-## 相交条件 #box_x0<=x<=#box_x1 #box_z0<=z<=#box_z1
-
 # Calculate the intersection point coordinate
-## Plane equation: y=#box_y0
-## Condition of crossing: #box_x0<=x<=#box_x1 #box_z0<=z<=#box_z1
+#   Plane equation: y = #box_y0
+#   Condition of crossing: #box_x0 <= x <= #box_x1  #box_z0 <= z <= #box_z1
 
 
 execute store result score #target_y mrcd_system run scoreboard players get #box_y0 mrcd_system

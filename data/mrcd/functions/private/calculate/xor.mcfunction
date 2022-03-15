@@ -1,18 +1,14 @@
-# 函数参数: #var0, #var1
-# var0-1: 被异或的两个Int32
-# 返回值: #var0
-# var0: Int32
+# args: 
+#   #var0 (int32)
+#   #var1 (int32)
+# return: 
+#   #var0 (int32)
 
-# params: #var0, #var1
-# var0-1: two Int32s used for XOR calculation
-# return values: #var0
-# var0: Int32
-
-# 如果我先加再说呢？ What if I do an addition first?
+# What if I do an addition first?
 scoreboard players operation #xor_result mrcd_system = #var0 mrcd_system
 scoreboard players operation #xor_result mrcd_system += #var1 mrcd_system
 
-# 检测并去除进位 detect and remove carried bits
+# detect and remove carried bits
 scoreboard players operation #var0 mrcd_system *= #n2 mrcd_system
 scoreboard players operation #var1 mrcd_system *= #n2 mrcd_system
 execute if score #var0 mrcd_system matches ..-1 if score #var1 mrcd_system matches ..-1 run scoreboard players operation #xor_result mrcd_system += #n2147483648 mrcd_system

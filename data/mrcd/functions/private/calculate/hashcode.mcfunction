@@ -1,12 +1,8 @@
-# 函数参数: #var0, #var1
-# var0-1: int值，xz坐标
-# 返回值: #var0
-# var0: 哈希值
-
-# params: #var0, #var1
-# var0-1: int value, x and z position
-# return values: #var0
-# var0: hashcode
+# args: x and z position
+#   #var0 (int)
+#   #var1 (int) 
+# return: hashcode
+#   #var0 (int)
 
 execute store result score #var_hc_x mrcd_system run scoreboard players get #var0 mrcd_system
 execute store result score #var_hc_z mrcd_system run scoreboard players get #var1 mrcd_system
