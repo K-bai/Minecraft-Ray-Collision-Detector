@@ -1,4 +1,3 @@
-# 根据朝向决定检测哪个面
 # Choose a side to detect based on direction
 execute unless entity @e[tag=mrcd_touch_cube_edge] if score @s mrcd_x0 matches 1.. if score #block_x mrcd_system <= #box_x0 mrcd_system run function mrcd:private/complex_cube/x0
 execute unless entity @e[tag=mrcd_touch_cube_edge] if score @s mrcd_x0 matches ..-1 if score #block_x mrcd_system >= #box_x1 mrcd_system run function mrcd:private/complex_cube/x1

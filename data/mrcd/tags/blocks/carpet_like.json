@@ -1,6 +1,6 @@
 {
   "values": [
     "#minecraft:carpets",
-    "minecraft:moss_carpet"
+    {"id": "minecraft:moss_carpet", "required": false}
   ]
 }

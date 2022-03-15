@@ -1,4 +1,5 @@
 {"values":[
-    "minecraft:dirt_path",
+    {"id": "minecraft:grass_path", "required": false},
+    {"id": "minecraft:dirt_path", "required": false},
     "minecraft:farmland"
 ]}

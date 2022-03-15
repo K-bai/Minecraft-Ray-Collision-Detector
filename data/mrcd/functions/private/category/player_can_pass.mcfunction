@@ -19,9 +19,6 @@ execute if entity @s[tag=!mrcd_detected] if block ~ ~ ~ twisting_vines run funct
 execute if entity @s[tag=!mrcd_detected] if block ~ ~ ~ twisting_vines_plant run function mrcd:private/types/twisting_vines_plant
 execute if entity @s[tag=!mrcd_detected] if block ~ ~ ~ nether_sprouts run function mrcd:private/types/sprouts
 execute if entity @s[tag=!mrcd_detected] if block ~ ~ ~ soul_fire run function mrcd:private/types/soul_fire
-execute if entity @s[tag=!mrcd_detected] if block ~ ~ ~ small_dripleaf run function mrcd:private/types/small_dripleaf
-execute if entity @s[tag=!mrcd_detected] if block ~ ~ ~ big_dripleaf_stem run function mrcd:private/types/big_dripleaf_stem/main
-execute if entity @s[tag=!mrcd_detected] if block ~ ~ ~ spore_blossom run function mrcd:private/types/spore_blossom
 
 execute if entity @s[tag=!mrcd_detected] if block ~ ~ ~ #wall_signs run function mrcd:private/types/wall_sign
 execute if entity @s[tag=!mrcd_detected] if block ~ ~ ~ #buttons run function mrcd:private/types/button
@@ -46,3 +43,5 @@ execute if entity @s[tag=!mrcd_detected] if block ~ ~ ~ #mrcd:pressure_plate_lik
 execute if entity @s[tag=!mrcd_detected] if block ~ ~ ~ #mrcd:mushroom run function mrcd:private/types/mushroom
 execute if entity @s[tag=!mrcd_detected] if block ~ ~ ~ #mrcd:fungus run function mrcd:private/types/fungus
 execute if entity @s[tag=!mrcd_detected] if block ~ ~ ~ #mrcd:roots run function mrcd:private/types/roots
+
+function mrcd:private/category/pcp_117

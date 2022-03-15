@@ -1,8 +1,8 @@
-# 清空上一次的tag Clear tags from last tick
+# Clear tags from last tick
 tag @s[tag=mrcd_detected] remove mrcd_detected
 tag @s[tag=mrcd_touch_edge_air] remove mrcd_touch_edge_air
 
-# 方块碰撞判定 Block collision test
+# Block collision test
 ## 当前是空气类方块，跳过 Skip if current block is air
 execute if block ~ ~ ~ #mrcd:air_like run tag @s add mrcd_detected
 ## 当前是子弹可穿过方块，跳过 Skip if the marker type is bullet and current block can be passed by player
@@ -20,10 +20,9 @@ execute if entity @s[tag=!mrcd_touch_edge] run function mrcd:private/types/air/m
 #tellraw @a ["target_x:",{"score":{"name":"#target_x","objective":"mrcd_system"}},", target_y:",{"score":{"name":"#target_y","objective":"mrcd_system"}},", target_z:",{"score":{"name":"#target_z","objective":"mrcd_system"}}]
 #tellraw @a ["block_x:",{"score":{"name":"#block_x","objective":"mrcd_system"}},", block_y:",{"score":{"name":"#block_y","objective":"mrcd_system"}},", block_z:",{"score":{"name":"#block_z","objective":"mrcd_system"}}]
 
-# 把复杂方块的实体转化为坐标 Convert the complex block markers to #target_x,y,z
+# Convert the complex block markers to #target_x,y,z
 execute if entity @s[tag=mrcd_touch_edge_complex] run function mrcd:private/complex_cube/convert
 
-# 实体碰撞判定 本格内有目标生物则执行 此处有dxdydz bug
 # Entity collision test. Executed if there are any entities in this block. Exist dxdydz bug.
 execute at @s[tag=mrcd_entity] align xyz if entity @e[type=!#mrcd:ignore,dx=0,dy=0,dz=0] run function mrcd:private/entity
 execute at @s[tag=mrcd_entity_targeted] align xyz if entity @e[tag=mrcd_target,dx=0,dy=0,dz=0] run function mrcd:private/entity_targeted
@@ -32,8 +31,7 @@ tag @s[tag=mrcd_entity_bullet] remove mrcd_touch_entity
 tag @s[tag=mrcd_entity_bullet] remove mrcd_touch_edge
 
 
-# 移动位置相关 Move marker
-## 修改为相对当前坐标的位置
+# Move marker
 ## Convert #target_x,y,z to a coordinate(#target_c_x,y,z) which based on the coordinate of marker (before based on the coordinate of block corner)
 execute store result score #target_c_x mrcd_system run scoreboard players get #target_x mrcd_system
 execute store result score #target_c_y mrcd_system run scoreboard players get #target_y mrcd_system
@@ -41,7 +39,6 @@ execute store result score #target_c_z mrcd_system run scoreboard players get #t
 scoreboard players operation #target_c_x mrcd_system -= #block_x mrcd_system
 scoreboard players operation #target_c_y mrcd_system -= #block_y mrcd_system
 scoreboard players operation #target_c_z mrcd_system -= #block_z mrcd_system
-## 判定目标距离和总距离的绝对值大小
 ## Which is longer? Length of #target_c_x,y,z or #total_x,y,z?
 execute store result score #var0 mrcd_system run scoreboard players get #total_x mrcd_system
 execute store result score #var1 mrcd_system run scoreboard players get #target_c_x mrcd_system
@@ -60,12 +57,9 @@ scoreboard players operation #var2 mrcd_system -= #var3 mrcd_system
 scoreboard players operation #var4 mrcd_system -= #var5 mrcd_system
 execute if score #var0 mrcd_system matches ..0 if score #var2 mrcd_system matches ..0 if score #var4 mrcd_system matches ..0 run scoreboard players set #if_reach_target mrcd_system 1
 execute if score #var0 mrcd_system matches 0.. if score #var2 mrcd_system matches 0.. if score #var4 mrcd_system matches 0.. run scoreboard players set #if_reach_target mrcd_system 0
-### 如果总距离小于等于目标距离，表示到达终点
 ### #total_x,y,z<#target_c_x,y,z ----> Reached the distance limit
 execute if score #if_reach_target mrcd_system matches 1 run function mrcd:private/reach_target
-### 如果总距离大于目标距离，且碰撞方块，表示到达终点
 ### #total_x,y,z >= #target_c_x,y,z and collide with a block ----> Collide with a block
 execute if score #if_reach_target mrcd_system matches 0 if entity @s[tag=mrcd_touch_edge] run function mrcd:private/hit_block
-### 如果总距离大于目标距离，且未碰撞方块，表示还未到达终点
 ### #total_x,y,z >= #target_c_x,y,z and not collide with a block ----> Next cycle
 execute if score #if_reach_target mrcd_system matches 0 if entity @s[tag=!mrcd_touch_edge] run function mrcd:private/next_cycle

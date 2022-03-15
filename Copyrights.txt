@@ -1,6 +1,7 @@
 Copyrights of the content of this folder:
   - Creator & Developer:  K-bai         (minecraft name: K_bai)
   - Developer:            mattcarter11  (minecraft name: YouKnowWhen)
+  - XOR algorithm:        xwjcool
 
 All rights reserved.
 

@@ -1,12 +1,9 @@
-# 函数参数: #var0, #var1
-# var0-1: int值，xz坐标
-# 返回值: #var0, #var1
-# var0-1: int值，xz坐标偏移量
-
-# params: #var0, #var1
-# var0-1: int value, x and z position
-# return values: #var0, #var1
-# var0-1: int value, x and z position offset
+# args: x and z position
+#   #var0 (int)
+#   #var1 (int)
+# return: x and z position offset
+#   #var0 (int)
+#   #var1 (int)
 
 function mrcd:private/calculate/hashcode
 execute store result score #var_ofs_hc mrcd_system run scoreboard players get #var0 mrcd_system

@@ -1,4 +1,4 @@
-# 清空标签 Clear tags
+# Clear tags
 tag @s[tag=mrcd_touch_edge] remove mrcd_touch_edge
 tag @s[tag=mrcd_touch_edge_complex] remove mrcd_touch_edge_complex
 tag @s[tag=mrcd_touch_x_plus] remove mrcd_touch_x_plus
@@ -8,14 +8,12 @@ tag @s[tag=mrcd_touch_y_minus] remove mrcd_touch_y_minus
 tag @s[tag=mrcd_touch_z_plus] remove mrcd_touch_z_plus
 tag @s[tag=mrcd_touch_z_minus] remove mrcd_touch_z_minus
 
-# 设定距离 Set total distance
+# Set total distance
 execute store result score #total_x mrcd_system run scoreboard players get @s mrcd_x0
 execute store result score #total_y mrcd_system run scoreboard players get @s mrcd_y0
 execute store result score #total_z mrcd_system run scoreboard players get @s mrcd_z0
 
-# 获取在方块内的坐标和方块角落坐标 Get the coordinate of current block
-# #block_x,y,z: 范围是0-1000，表示相对方块顶点坐标
-# #block_corner_x,y,z: 表示方块顶点绝对坐标(1000倍)
+# Get the coordinate of current block
 # #block_x,y,z: range from 0-1000, relative coordinate in a block
 # #block_corner_x,y,z: absolute coordinate of current block (multiply by 1000)
 execute store result score #block_x mrcd_system run data get entity @s Pos[0] 1000
@@ -39,5 +37,5 @@ execute if score #block_z mrcd_system matches 999 run scoreboard players set #bl
 #tellraw @a ["block_x:",{"score":{"name":"#block_x","objective":"mrcd_system"}},", block_y:",{"score":{"name":"#block_y","objective":"mrcd_system"}},", block_z:",{"score":{"name":"#block_z","objective":"mrcd_system"}}]
 #tellraw @a ["block_corner_x:",{"score":{"name":"#block_corner_x","objective":"mrcd_system"}},", block_corner_y:",{"score":{"name":"#block_corner_y","objective":"mrcd_system"}},", block_corner_z:",{"score":{"name":"#block_corner_z","objective":"mrcd_system"}}]
 
-# 递归 Recurse
+# Recurse
 execute at @s run function mrcd:private/recurse

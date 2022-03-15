@@ -1,19 +1,10 @@
-# 方程联立
-## 直线方程 (x-x1)/x0=(y-y1)/y0=(z-z1)/z0
-## 平面方程 z=#target_z
-# 计算线面交点
-## 若z0!=0
-### 方程整理得 x=(#target_z-z1)x0/z0+x1
-### 方程整理得 y=(#target_z-z1)y0/z0+y1
-## 若z0=0，无交点
-
-## Line equation: (x-x1)/x0=(y-y1)/y0=(z-z1)/z0
-## Plane equation: z=#target_z
+# Line equation: (x-x1)/x0 = (y-y1)/y0 = (z-z1)/z0
+# Plane equation: z = #target_z
 # Calculate the intersection point coordinate
-## if z0!=0
-### The equation can be arranged to: x=(#target_z-z1)x0/z0+x1
-### The equation can be arranged to: y=(#target_z-z1)y0/z0+y1
-## if z0=0, no intersection point
+#   if z0!=0
+#       The equation can be arranged to: x = (#target_z-z1)x0/z0+x1
+#       The equation can be arranged to: y = (#target_z-z1)y0/z0+y1
+#   if z0=0, no intersection point
 
 
 

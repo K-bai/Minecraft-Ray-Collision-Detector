@@ -38,7 +38,7 @@
     "#mrcd:hanging_roots_like",
     "#mrcd:weeping_like",
 
-	  "minecraft:red_mushroom",
+	"minecraft:red_mushroom",
     "minecraft:brown_mushroom",
     "#minecraft:small_flowers",
     "#minecraft:tall_flowers",
@@ -59,9 +59,9 @@
     "minecraft:water",
     "minecraft:nether_portal",
 
-    "minecraft:small_dripleaf",
-    "minecraft:big_dripleaf_stem",
-    "minecraft:spore_blossom",
-    "minecraft:powder_snow"
+    {"id": "minecraft:small_dripleaf", "required": false},
+    {"id": "minecraft:big_dripleaf_stem", "required": false},
+    {"id": "minecraft:spore_blossom", "required": false},
+    {"id":"minecraft:powder_snow", "required": false}
   ]
 }
