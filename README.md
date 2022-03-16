@@ -21,7 +21,7 @@ Logically tags can be combined following this strucuture: <block_handling>,<enti
 * entity_handeling: none or mrcd_entity or mrcd_entity_targeted
 * entity_extra: none or mrcd_entity_bullet
 
-To see some basic working examples, check the folder 'example'. You simply need to run each tick the function `mrcd:example/tick` and give yourself the needed items with the function `mrcd:example/give`.
+To see some basic working examples, check the folder **example**. You simply need to run each tick the function `mrcd:example/tick` and give yourself the needed items with the function `mrcd:example/give`.
 
 # How it works
 Firstly, we get the direction vector of the marker, saved as #total_x,y,z. Besides, get the position of the marker in a block, saved as #block_x,y,z. These two vector can make a line, represant the moving route of the marker.
