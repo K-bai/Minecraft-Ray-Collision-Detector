@@ -1,5 +1,7 @@
-{"values":[
-    "minecraft:vine",
-    "minecraft:fire",
-    {"id": "minecraft:glow_lichen", "required": false}
-]}
+{
+    "values":[
+        "vine",
+        "fire",
+        {"id": "glow_lichen", "required": false}
+    ]
+}

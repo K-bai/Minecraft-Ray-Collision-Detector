@@ -1,9 +1,9 @@
 # Intro
 Minecraft Ray Collision Detector is a super precise raycast system in vanilla minecraft! This datapack solved the raycast problem perfectly with minimal command cost. It defines the hitbox of most blocks and does some calculations to judge which surface will be touched.
 
-Current datapack version: 2.4
+Current datapack version: 2.5
 
-Supported minecraft version: 1.17, 1.18
+Supported minecraft version: 1.16, 1.17, 1.18
 
 # How to use
 Set scoreboard `mrcd_x0`, `mrcd_y0`, `mrcd_z0` for any ray (entity used as the ray marker, usually area_effect_cloud or markers). These three scoreboards stand for how many milliblocks that the ray can fly in three dimensions respectively each time you call `function mrcd:ray_tick` as the ray. If it **touches a block**, it will have the tags `mrcd_touch_edge` and `mrcd_touch_DIRECTION`. You can recognize which surface it touched from those tags.
@@ -34,7 +34,7 @@ Finally, move the marker to #targetx,y,z!
 
 # Block Support
 
-These blocks listed below are supported in is datapack. Please post an issue if you find some unsupported blocks and bugs.
+These blocks listed below are supported in is datapack. Please post an issue if you find some unsupported blocks and bugs. *All blocks are listed using the latest minecraft block tags*
 
 * any full block
 * simple blocks
@@ -64,6 +64,8 @@ These blocks listed below are supported in is datapack. Please post an issue if 
     * minecraft:chain
     * minecraft:twisting_vines
     * minecraft:twisting_vines_plant
+    * minecraft:weeping_vines
+    * minecraft:weeping_vines_plant
     * minecraft:nether_sprouts
     * minecraft:soul_fire
     * minecraft:small_dripleaf
@@ -74,10 +76,12 @@ These blocks listed below are supported in is datapack. Please post an issue if 
     * minecraft:large_amethyst_bud
     * minecraft:amethyst_cluster
     * minecraft:pointed_dripstone
+    * minecraft:hanging_roots
     * minecraft:turtle_egg
     * minecraft:light
     * minecraft:sculk_sensor
     * #minecraft:slabs
+    * #minecraft:pressure_plates
     * #minecraft:wall_signs
     * #minecraft:flower_pots
     * #minecraft:buttons
@@ -88,12 +92,11 @@ These blocks listed below are supported in is datapack. Please post an issue if 
     * #minecraft:small_flowers
     * #minecraft:campfires
     * #minecraft:candles
+    * #minecraft:cave_vines
     * #mrcd:mushroom
         * red mushroom and brown mushroom
     * #mrcd:standing_sign_like
         * standing sign and standing banner
-    * #mrcd:pressure_plate_like
-        * all kinds of pressure plates
     * #mrcd:repeater_like
         * repeater and comparator
     * #mrcd:attached_melon_stem_like
@@ -110,11 +113,11 @@ These blocks listed below are supported in is datapack. Please post an issue if 
         * all kinds of skulls, including dragon head
     * #mrcd:wall_skull_like
         * all kinds of skulls, including dragon head
-    * #mrcd:wall_torch_like
+    * #mrcd:wall_torches
         * torch, soul torch and redstone torch
     * #mrcd:grass_path_like
         * grass path and farmland
-    * #mrcd:torch_like
+    * #mrcd:torches
         * torch, soul torch and redstone torch
     * #mrcd:wall_coral_like
         * all kinds of corals
@@ -132,18 +135,13 @@ These blocks listed below are supported in is datapack. Please post an issue if 
         * crimson and warped fungus
     * #mrcd:roots
         * crimson and warped roots
-    * #mrcd:hanging_roots_like
-        * hanging root and weeping vines
     * #mrcd:rod_like
         * end rod and lightning rod
-    * #mrcd:weeping_like
-        * weeping_vines plant and cave vine head
 
 * complex blocks
     * minecraft:redstone_wire
     * minecraft:piston_head
     * minecraft:brewing_stand
-    * minecraft:cauldron
     * minecraft:grindstone
     * minecraft:bell
     * minecraft:hopper
@@ -152,6 +150,8 @@ These blocks listed below are supported in is datapack. Please post an issue if 
     * minecraft:scaffolding
     * minecraft:big_dripleaf
     * minecraft:candle_cake
+    * minecraft:glow_lichen
+    * #minecraft:cauldrons
     * #minecraft:anvil
     * #minecraft:stairs
     * #minecraft:walls
@@ -162,7 +162,7 @@ These blocks listed below are supported in is datapack. Please post an issue if 
     * #mrcd:azalea
         * azalea and flower_azalea
     * #mrcd:vine_like
-        * vine, glow lichen and fire (what????)
+        * vines and fire (what????)
     * #mrcd:piston
         * sticky piston and normal piston
     * #mrcd:lanterns
@@ -223,3 +223,13 @@ These blocks listed below are supported in is datapack. Please post an issue if 
  * v2.4
    * Updates
        * Added new type of ray `mrcd_entity_bullet`
+ * v2.5
+   * Updates
+      * Merged the pull request of the new XOR algorithm (from 350 lines to 100) for offset blocks done by xwjcool123
+      * Added support for 1.16
+   * Changes
+      * 1.17 block checks are now skiped in older versions
+          * This means some changes on some block tags
+   * Fixes
+      * Weeping vines and Cave Vines were grouped with the same hitbox
+      * Blackstone pressure plate was missing

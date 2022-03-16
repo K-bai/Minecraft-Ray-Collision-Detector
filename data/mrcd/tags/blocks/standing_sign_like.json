@@ -1,21 +1,21 @@
-{"values":[
-    "#minecraft:standing_signs",
-    "minecraft:white_banner",
-    "minecraft:orange_banner",
-    "minecraft:magenta_banner",
-    "minecraft:light_blue_banner",
-    "minecraft:yellow_banner",
-    "minecraft:lime_banner",
-    "minecraft:pink_banner",
-    "minecraft:gray_banner",
-    "minecraft:light_gray_banner",
-    "minecraft:cyan_banner",
-    "minecraft:purple_banner",
-    "minecraft:blue_banner",
-    "minecraft:brown_banner",
-    "minecraft:green_banner",
-    "minecraft:red_banner",
-    "minecraft:black_banner"
-]}
-
-
+{
+    "values": [
+        "#standing_signs",
+        "white_banner",
+        "orange_banner",
+        "magenta_banner",
+        "light_blue_banner",
+        "yellow_banner",
+        "lime_banner",
+        "pink_banner",
+        "gray_banner",
+        "light_gray_banner",
+        "cyan_banner",
+        "purple_banner",
+        "blue_banner",
+        "brown_banner",
+        "green_banner",
+        "red_banner",
+        "black_banner"
+    ]
+}

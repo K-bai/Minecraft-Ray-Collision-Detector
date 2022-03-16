@@ -1,6 +1,6 @@
-{"values":[
-    "minecraft:chest",
-    "minecraft:trapped_chest"
-]}
-
-
+{
+    "values": [
+        "chest",
+        "trapped_chest"
+    ]
+}

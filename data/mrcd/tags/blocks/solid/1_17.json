@@ -1,0 +1,22 @@
+{
+    "values": [
+        "large_amethyst_bud",
+        "small_amethyst_bud",
+        "medium_amethyst_bud",
+        "amethyst_cluster",
+
+        "azalea",
+        "flowering_azalea",
+
+        "lightning_rod",
+        
+        "#candles",
+        "#candle_cakes",
+        "#cauldrons",
+        
+        "big_dripleaf",
+        "pointed_dripstone",
+        "sculk_sensor",
+        "rooted_dirt"     
+    ]
+}

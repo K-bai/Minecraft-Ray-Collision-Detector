@@ -1,8 +1,11 @@
-{"values":[
-    "#minecraft:wooden_pressure_plates",
-    "minecraft:stone_pressure_plate",
-    "minecraft:light_weighted_pressure_plate",
-    "minecraft:heavy_weighted_pressure_plate"
-]}
+{
+    "values":[
+        {"id":"#pressure_plates", "required": false},
+        "#wooden_pressure_plates",
+        "stone_pressure_plate",
+        "light_weighted_pressure_plate",
+        "heavy_weighted_pressure_plate"
+    ]
+}
 
 

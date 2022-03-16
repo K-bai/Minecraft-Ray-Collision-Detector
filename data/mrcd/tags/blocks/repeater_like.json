@@ -1,6 +1,6 @@
-{"values":[
-    "minecraft:repeater",
-    "minecraft:comparator"
-]}
-
-
+{
+    "values": [
+        "repeater",
+        "comparator"
+    ]
+}

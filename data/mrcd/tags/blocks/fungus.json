@@ -1,4 +1,6 @@
-{"replace": false,"values": [
-    "minecraft:warped_fungus",
-    "minecraft:crimson_fungus"
-]}
+{
+    "values": [
+        "warped_fungus",
+        "crimson_fungus"
+    ]
+}

@@ -1,6 +1,6 @@
 {
-  "values": [
-    "minecraft:azalea",
-    "minecraft:flowering_azalea"
-  ]
+    "values": [
+        "azalea",
+        "flowering_azalea"
+    ]
 }

@@ -1,7 +1,7 @@
-{"values":[
-    "minecraft:dead_bush",
-    "minecraft:grass",
-    "minecraft:fern"
-]}
-
-
+{
+    "values": [
+        "dead_bush",
+        "grass",
+        "fern"
+    ]
+}

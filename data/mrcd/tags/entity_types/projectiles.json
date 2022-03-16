@@ -1,18 +1,18 @@
 {
 	"values": [
-		"minecraft:arrow",
-		"minecraft:dragon_fireball",
-		"minecraft:egg",
-		"minecraft:ender_pearl",
-		"minecraft:experience_bottle",
-		"minecraft:fireball",
-		"minecraft:llama_spit",
-		"minecraft:potion",
-		"minecraft:shulker_bullet",
-		"minecraft:small_fireball",
-		"minecraft:snowball",
-		"minecraft:spectral_arrow",
-		"minecraft:trident",
-		"minecraft:wither_skull"
+		"arrow",
+		"dragon_fireball",
+		"egg",
+		"ender_pearl",
+		"experience_bottle",
+		"fireball",
+		"llama_spit",
+		"potion",
+		"shulker_bullet",
+		"small_fireball",
+		"snowball",
+		"spectral_arrow",
+		"trident",
+		"wither_skull"
 	]
 }

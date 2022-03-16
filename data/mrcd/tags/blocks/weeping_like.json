@@ -1,7 +1,0 @@
-{
-  "values": [
-    "minecraft:weeping_vines_plant",
-    {"id": "minecraft:cave_vines_plant", "required": false},
-    {"id": "minecraft:cave_vines", "required": false}
-    ]
-}

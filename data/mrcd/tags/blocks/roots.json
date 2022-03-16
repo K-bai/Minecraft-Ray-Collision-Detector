@@ -1,4 +1,6 @@
-{"replace": false,"values": [
-    "minecraft:warped_roots",
-    "minecraft:crimson_roots"
-]}
+{
+    "values": [
+        "warped_roots",
+        "crimson_roots"
+    ]
+}

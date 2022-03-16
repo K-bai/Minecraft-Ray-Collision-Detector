@@ -1,20 +1,20 @@
-{"values":[
-    "minecraft:white_wall_banner",
-    "minecraft:orange_wall_banner",
-    "minecraft:magenta_wall_banner",
-    "minecraft:light_blue_wall_banner",
-    "minecraft:yellow_wall_banner",
-    "minecraft:lime_wall_banner",
-    "minecraft:pink_wall_banner",
-    "minecraft:gray_wall_banner",
-    "minecraft:light_gray_wall_banner",
-    "minecraft:cyan_wall_banner",
-    "minecraft:purple_wall_banner",
-    "minecraft:blue_wall_banner",
-    "minecraft:brown_wall_banner",
-    "minecraft:green_wall_banner",
-    "minecraft:red_wall_banner",
-    "minecraft:black_wall_banner"
-]}
-
-
+{
+    "values": [
+        "white_wall_banner",
+        "orange_wall_banner",
+        "magenta_wall_banner",
+        "light_blue_wall_banner",
+        "yellow_wall_banner",
+        "lime_wall_banner",
+        "pink_wall_banner",
+        "gray_wall_banner",
+        "light_gray_wall_banner",
+        "cyan_wall_banner",
+        "purple_wall_banner",
+        "blue_wall_banner",
+        "brown_wall_banner",
+        "green_wall_banner",
+        "red_wall_banner",
+        "black_wall_banner"
+    ]
+}

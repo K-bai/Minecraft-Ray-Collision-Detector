@@ -1,6 +1,8 @@
-{"replace": false,"values": [
-    "minecraft:air",
-    "minecraft:cave_air",
-    "minecraft:void_air",
-    "minecraft:light"
-]}
+{
+    "values": [
+        "air",
+        "cave_air",
+        "void_air",
+        {"id":"light", "required": false}
+    ]
+}
