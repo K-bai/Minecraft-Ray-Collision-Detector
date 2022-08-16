@@ -1,9 +1,9 @@
 # Intro
 Minecraft Ray Collision Detector is a super precise raycast system in vanilla minecraft! This datapack solved the raycast problem perfectly with minimal command cost. It defines the hitbox of most blocks and does some calculations to judge which surface will be touched.
 
-Current datapack version: 2.5
+Current datapack version: 2.6
 
-Supported minecraft version: 1.16, 1.17, 1.18
+Supported minecraft version: 1.16, 1.17, 1.18, 1.19
 
 # How to use
 Set scoreboard `mrcd_x0`, `mrcd_y0`, `mrcd_z0` for any ray (entity used as the ray marker, usually area_effect_cloud or markers). These three scoreboards stand for how many milliblocks that the ray can fly in three dimensions respectively each time you call `function mrcd:ray_tick` as the ray. If it **touches a block**, it will have the tags `mrcd_touch_edge` and `mrcd_touch_DIRECTION`. You can recognize which surface it touched from those tags.
@@ -80,6 +80,9 @@ These blocks listed below are supported in is datapack. Please post an issue if 
     * minecraft:turtle_egg
     * minecraft:light
     * minecraft:sculk_sensor
+    * minecraft:frogspawn
+    * minecraft:sculk_shrieker
+    * minecraft:mangrove_propagule
     * #minecraft:slabs
     * #minecraft:pressure_plates
     * #minecraft:wall_signs
@@ -92,7 +95,7 @@ These blocks listed below are supported in is datapack. Please post an issue if 
     * #minecraft:small_flowers
     * #minecraft:campfires
     * #minecraft:candles
-    * #minecraft:cave_vines
+    * #minecraft:cave_vinescave
     * #mrcd:mushroom
         * red mushroom and brown mushroom
     * #mrcd:standing_sign_like
@@ -137,6 +140,8 @@ These blocks listed below are supported in is datapack. Please post an issue if 
         * crimson and warped roots
     * #mrcd:rod_like
         * end rod and lightning rod
+    * #mrcd:carpet_like
+        * wool, moss carpets
 
 * complex blocks
     * minecraft:redstone_wire
@@ -150,7 +155,6 @@ These blocks listed below are supported in is datapack. Please post an issue if 
     * minecraft:scaffolding
     * minecraft:big_dripleaf
     * minecraft:candle_cake
-    * minecraft:glow_lichen
     * #minecraft:cauldrons
     * #minecraft:anvil
     * #minecraft:stairs
@@ -162,7 +166,7 @@ These blocks listed below are supported in is datapack. Please post an issue if 
     * #mrcd:azalea
         * azalea and flower_azalea
     * #mrcd:vine_like
-        * vines and fire (what????)
+        * vines, glow_lichen, sculk_vein and fire (what????)
     * #mrcd:piston
         * sticky piston and normal piston
     * #mrcd:lanterns
@@ -233,3 +237,8 @@ These blocks listed below are supported in is datapack. Please post an issue if 
    * Fixes
       * Weeping vines and Cave Vines were grouped with the same hitbox
       * Blackstone pressure plate was missing
+ * v2.6
+   * Updates
+      * Added support for 1.19
+   * Fixes
+      * 1.17 blocks not working

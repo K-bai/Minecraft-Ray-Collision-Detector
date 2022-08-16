@@ -1,5 +1,5 @@
 {
-    "_comment": "Azalea is considered a sapling but it's solid (!player_can_pass)",
+    "_comment": "Azalea is considered a sapling but it's solid (!player_can_pass). Propagule is considered a sapling but it has a diferent shape",
     "values":[
         "oak_sapling",
         "spruce_sapling",

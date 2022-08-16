@@ -51,6 +51,7 @@
         "nether_portal",
 
         {"id": "#mrcd:player_can_pass/1_16", "required": false},
-        {"id": "#mrcd:player_can_pass/1_17", "required": false}
+        {"id": "#mrcd:player_can_pass/1_17", "required": false},
+        {"id": "#mrcd:player_can_pass/1_19", "required": false}
     ]
 }

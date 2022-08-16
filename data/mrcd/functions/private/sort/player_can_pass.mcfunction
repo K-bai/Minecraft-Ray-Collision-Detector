@@ -43,3 +43,7 @@ execute if entity @s[tag=!mrcd_detected] if block ~ ~ ~ #mrcd:player_can_pass/1_
 
 # 1.17
 execute if entity @s[tag=!mrcd_detected] if block ~ ~ ~ #mrcd:player_can_pass/1_17 run function mrcd:private/sort/player_can_pass/1_17
+
+# 1.19
+execute if entity @s[tag=!mrcd_detected] if block ~ ~ ~ #mrcd:player_can_pass/1_19 run function mrcd:private/sort/player_can_pass/1_19
+
