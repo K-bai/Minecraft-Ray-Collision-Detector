@@ -1,7 +1,7 @@
 # Intro
 Minecraft Ray Collision Detector is a super precise raycast system in vanilla minecraft! This datapack solved the raycast problem perfectly with minimal command cost. It defines the hitbox of most blocks and does some calculations to judge which surface will be touched.
 
-Current datapack version: 2.6
+Current datapack version: 2.6.1
 
 Supported minecraft version: 1.16, 1.17, 1.18, 1.19
 
@@ -242,4 +242,7 @@ These blocks listed below are supported in is datapack. Please post an issue if 
       * Added support for 1.19
    * Fixes
       * 1.17 blocks not working
+      * Made ray entity detection hitbox precise
+ * v2.6.1
+   * Fixes
       * Made ray entity detection hitbox precise
