@@ -1,16 +1,3 @@
-# Test entities on the sight
-execute at @s[tag=!mrcd_touch_entity] run function mrcd:private/entity_detect
-execute at @s[tag=!mrcd_touch_entity] positioned ^ ^ ^.2 run function mrcd:private/entity_detect
-execute at @s[tag=!mrcd_touch_entity] positioned ^ ^ ^.4 run function mrcd:private/entity_detect
-execute at @s[tag=!mrcd_touch_entity] positioned ^ ^ ^.6 run function mrcd:private/entity_detect
-execute at @s[tag=!mrcd_touch_entity] positioned ^ ^ ^.8 run function mrcd:private/entity_detect
-execute at @s[tag=!mrcd_touch_entity] positioned ^ ^ ^1.0 run function mrcd:private/entity_detect
-execute at @s[tag=!mrcd_touch_entity] positioned ^ ^ ^1.2 run function mrcd:private/entity_detect
-execute at @s[tag=!mrcd_touch_entity] positioned ^ ^ ^1.4 run function mrcd:private/entity_detect
-execute at @s[tag=!mrcd_touch_entity] positioned ^ ^ ^1.6 run function mrcd:private/entity_detect
-execute at @s[tag=!mrcd_touch_entity] positioned ^ ^ ^1.7 run function mrcd:private/entity_detect
-
-# Add tags
+execute as @e[type=!#mrcd:ignore,dx=0,dy=0,dz=0] positioned ~-.99 ~-.99 ~-.99 run tag @s[dx=0] add mrcd_target_entity
+execute if entity @e[tag=mrcd_target_entity,limit=1] run tag @s add mrcd_touch_entity
 execute if entity @s[tag=mrcd_touch_entity] run tag @s add mrcd_touch_edge
-tag @e[tag=mrcd_target_entity_temp] add mrcd_target_entity
-tag @e[tag=mrcd_target_entity_temp] remove mrcd_target_entity_temp

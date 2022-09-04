@@ -21,8 +21,8 @@ execute as @e[tag=test_mark] at @s run function mrcd:ray_tick
 
 # Check entity hited
 effect give @e[tag=mrcd_target_entity] glowing 1 0 true
-effect clear @e[tag=!mrcd_target_entity] glowing
 # execute as @e[tag=mrcd_target_entity] at @s run say I'm marked.
+effect clear @e[tag=!mrcd_target_entity,nbt={ActiveEffects:[{Id:24,Duration:15}]}] glowing
 tag @e[tag=mrcd_target_entity] remove mrcd_target_entity
 
 # Check block hited
