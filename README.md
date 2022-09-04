@@ -242,3 +242,4 @@ These blocks listed below are supported in is datapack. Please post an issue if 
       * Added support for 1.19
    * Fixes
       * 1.17 blocks not working
+      * Made ray entity detection hitbox precise
