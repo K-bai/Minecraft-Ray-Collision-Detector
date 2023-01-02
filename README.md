@@ -23,6 +23,8 @@ Logically tags can be combined following this strucuture: <block_handling>,<enti
 
 To see some basic working examples, check the folder **example**. You simply need to run each tick the function `mrcd:example/tick` and give yourself the needed items with the function `mrcd:example/give`.
 
+*⚠️ Rememver to remove the result tags when needed. For example: if we check for an entity hit we must remove the tag mrcd_target_entity after the hitting it, so the new cast don't think that entity was hit.*
+
 # How it works
 Firstly, we get the direction vector of the marker, saved as #total_x,y,z. Besides, get the position of the marker in a block, saved as #block_x,y,z. These two vector can make a line, represant the moving route of the marker.
 
