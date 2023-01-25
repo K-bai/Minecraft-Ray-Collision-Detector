@@ -16,4 +16,4 @@ execute if block ~ ~ ~ minecraft:snow[layers=8] run scoreboard players set #box_
 
 
 function mrcd:private/cube/main
-tag @s add mrcd_detected
+tag @s add mrcd_block_collision_done

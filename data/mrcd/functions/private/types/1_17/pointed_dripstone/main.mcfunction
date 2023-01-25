@@ -5,8 +5,8 @@ execute if block ~ ~ ~ pointed_dripstone[thickness=tip_merge] run function mrcd:
 execute if block ~ ~ ~ pointed_dripstone[thickness=tip,vertical_direction=up] run function mrcd:private/1_17/types/pointed_dripstone/tip_up
 execute if block ~ ~ ~ pointed_dripstone[thickness=tip,vertical_direction=down] run function mrcd:private/types/1_17/pointed_dripstone/tip_down
 
-execute store result score #var0 mrcd_system run scoreboard players get #block_corner_x mrcd_system
-execute store result score #var1 mrcd_system run scoreboard players get #block_corner_z mrcd_system
+scoreboard players operation #var0 mrcd_system = #block_corner_x mrcd_system
+scoreboard players operation #var1 mrcd_system = #block_corner_z mrcd_system
 scoreboard players operation #var0 mrcd_system /= #const_1000 mrcd_system
 scoreboard players operation #var1 mrcd_system /= #const_1000 mrcd_system
 function mrcd:private/calculate/offset
@@ -16,4 +16,4 @@ scoreboard players operation #box_z0 mrcd_system += #var1 mrcd_system
 scoreboard players operation #box_z1 mrcd_system += #var1 mrcd_system
 
 function mrcd:private/cube/main
-tag @s add mrcd_detected
+tag @s add mrcd_block_collision_done

@@ -16,4 +16,4 @@ scoreboard players set #box_z1 mrcd_system 1000
 execute if block ~ ~ ~ #mrcd:fence_gate_like[facing=east] run function mrcd:private/cube/main
 execute if block ~ ~ ~ #mrcd:fence_gate_like[facing=west] run function mrcd:private/cube/main
 
-tag @s add mrcd_detected
+tag @s add mrcd_block_collision_done

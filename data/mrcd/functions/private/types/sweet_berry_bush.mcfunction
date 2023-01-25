@@ -16,4 +16,4 @@ execute if block ~ ~ ~ minecraft:sweet_berry_bush[age=1] run function mrcd:priva
 execute if block ~ ~ ~ minecraft:sweet_berry_bush[age=2] run function mrcd:private/cube/main
 
 
-tag @s add mrcd_detected
+tag @s add mrcd_block_collision_done

@@ -84,4 +84,4 @@ scoreboard players set #box_x1 mrcd_system 938
 scoreboard players set #box_y1 mrcd_system 750
 scoreboard players set #box_z1 mrcd_system 750
 execute if block ~ ~ ~ minecraft:cocoa[facing=east,age=2] run function mrcd:private/cube/main
-tag @s add mrcd_detected
+tag @s add mrcd_block_collision_done
