@@ -17,4 +17,4 @@ execute if block ~ ~ ~ #mrcd:melon_stem_like[age=7] run scoreboard players set #
 
 
 function mrcd:private/cube/main
-tag @s add mrcd_detected
+tag @s add mrcd_block_collision_done

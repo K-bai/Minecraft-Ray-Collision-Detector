@@ -4,8 +4,8 @@
 # return: hashcode
 #   #var0 (int)
 
-execute store result score #var_hc_x mrcd_system run scoreboard players get #var0 mrcd_system
-execute store result score #var_hc_z mrcd_system run scoreboard players get #var1 mrcd_system
+scoreboard players operation #var_hc_x mrcd_system = #var0 mrcd_system
+scoreboard players operation #var_hc_z mrcd_system = #var1 mrcd_system
 
 # x = x*3129871
 scoreboard players operation #var0 mrcd_system *= #n3129871 mrcd_system
@@ -15,7 +15,7 @@ scoreboard players operation #var1 mrcd_system *= #n116129781 mrcd_system
 
 # t = x^z
 function mrcd:private/calculate/xor
-execute store result score #var_hc_t mrcd_system run scoreboard players get #var0 mrcd_system
+scoreboard players operation #var_hc_t mrcd_system = #var0 mrcd_system
 
 # n = t*t*42317861
 scoreboard players operation #var0 mrcd_system *= #var0 mrcd_system

@@ -1,7 +1,7 @@
 # Move to #targetx,y,z
-execute store result score #target_temp_x mrcd_system run scoreboard players get #target_x mrcd_system
-execute store result score #target_temp_y mrcd_system run scoreboard players get #target_y mrcd_system
-execute store result score #target_temp_z mrcd_system run scoreboard players get #target_z mrcd_system
+scoreboard players operation #target_temp_x mrcd_system = #target_x mrcd_system
+scoreboard players operation #target_temp_y mrcd_system = #target_y mrcd_system
+scoreboard players operation #target_temp_z mrcd_system = #target_z mrcd_system
 scoreboard players operation #target_x mrcd_system += #block_corner_x mrcd_system
 scoreboard players operation #target_y mrcd_system += #block_corner_y mrcd_system
 scoreboard players operation #target_z mrcd_system += #block_corner_z mrcd_system

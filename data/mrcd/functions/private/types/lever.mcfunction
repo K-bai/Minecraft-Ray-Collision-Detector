@@ -59,4 +59,4 @@ scoreboard players set #box_x1 mrcd_system 1000
 scoreboard players set #box_y1 mrcd_system 750
 scoreboard players set #box_z1 mrcd_system 688
 execute if block ~ ~ ~ minecraft:lever[face=wall,facing=west] run function mrcd:private/cube/main
-tag @s add mrcd_detected
+tag @s add mrcd_block_collision_done

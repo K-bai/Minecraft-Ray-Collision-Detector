@@ -6,4 +6,4 @@ execute if block ~ ~ ~ amethyst_cluster[facing=east] run function mrcd:private/t
 execute if block ~ ~ ~ amethyst_cluster[facing=west] run function mrcd:private/types/1_17/amethyst_cluster/west
 
 function mrcd:private/cube/main
-tag @s add mrcd_detected
+tag @s add mrcd_block_collision_done

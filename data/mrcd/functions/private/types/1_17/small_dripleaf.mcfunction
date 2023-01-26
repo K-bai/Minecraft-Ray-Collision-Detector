@@ -8,4 +8,4 @@ execute if block ~ ~ ~ small_dripleaf[half=lower] run scoreboard players set #bo
 
 
 function mrcd:private/cube/main
-tag @s add mrcd_detected
+tag @s add mrcd_block_collision_done

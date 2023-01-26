@@ -18,4 +18,4 @@ execute if block ~ ~ ~ #mrcd:carrots_like[age=7] run scoreboard players set #box
 
 
 function mrcd:private/cube/main
-tag @s add mrcd_detected
+tag @s add mrcd_block_collision_done

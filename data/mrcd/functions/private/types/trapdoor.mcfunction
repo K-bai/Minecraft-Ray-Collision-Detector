@@ -41,4 +41,4 @@ scoreboard players set #box_x1 mrcd_system 1000
 scoreboard players set #box_y1 mrcd_system 1000
 scoreboard players set #box_z1 mrcd_system 1000
 execute if block ~ ~ ~ #minecraft:trapdoors[facing=west,open=true] run function mrcd:private/cube/main
-tag @s add mrcd_detected
+tag @s add mrcd_block_collision_done

@@ -39,4 +39,4 @@ execute if block ~ ~ ~ #minecraft:doors[facing=south,open=true,hinge=left] run f
 execute if block ~ ~ ~ #minecraft:doors[facing=north,open=true,hinge=right] run function mrcd:private/cube/main
 
 
-tag @s add mrcd_detected
+tag @s add mrcd_block_collision_done

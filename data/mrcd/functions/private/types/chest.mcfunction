@@ -16,4 +16,4 @@ execute if block ~ ~ ~ #mrcd:big_chest[facing=south,type=right] run scoreboard p
 
 
 function mrcd:private/cube/main
-tag @s add mrcd_detected
+tag @s add mrcd_block_collision_done

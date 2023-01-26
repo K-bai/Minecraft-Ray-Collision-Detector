@@ -16,4 +16,4 @@ execute if block ~ ~ ~ minecraft:wheat[age=7] run scoreboard players set #box_y1
 
 
 function mrcd:private/cube/main
-tag @s add mrcd_detected
+tag @s add mrcd_block_collision_done

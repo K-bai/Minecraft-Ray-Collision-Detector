@@ -17,4 +17,4 @@ execute if block ~ ~ ~ minecraft:cake[bites=6] run scoreboard players set #box_x
 
 
 function mrcd:private/cube/main
-tag @s add mrcd_detected
+tag @s add mrcd_block_collision_done

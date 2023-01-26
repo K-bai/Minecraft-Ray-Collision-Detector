@@ -1,12 +1,12 @@
 # Intro
 Minecraft Ray Collision Detector is a super precise raycast system in vanilla minecraft! This datapack solved the raycast problem perfectly with minimal command cost. It defines the hitbox of most blocks and does some calculations to judge which surface will be touched.
 
-Current datapack version: 2.6.1
+Current datapack version: 2.6.2
 
 Supported minecraft version: 1.16, 1.17, 1.18, 1.19
 
 # How to use
-Set scoreboard `mrcd_x0`, `mrcd_y0`, `mrcd_z0` for any ray (entity used as the ray marker, usually area_effect_cloud or markers). These three scoreboards stand for how many milliblocks that the ray can fly in three dimensions respectively each time you call `function mrcd:ray_tick` as the ray. If it **touches a block**, it will have the tags `mrcd_touch_edge` and `mrcd_touch_DIRECTION`. You can recognize which surface it touched from those tags.
+Set scoreboard `mrcd_x0`, `mrcd_y0`, `mrcd_z0` for any ray (entity used as the ray marker, usually area_effect_cloud or markers). These three scoreboards stand for how many milliblocks the ray can fly in three dimensions respectively each time you call `function mrcd:ray_tick` as the ray. If it **touches a block**, it will have the tags `mrcd_touch_edge` and `mrcd_touch_DIRECTION`. You can recognize which surface it touched from those tags.
 
 If you want a ray that can **pass those blocks** that a player can pass, you should tag the ray `mrcd_bullet`.
 
@@ -25,12 +25,14 @@ To see some basic working examples, check the folder **example**. You simply nee
 
 *⚠️ Rememver to remove the result tags when needed. For example: if we check for an entity hit we must remove the tag mrcd_target_entity after the hitting it, so the new cast don't think that entity was hit.*
 
-# How it works
-Firstly, we get the direction vector of the marker, saved as #total_x,y,z. Besides, get the position of the marker in a block, saved as #block_x,y,z. These two vector can make a line, represant the moving route of the marker.
+# How block detection works
+## Before calculations
+Before we do any calulations all the hitboxes of all blocks that are not full have been hardcoded(See `mrcd:private/types/slab` as a simple example). All the hitboxes in Minecraft are cuboids, so we can use 2 points to define them (*#box_x0,y0,z0* and *#box_x1,y1,z1*).
 
-Secondly, we defines the hitboxes of all blocks that are not full (See `mrcd:private/types/slab` as an simple example). All the hitboxes in Minecraft are cuboid, so we can use 2 vectors(#box_x,y,z0 and #box_x,y,z1) to define them.
+## Calculations
+Firstly, we copy the motion vector of the ray from @s *mrcd_x0,y0,z0* to *#total_x,y,z* and also get the position of the ray relative to the block it's in, saved as *#block_x,y,z*. With this we can make a line that represents the path of the ray (from *#block_x,y,z* to *#block_x,y,z + #total_x,y,z*).
 
-Thirdly, find which block the marker is in, and determine which plane of the block it will collide (See `mrcd:private/cube/main`). Calculate the intersection point of the plane and the moving line of the marker, and determine if it can collide by boundary condition (See `mrcd:private/cube/x0,x1,y0,y1,z0,z1` and `mrcd:private/calculate/x,y,z`). Save the collision point as #target_x,y,z
+Sencondly, we find which block the marker is in, and determine which plane of the block it will collide (See `mrcd:private/cube/main`). Then we calculate the intersection point of the plane with the path line, and determine if it can collide by boundary condition (See `mrcd:private/cube/x0,x1,y0,y1,z0,z1` and `mrcd:private/calculate/x,y,z`). We save the collision point to *#target_x,y,z*.
 
 Finally, move the marker to #targetx,y,z!
 
@@ -248,3 +250,10 @@ These blocks listed below are supported in is datapack. Please post an issue if 
  * v2.6.1
    * Fixes
       * Made ray entity detection hitbox precise
+ * v2.6.2
+   * Changes
+      * Renamed some internal tags to be more descriptive
+      * Optimized mrcd_entity and mrcd_entity_targeted (if you hit entity, you don't need to calculate block stuff)
+   * Fixes
+      * Ray can't target itself
+      * Ray sometimes getting inside complex block (collision not working)

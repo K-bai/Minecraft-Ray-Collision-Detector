@@ -11,4 +11,4 @@ execute if block ~ ~ ~ #minecraft:rails[shape=ascending_south] run scoreboard pl
 
 
 function mrcd:private/cube/main
-tag @s add mrcd_detected
+tag @s add mrcd_block_collision_done

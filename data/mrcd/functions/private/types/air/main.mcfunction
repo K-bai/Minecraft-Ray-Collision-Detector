@@ -1,4 +1,6 @@
-# Choose a side to detect based on direction
+tag @s[tag=mrcd_touch_edge_air] remove mrcd_touch_edge_air
+
+# Choose the side to detect based on direction
 execute if score @s[tag=!mrcd_touch_edge_air] mrcd_x0 matches 1.. run function mrcd:private/types/air/x_plus
 execute if score @s[tag=!mrcd_touch_edge_air] mrcd_x0 matches ..-1 run function mrcd:private/types/air/x_minus
 execute if score @s[tag=!mrcd_touch_edge_air] mrcd_y0 matches 1.. run function mrcd:private/types/air/y_plus
