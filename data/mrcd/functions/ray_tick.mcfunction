@@ -33,14 +33,20 @@ execute if score #block_x mrcd_system matches 999 run scoreboard players set #bl
 execute if score #block_y mrcd_system matches 999 run scoreboard players set #block_y mrcd_system 1000
 execute if score #block_z mrcd_system matches 999 run scoreboard players set #block_z mrcd_system 1000
 
+# Mark starting point
+
 # Debug
 # tellraw @a ["\n\n\n\n\n\n\n----- start -----"]
-# tellraw @a ["total_x:",{"score":{"name":"#total_x","objective":"mrcd_system"}},", total_y:",{"score":{"name":"#total_y","objective":"mrcd_system"}},", total_z:",{"score":{"name":"#total_z","objective":"mrcd_system"}}]
-# tellraw @a ["block_x:",{"score":{"name":"#block_x","objective":"mrcd_system"}},", block_y:",{"score":{"name":"#block_y","objective":"mrcd_system"}},", block_z:",{"score":{"name":"#block_z","objective":"mrcd_system"}}]
-# tellraw @a ["block_corner_x:",{"score":{"name":"#block_corner_x","objective":"mrcd_system"}},", block_corner_y:",{"score":{"name":"#block_corner_y","objective":"mrcd_system"}},", block_corner_z:",{"score":{"name":"#block_corner_z","objective":"mrcd_system"}}]
-scoreboard players set n_recurse mrcd_system 0
+# tellraw @a ["total (",{"score":{"name":"#total_x","objective":"mrcd_system"}},", ",{"score":{"name":"#total_y","objective":"mrcd_system"}},", ",{"score":{"name":"#total_z","objective":"mrcd_system"}}, ") (x, y, z)"]
+# tellraw @a ["block (",{"score":{"name":"#block_x","objective":"mrcd_system"}},", ",{"score":{"name":"#block_y","objective":"mrcd_system"}},", ",{"score":{"name":"#block_z","objective":"mrcd_system"}}, ") (x, y, z)"]
+# tellraw @a ["block_corner (",{"score":{"name":"#block_corner_x","objective":"mrcd_system"}},", ",{"score":{"name":"#block_corner_y","objective":"mrcd_system"}},", ",{"score":{"name":"#block_corner_z","objective":"mrcd_system"}}, ") (x, y, z)"]
+# scoreboard players set n_recurse mrcd_system 0
 
 # === Recurse ===
 tag @s add mrcd_ticking
+execute at @s run summon area_effect_cloud ~ ~ ~ {Tags:["mrcd_start_mark"]}
+
 execute at @s run function mrcd:private/recurse
+
 tag @s remove mrcd_ticking
+kill @e[type=area_effect_cloud,tag=mrcd_start_mark,limit=1]

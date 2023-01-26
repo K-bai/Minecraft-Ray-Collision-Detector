@@ -1,6 +1,6 @@
 # Debug 
 # tellraw @a ["----- hit entity -----"]
-# tellraw @a ["target_x:",{"score":{"name":"#target_x","objective":"mrcd_system"}},", target_y:",{"score":{"name":"#target_y","objective":"mrcd_system"}},", target_z:",{"score":{"name":"#target_z","objective":"mrcd_system"}}]
+# tellraw @a ["target (",{"score":{"name":"#target_x","objective":"mrcd_system"}},", ",{"score":{"name":"#target_y","objective":"mrcd_system"}},", ",{"score":{"name":"#target_z","objective":"mrcd_system"}}, ") (x, y, z)"]
 
 # Clear collision scoreboards
 scoreboard players set #target_x mrcd_system 0

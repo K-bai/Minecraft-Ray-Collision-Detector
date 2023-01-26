@@ -256,3 +256,4 @@ These blocks listed below are supported in is datapack. Please post an issue if 
       * Optimized mrcd_entity and mrcd_entity_targeted (if you hit entity, you don't need to calculate block stuff)
    * Fixes
       * Ray can't target itself
+      * Ray sometimes getting inside complex block (collision not working)

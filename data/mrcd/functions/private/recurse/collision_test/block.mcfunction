@@ -16,5 +16,5 @@ execute if entity @s[tag=!mrcd_touch_edge] run function mrcd:private/types/air/m
 execute if entity @s[tag=mrcd_touch_edge_complex] run function mrcd:private/complex_cube/convert
 
 # tellraw @a ["----- block test -----"]
-# tellraw @a ["target_x:",{"score":{"name":"#target_x","objective":"mrcd_system"}},", target_y:",{"score":{"name":"#target_y","objective":"mrcd_system"}},", target_z:",{"score":{"name":"#target_z","objective":"mrcd_system"}}]
-# tellraw @a ["block_x:",{"score":{"name":"#block_x","objective":"mrcd_system"}},", block_y:",{"score":{"name":"#block_y","objective":"mrcd_system"}},", block_z:",{"score":{"name":"#block_z","objective":"mrcd_system"}}]
+# tellraw @a ["target (",{"score":{"name":"#target_x","objective":"mrcd_system"}},", ",{"score":{"name":"#target_y","objective":"mrcd_system"}},", ",{"score":{"name":"#target_z","objective":"mrcd_system"}}, ") (x, y, z)"]
+# tellraw @a ["block (",{"score":{"name":"#block_x","objective":"mrcd_system"}},", ",{"score":{"name":"#block_y","objective":"mrcd_system"}},", ",{"score":{"name":"#block_z","objective":"mrcd_system"}}, ") (x, y, z)"]

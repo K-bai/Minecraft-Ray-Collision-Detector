@@ -1,5 +1,5 @@
 # Create marker
-# We use oriented relative coordinates and some math to eassily assing the speed (this case, 0.5 b/ray_tick).
+# We use oriented relative coordinates and some math to eassily assing the speed (this case, 0.5 b/t).
 # Since it lasts for 10 ticks (Duration), it will travel at max 5 blocks
 execute at @s positioned ^ ^ ^.5 run summon area_effect_cloud ~ ~ ~ {Tags:["test_mark","init","mrcd_entity_targeted"],Duration:10}
 

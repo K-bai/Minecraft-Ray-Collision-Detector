@@ -1,7 +1,7 @@
 # Create marker
-# We use oriented relative coordinates and some math to eassily assing the speed (this case, 0.5 b/t).
-# Since it lasts for 10 ticks (Duration), it will travel at max 5 blocks
-execute at @s positioned ^ ^ ^.5 run summon area_effect_cloud ~ ~ ~ {Tags:["test_mark","init","mrcd_bullet","mrcd_entity"],Duration:10}
+# We use oriented relative coordinates and some math to eassily assing the speed (this case, 10 b/t).
+# Since we what it instant, we wont set a Duration
+execute at @s positioned ^ ^ ^10 run summon area_effect_cloud ~ ~ ~ {Tags:["test_mark","init","mrcd_bullet","mrcd_entity","instnat"]}
 
 # Save speed and direction
 execute as @e[tag=init] store result score @s mrcd_x0 run data get entity @s Pos[0] 1000
