@@ -3,7 +3,7 @@ execute if entity @s[tag=mrcd_entity,tag=!mrcd_entity_targeted] as @e[type=!#mrc
 execute if entity @s[tag=mrcd_entity_targeted] as @e[tag=mrcd_target,tag=!mrcd_ignore,dx=0] positioned ~-.9 ~-.9 ~-.9 run tag @s[dx=0] add mrcd_target_entity
 
 # Debug
-particle end_rod ~ ~ ~ 0 0 0 0 1
+# particle end_rod ~ ~ ~ 0 0 0 0 1
 
 # Loop 
 scoreboard players add #steps mrcd_system 1
