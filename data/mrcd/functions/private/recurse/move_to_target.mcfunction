@@ -17,3 +17,8 @@ execute if score #target_temp_z mrcd_system matches -1 at @s run tp @s ~ ~ ~0.00
 execute if entity @s[tag=mrcd_touch_edge] if score #target_temp_x mrcd_system matches 1000 at @s run tp @s ~-0.00001 ~ ~ ~ ~
 execute if entity @s[tag=mrcd_touch_edge] if score #target_temp_y mrcd_system matches 1000 at @s run tp @s ~ ~-0.00001 ~ ~ ~
 execute if entity @s[tag=mrcd_touch_edge] if score #target_temp_z mrcd_system matches 1000 at @s run tp @s ~ ~ ~-0.00001 ~ ~
+
+# Debug
+# tellraw @a ["----- move to target -----"]
+# tellraw @a ["target (",{"score":{"name":"#target_x","objective":"mrcd_system"}},", ",{"score":{"name":"#target_y","objective":"mrcd_system"}},", ",{"score":{"name":"#target_z","objective":"mrcd_system"}}, ") (x, y, z)"]
+# tellraw @a ["target_temp (",{"score":{"name":"#target_temp_x","objective":"mrcd_system"}},", ",{"score":{"name":"#target_temp_y","objective":"mrcd_system"}},", ",{"score":{"name":"#target_temp_z","objective":"mrcd_system"}}, ") (x, y, z)"]

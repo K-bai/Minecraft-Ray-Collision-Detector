@@ -12,7 +12,7 @@ If you want a ray that can **pass those blocks** that a player can pass, you sho
 
 If you want a ray that can **touch entities** (stops after one found), you should tag the ray `mrcd_entity` and **rotate the AEC as the speed direction**. If it touched an entity, it will have a tag named `mrcd_touch_entity`, and the target entity will be tagged `mrcd_target_entity`. Note that some entities like player and projectiles are ignored by default. You can remove them in entity types tag (`#mrcd:ignore`) to change it.
 
-If you want a ray that can **touch a specific entity or group of entities** (stops after one found), you should tag it/them with `mrcd_target`, the ray `mrcd_entity_targeted` and **rotate the AEC as the speed direction**. If it touched a tagged entity, it will have a tag named `mrcd_touch_entity`, and the target entity will be tagged `mrcd_target_entity`. Any other non tagged entity that hits, will be ignored and the ray will pass through. This method can target any entity, even those that are in the `#mrcd:ignore` tag list.
+If you want a ray that can **touch a specific entity or group of entities** (stops after one found), you should tag it/them with `mrcd_target`, the ray `mrcd_entity_targeted` and **rotate the AEC as the speed direction**. If it touched a tagged entity, it will have a tag named `mrcd_touch_entity`, and the target entity will be tagged `mrcd_target_entity`. Any other non tagged entity that hits, will be ignored and the ray will pass through. This method can target any entity, even those that are in the `#mrcd:ignore` tag list. Also, you can tag an entity with `mrcd_ignore` to also be ignored.
 
 If you want a ray that can **touch multiple entities** (doesn't stops after one found), you should tag the ray `mrcd_entity` and `mrcd_entity_bullet` and **rotate the AEC as the speed direction** (this is also works with `mrcd_entity_targeted`). If it touched an entity, it will have a tag named `mrcd_touch_entity`, and the target entity will be tagged `mrcd_target_entity`.
 
@@ -251,9 +251,16 @@ These blocks listed below are supported in is datapack. Please post an issue if 
    * Fixes
       * Made ray entity detection hitbox precise
  * v2.6.2
+   * Updates
+      * Added the possibility to use the `mrcd_ignore` tag to force ignore entities
+      * Improved example to show how to properly cast instant rays 
    * Changes
       * Renamed some internal tags to be more descriptive
-      * Optimized mrcd_entity and mrcd_entity_targeted (if you hit entity, you don't need to calculate block stuff)
+      * Entity hit detection redone, so it's even preciser (the check is done in steps of 0.33 blocks) 
+      * Optimitzations
+          * If no entit hitbox in block, don't do entity calculations
+          * If you hit entity, you don't need to calculate block stuff (`mrcd_entity` and `mrcd_entity_targeted`)
    * Fixes
-      * Ray can't target itself
-      * Ray sometimes getting inside complex block (collision not working)
+      * Ray should not target itself
+      * Ray sometimes getting inside complex block when the ray was comming from -xyz (collision not working)
+      * mrcd_entity and mrcd_entity_targeted could tag more than one entity when not being a mrcd_entity_bullet

@@ -12,7 +12,7 @@ execute if entity @s[tag=!mrcd_block_collision_done] if block ~ ~ ~ medium_ameth
 execute if entity @s[tag=!mrcd_block_collision_done] if block ~ ~ ~ large_amethyst_bud run function mrcd:private/types/1_17/large_amethyst_bud/main
 execute if entity @s[tag=!mrcd_block_collision_done] if block ~ ~ ~ amethyst_cluster run function mrcd:private/types/1_17/amethyst_cluster/main
 execute if entity @s[tag=!mrcd_block_collision_done] if block ~ ~ ~ pointed_dripstone run function mrcd:private/types/1_17/pointed_dripstone/main
-execute if entity @s[tag=!mrcd_block_collision_done] if block ~ ~ ~ sculk_sensor run function mrcd:private/types/1_17/sculk_sensor
+execute if entity @s[tag=!mrcd_block_collision_done] if block ~ ~ ~ sculk_sensor run function mrcd:private/types/slab/bottom
 
 execute if entity @s[tag=!mrcd_block_collision_done] if block ~ ~ ~ #candles run function mrcd:private/types/1_17/candle/main
 

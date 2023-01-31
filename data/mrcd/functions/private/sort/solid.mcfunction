@@ -5,7 +5,7 @@ execute if entity @s[tag=!mrcd_block_collision_done] if block ~ ~ ~ brewing_stan
 execute if entity @s[tag=!mrcd_block_collision_done] if block ~ ~ ~ grindstone run function mrcd:private/types/grindstone
 execute if entity @s[tag=!mrcd_block_collision_done] if block ~ ~ ~ bell run function mrcd:private/types/bell
 execute if entity @s[tag=!mrcd_block_collision_done] if block ~ ~ ~ hopper run function mrcd:private/types/hopper
-execute if entity @s[tag=!mrcd_block_collision_done] if block ~ ~ ~ lectern run function mrcd:private/types/lectern
+execute if entity @s[tag=!mrcd_block_collision_done] if block ~ ~ ~ lectern run function mrcd:private/types/lectern/main
 execute if entity @s[tag=!mrcd_block_collision_done] if block ~ ~ ~ chorus_plant run function mrcd:private/types/chorus_plant
 execute if entity @s[tag=!mrcd_block_collision_done] if block ~ ~ ~ cauldron run function mrcd:private/types/cauldron
 
@@ -37,7 +37,7 @@ execute if entity @s[tag=!mrcd_block_collision_done] if block ~ ~ ~ turtle_egg r
 execute if entity @s[tag=!mrcd_block_collision_done] if block ~ ~ ~ #trapdoors run function mrcd:private/types/trapdoor
 execute if entity @s[tag=!mrcd_block_collision_done] if block ~ ~ ~ #flower_pots run function mrcd:private/types/flower_pot
 execute if entity @s[tag=!mrcd_block_collision_done] if block ~ ~ ~ #doors run function mrcd:private/types/door
-execute if entity @s[tag=!mrcd_block_collision_done] if block ~ ~ ~ #slabs run function mrcd:private/types/slab
+execute if entity @s[tag=!mrcd_block_collision_done] if block ~ ~ ~ #slabs run function mrcd:private/types/slab/main
 
 execute if entity @s[tag=!mrcd_block_collision_done] if block ~ ~ ~ #mrcd:campfires run function mrcd:private/types/campfires
 execute if entity @s[tag=!mrcd_block_collision_done] if block ~ ~ ~ #mrcd:carpet_like run function mrcd:private/types/carpet
@@ -56,5 +56,5 @@ execute if entity @s[tag=!mrcd_block_collision_done] if block ~ ~ ~ chain run fu
 # 1.17
 execute if entity @s[tag=!mrcd_block_collision_done] if block ~ ~ ~ #mrcd:solid/1_17 run function mrcd:private/sort/solid/1_17
 
-# 1.19 Walls, Slabs, Stairs, Flower Pots
-execute if entity @s[tag=!mrcd_block_collision_done] if block ~ ~ ~ sculk_shrieker run function mrcd:private/types/1_17/sculk_sensor
+# 1.19 (+ Walls, Slabs, Stairs, Flower Pots)
+execute if entity @s[tag=!mrcd_block_collision_done] if block ~ ~ ~ sculk_shrieker run function mrcd:private/types/slab/bottom
