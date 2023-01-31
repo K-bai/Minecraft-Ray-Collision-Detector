@@ -1,3 +1,0 @@
-# Executed if there are any entities in this block. Exist dxdydz bug.
-execute if entity @s[tag=mrcd_entity,tag=!mrcd_entity_targeted] if entity @e[type=!#mrcd:ignore,tag=!mrcd_ticking,dx=0,dy=0,dz=0,limit=1] run function mrcd:private/entity/normal
-execute if entity @s[tag=mrcd_entity_targeted] if entity @e[tag=mrcd_target,tag=!mrcd_ticking,dx=0,dy=0,dz=0,limit=1] run function mrcd:private/entity/targeted

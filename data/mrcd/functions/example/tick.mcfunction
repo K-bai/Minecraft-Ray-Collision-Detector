@@ -12,13 +12,13 @@ execute as @a[nbt={SelectedItem:{id:"minecraft:bamboo"}}] at @s run function mrc
 execute as @a[nbt={SelectedItem:{id:"minecraft:arrow"}}] at @s run function mrcd:example/bullet_entity
 execute as @a[nbt={SelectedItem:{id:"minecraft:spectral_arrow"}}] at @s run function mrcd:example/bullet_and_entity
 
-# The best way to raycast if it happends instnatly (not over a course of time) is to set the motion, and not have any duration
+# The best way to raycast if it happends instnatly (not over a course of time) is to set the motion, and not have any duration. This way you use a lot less commands
 execute as @a[nbt={SelectedItem:{id:"minecraft:feather"}}] at @s run function mrcd:example/bullet_and_entity_instant
 
 # If we whant a ray that is 
 
 # Do something at the ray (trace ray path)
-execute at @e[tag=test_mark] run particle mycelium ~ ~ ~ 0 0 0 0 1 force
+# execute at @e[tag=test_mark] run particle mycelium ~ ~ ~ 0 0 0 0 1 force
 # execute at @e[tag=mrcd_bullet] run particle wax_on ~ ~ ~ 0 0 0 0 1 force
 # execute at @e[tag=mrcd_entity] run particle wax_off ~ ~ ~ 0 0 0 0 1 force
 # execute at @e[tag=mrcd_entity_targeted] run particle scrape ~ ~ ~ 0 0 0 0 1 force
@@ -30,19 +30,21 @@ execute as @e[tag=test_mark] at @s run function mrcd:ray_tick
 # Do something at the ray (trace ray path) after ticking
 execute at @e[tag=test_mark,tag=instnat] run particle end_rod ~ ~ ~ 0 0 0 0 1 force
 
-# Check entity hited
+# Check entity hit
 effect give @e[tag=mrcd_target_entity] glowing 1 0 true
 # execute as @e[tag=mrcd_target_entity] at @s run say I'm marked.
 effect clear @e[tag=!mrcd_target_entity,nbt={ActiveEffects:[{Id:24,Duration:15}]}] glowing
 tag @e[tag=mrcd_target_entity] remove mrcd_target_entity
 
-# Check block hited
+# Check block hit
 # execute as @e[tag=mrcd_touch_edge,tag=mrcd_touch_x_plus] at @s run say touched x+
 # execute as @e[tag=mrcd_touch_edge,tag=mrcd_touch_x_minus] at @s run say touched x-
 # execute as @e[tag=mrcd_touch_edge,tag=mrcd_touch_y_plus] at @s run say touched y+
 # execute as @e[tag=mrcd_touch_edge,tag=mrcd_touch_y_minus] at @s run say touched y-
 # execute as @e[tag=mrcd_touch_edge,tag=mrcd_touch_z_plus] at @s run say touched z+
 # execute as @e[tag=mrcd_touch_edge,tag=mrcd_touch_z_minus] at @s run say touched z-
+
+execute at @e[tag=mrcd_touch_edge] run particle small_flame ~ ~ ~ 0 0 0 0 1 force
 
 # Once hited remove
 kill @e[tag=mrcd_bullet,tag=mrcd_touch_edge]
