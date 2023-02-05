@@ -51,19 +51,24 @@ execute if score #block_x mrcd_system matches 999 run scoreboard players set #bl
 execute if score #block_y mrcd_system matches 999 run scoreboard players set #block_y mrcd_system 1000
 execute if score #block_z mrcd_system matches 999 run scoreboard players set #block_z mrcd_system 1000
 
+# === Clear target ===
+scoreboard players set #target_x mrcd_system 0
+scoreboard players set #target_y mrcd_system 0
+scoreboard players set #target_z mrcd_system 0
+
 # === Init flags ===
 # if mrcd_entity or mrcd_entity_targeted = not(mrcd_entity and mrcd_entity_targeted)
 execute store result score #detect_entity mrcd_system run execute unless entity @s[tag=!mrcd_entity,tag=!mrcd_entity_targeted]
 
 # === Debug ===
-# tellraw @a ["\n\n\n\n------------ START ------------"]
-# tellraw @a ["block (",{"score":{"name":"#block_x","objective":"mrcd_system"}},", ",{"score":{"name":"#block_y","objective":"mrcd_system"}},", ",{"score":{"name":"#block_z","objective":"mrcd_system"}}, ") (x, y, z)"]
-# tellraw @a ["block_corner (",{"score":{"name":"#block_corner_x","objective":"mrcd_system"}},", ",{"score":{"name":"#block_corner_y","objective":"mrcd_system"}},", ",{"score":{"name":"#block_corner_z","objective":"mrcd_system"}}, ") (x, y, z)"]
 # scoreboard players set n_recurse mrcd_system 0
 
 # === Recurse ===
 tag @s[tag=mrcd_ignore] add mrcd_ignore_keep
 tag @s add mrcd_ignore
+
 execute at @s run function mrcd:private/recurse
+
 tag @s[tag=!mrcd_ignore_keep] remove mrcd_ignore
 tag @s remove mrcd_ignore_keep
+tag @e remove mrcd_tick_done

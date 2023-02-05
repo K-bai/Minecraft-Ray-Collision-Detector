@@ -1,6 +1,6 @@
 # === Compute line-surface intersection ===
 # Line equation:                (x-x1)/x0 = (y-y1)/y0 = (z-z1)/z0
-# Plane equation:               z = 1000
+# Plane equation:               z = 0
 # Intersection condition:       0 <= x <= 1000  0 <= y <=1000
 # The equation is sorted into:  x = (1000-z1)x0/z0+x1
 # The equation is sorted into:  y = (1000-z1)z0/z0+y1

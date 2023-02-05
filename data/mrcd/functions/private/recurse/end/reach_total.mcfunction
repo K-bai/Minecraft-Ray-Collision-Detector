@@ -17,6 +17,4 @@ execute if score #detect_entity mrcd_system matches 1 align xyz if entity @e[tag
 
 # Clear collision tags and scoreboards
 tag @s[tag=mrcd_touch_edge] remove mrcd_touch_edge
-scoreboard players set #target_x mrcd_system 0
-scoreboard players set #target_y mrcd_system 0
-scoreboard players set #target_z mrcd_system 0
+tag @s add mrcd_tick_done

@@ -7,7 +7,7 @@
 execute as @a[nbt={SelectedItem:{id:"minecraft:stick"}}] at @s run function mrcd:example/raycast
 execute as @a[nbt={SelectedItem:{id:"minecraft:blaze_rod"}}] at @s run function mrcd:example/bullet
 execute as @a[nbt={SelectedItem:{id:"minecraft:bone"}}] at @s run function mrcd:example/entity
-execute as @a[nbt={SelectedItem:{id:"minecraft:bamboo"}}] at @s run tag @e[type=armor_stand] add mrcd_target
+execute if entity @a[nbt={SelectedItem:{id:"minecraft:bamboo"}}] run tag @e[type=armor_stand] add mrcd_target
 execute as @a[nbt={SelectedItem:{id:"minecraft:bamboo"}}] at @s run function mrcd:example/entity_targeted
 execute as @a[nbt={SelectedItem:{id:"minecraft:arrow"}}] at @s run function mrcd:example/bullet_entity
 execute as @a[nbt={SelectedItem:{id:"minecraft:spectral_arrow"}}] at @s run function mrcd:example/bullet_and_entity

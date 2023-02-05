@@ -268,6 +268,7 @@ These blocks listed below are supported in is datapack. Please post an issue if 
    * Updates
       * Redone how it checks if the ray has reached the max distance (fixing the bug), plus making it use less commands (~9 commands per block check recursion)
    * Fixes
+      * Ray not being calculated properly when going throgh air corners
       * Ray going moving towards negative x and/or y and/or y with long "motion" sometimes iterated forever (caused by inpresisions)
       * Hannging roots, Lectern, Bamboo[leaves:large] not calc ok
       * Missing seap pickle, composter

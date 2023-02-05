@@ -1,7 +1,12 @@
 # === Debug ===
+# tellraw @a ["------------ BLOCK ------------"]
+# tellraw @a ["block (",{"score":{"name":"#block_x","objective":"mrcd_system"}},", ",{"score":{"name":"#block_y","objective":"mrcd_system"}},", ",{"score":{"name":"#block_z","objective":"mrcd_system"}}, ") (x, y, z)"]
+# tellraw @a ["block_corner (",{"score":{"name":"#block_corner_x","objective":"mrcd_system"}},", ",{"score":{"name":"#block_corner_y","objective":"mrcd_system"}},", ",{"score":{"name":"#block_corner_z","objective":"mrcd_system"}}, ") (x, y, z)"]
+
 # scoreboard players add n_recurse mrcd_system 1
-particle flame ~ ~ ~ 0 0 0 0 1 force
+# particle end_rod ~ ~ ~ 0 0 0 0 1 force
 # execute at @s run particle end_rod ~ ~ ~ 0 0 0 0 1 force
+
 
 # === Block Collision Test ===
 tag @s[tag=mrcd_block_collision_done] remove mrcd_block_collision_done
@@ -50,11 +55,11 @@ execute store result score #hit_entity_and_not_bullet mrcd_system run execute if
 
 
 # === Debug ===
-tellraw @a ["----- block test -----"]
-tellraw @a ["target (",{"score":{"name":"#target_x","objective":"mrcd_system"}},", ",{"score":{"name":"#target_y","objective":"mrcd_system"}},", ",{"score":{"name":"#target_z","objective":"mrcd_system"}}, ") (x, y, z)"]
-tellraw @a ["total (",{"score":{"name":"#total_x","objective":"mrcd_system"}},", ",{"score":{"name":"#total_y","objective":"mrcd_system"}},", ",{"score":{"name":"#total_z","objective":"mrcd_system"}}, ") (x, y, z)"]
-tellraw @a ["traveled (",{"score":{"name":"#traveled_x","objective":"mrcd_system"}},", ",{"score":{"name":"#traveled_y","objective":"mrcd_system"}},", ",{"score":{"name":"#traveled_z","objective":"mrcd_system"}}, ") (x, y, z)"]
-tellraw @a ["t<c ",{"score":{"name":"#total_before_collision","objective":"mrcd_system"}}," he&!b ",{"score":{"name":"#hit_entity_and_not_bullet","objective":"mrcd_system"}}]
+# tellraw @a ["----- block test -----"]
+# tellraw @a ["target (",{"score":{"name":"#target_x","objective":"mrcd_system"}},", ",{"score":{"name":"#target_y","objective":"mrcd_system"}},", ",{"score":{"name":"#target_z","objective":"mrcd_system"}}, ") (x, y, z)"]
+# tellraw @a ["total (",{"score":{"name":"#total_x","objective":"mrcd_system"}},", ",{"score":{"name":"#total_y","objective":"mrcd_system"}},", ",{"score":{"name":"#total_z","objective":"mrcd_system"}}, ") (x, y, z)"]
+# tellraw @a ["traveled (",{"score":{"name":"#traveled_x","objective":"mrcd_system"}},", ",{"score":{"name":"#traveled_y","objective":"mrcd_system"}},", ",{"score":{"name":"#traveled_z","objective":"mrcd_system"}}, ") (x, y, z)"]
+# tellraw @a ["t<c ",{"score":{"name":"#total_before_collision","objective":"mrcd_system"}}," he&!b ",{"score":{"name":"#hit_entity_and_not_bullet","objective":"mrcd_system"}}]
 
 # === Ray loop end conditions ===
 execute if score #hit_entity_and_not_bullet mrcd_system matches 1 run function mrcd:private/recurse/end/hit_entity
@@ -63,4 +68,4 @@ execute if score #hit_entity_and_not_bullet mrcd_system matches 0 if score #tota
 # total_x,y,z >= collision_dx,dy,dz and collide with a block ----> Collide with a block
 execute if score #hit_entity_and_not_bullet mrcd_system matches 0 if score #total_before_collision mrcd_system matches 0 if entity @s[tag=mrcd_touch_edge] run function mrcd:private/recurse/end/hit_block
 # total_x,y,z >= collision_dx,dy,dz and not collide with a block ----> Next cycle
-execute if score #hit_entity_and_not_bullet mrcd_system matches 0 if score #total_before_collision mrcd_system matches 0 if entity @s[tag=!mrcd_touch_edge] run function mrcd:private/recurse/continue/next_block
+execute if score #hit_entity_and_not_bullet mrcd_system matches 0 if score #total_before_collision mrcd_system matches 0 if entity @s[tag=!mrcd_touch_edge,tag=!mrcd_tick_done] run function mrcd:private/recurse/continue/next_block
