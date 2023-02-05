@@ -3,7 +3,7 @@
 particle flame ~ ~ ~ 0 0 0 0 1 force
 # execute at @s run particle end_rod ~ ~ ~ 0 0 0 0 1 force
 
-# == Block Collision Test ===
+# === Block Collision Test ===
 tag @s[tag=mrcd_block_collision_done] remove mrcd_block_collision_done
 # Skip if current block is air
 execute if block ~ ~ ~ #mrcd:air_like run tag @s add mrcd_block_collision_done
