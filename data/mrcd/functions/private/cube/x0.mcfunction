@@ -4,5 +4,5 @@
 
 scoreboard players operation #target_x mrcd_system = #box_x0 mrcd_system
 function mrcd:private/calculate/x
-execute if score #target_y mrcd_system >= #box_y0 mrcd_system if score #target_y mrcd_system <= #box_y1 mrcd_system if score #target_z mrcd_system >= #box_z0 mrcd_system if score #target_z mrcd_system <= #box_z1 mrcd_system run tag @s add mrcd_touch_x_minus
+execute if score #target_y mrcd_system >= #box_y0 mrcd_system if score #target_y mrcd_system <= #box_y1 mrcd_system if score #target_z mrcd_system >= #box_z0 mrcd_system if score #target_z mrcd_system <= #box_z1 mrcd_system run function mrcd:private/cube/touch/x_minus
 

@@ -1,8 +1,3 @@
-# total
-scoreboard players operation #total_x mrcd_system -= #collision_dx mrcd_system
-scoreboard players operation #total_y mrcd_system -= #collision_dy mrcd_system
-scoreboard players operation #total_z mrcd_system -= #collision_dz mrcd_system
-
 # block
 scoreboard players operation #block_x mrcd_system = #target_x mrcd_system
 scoreboard players operation #block_y mrcd_system = #target_y mrcd_system
@@ -23,10 +18,9 @@ execute if score #target_y mrcd_system matches -1 run scoreboard players remove 
 execute if score #target_z mrcd_system matches -1 run scoreboard players remove #block_corner_z mrcd_system 1000
 
 # Debug
-# tellraw @a ["----- next block -----"]
-# tellraw @a ["total (",{"score":{"name":"#total_x","objective":"mrcd_system"}},", ",{"score":{"name":"#total_y","objective":"mrcd_system"}},", ",{"score":{"name":"#total_z","objective":"mrcd_system"}}, ") (x, y, z)"]
-# tellraw @a ["block (",{"score":{"name":"#block_x","objective":"mrcd_system"}},", ",{"score":{"name":"#block_y","objective":"mrcd_system"}},", ",{"score":{"name":"#block_z","objective":"mrcd_system"}}, ") (x, y, z)"]
-# tellraw @a ["block_corner (",{"score":{"name":"#block_corner_x","objective":"mrcd_system"}},", ",{"score":{"name":"#block_corner_y","objective":"mrcd_system"}},", ",{"score":{"name":"#block_corner_z","objective":"mrcd_system"}}, ") (x, y, z)"]
+tellraw @a ["------------ NEXT BLOCK ------------"]
+tellraw @a ["block (",{"score":{"name":"#block_x","objective":"mrcd_system"}},", ",{"score":{"name":"#block_y","objective":"mrcd_system"}},", ",{"score":{"name":"#block_z","objective":"mrcd_system"}}, ") (x, y, z)"]
+tellraw @a ["block_corner (",{"score":{"name":"#block_corner_x","objective":"mrcd_system"}},", ",{"score":{"name":"#block_corner_y","objective":"mrcd_system"}},", ",{"score":{"name":"#block_corner_z","objective":"mrcd_system"}}, ") (x, y, z)"]
 
 # Change execute position and continue
 execute if score #target_x mrcd_system matches 1000 positioned ~1 ~ ~ run function mrcd:private/recurse

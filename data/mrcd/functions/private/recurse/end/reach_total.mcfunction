@@ -1,15 +1,15 @@
 # Tp to #target position
-scoreboard players operation #target_x mrcd_system = #total_x mrcd_system
-scoreboard players operation #target_y mrcd_system = #total_y mrcd_system
-scoreboard players operation #target_z mrcd_system = #total_z mrcd_system
-scoreboard players operation #target_x mrcd_system += #block_x mrcd_system
-scoreboard players operation #target_y mrcd_system += #block_y mrcd_system
-scoreboard players operation #target_z mrcd_system += #block_z mrcd_system
-function mrcd:private/recurse/move_to_target
+scoreboard players operation #total_x mrcd_system += #start_x mrcd_system
+scoreboard players operation #total_y mrcd_system += #start_y mrcd_system
+scoreboard players operation #total_z mrcd_system += #start_z mrcd_system
+
+execute store result entity @s Pos[0] double 0.001 run scoreboard players get #total_x mrcd_system
+execute store result entity @s Pos[1] double 0.001 run scoreboard players get #total_y mrcd_system
+execute store result entity @s Pos[2] double 0.001 run scoreboard players get #total_z mrcd_system
 
 # Debug
 # tellraw @a ["----- reach total -----"]
-# tellraw @a ["target (",{"score":{"name":"#target_x","objective":"mrcd_system"}},", ",{"score":{"name":"#target_y","objective":"mrcd_system"}},", ",{"score":{"name":"#target_z","objective":"mrcd_system"}}, ") (x, y, z)"]
+# tellraw @a ["final pos (",{"score":{"name":"#total_x","objective":"mrcd_system"}},", ",{"score":{"name":"#total_y","objective":"mrcd_system"}},", ",{"score":{"name":"#total_z","objective":"mrcd_system"}}, ") (x, y, z)"]
 
 # Last entity check
 scoreboard players set #steps mrcd_system 3

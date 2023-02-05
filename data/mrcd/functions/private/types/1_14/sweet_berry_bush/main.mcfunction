@@ -1,0 +1,2 @@
+execute if block ~ ~ ~ sweet_berry_bush[age=0] run function mrcd:private/types/1_14/sweet_berry_bush/0
+execute unless block ~ ~ ~ sweet_berry_bush[age=0] run function mrcd:private/types/1_14/sweet_berry_bush/1_2

@@ -264,3 +264,10 @@ These blocks listed below are supported in is datapack. Please post an issue if 
       * Ray should not target itself
       * Ray sometimes getting inside complex block when the ray was comming from -xyz (collision not working)
       * mrcd_entity and mrcd_entity_targeted could tag more than one entity when not being a mrcd_entity_bullet
+ * v2.6.3
+   * Updates
+      * Redone how it checks if the ray has reached the max distance (fixing the bug), plus making it use less commands (~9 commands per block check recursion)
+   * Fixes
+      * Ray going moving towards negative x and/or y and/or y with long "motion" sometimes iterated forever (caused by inpresisions)
+      * Hannging roots, Lectern, Bamboo[leaves:large] not calc ok
+      * Missing seap pickle, composter
