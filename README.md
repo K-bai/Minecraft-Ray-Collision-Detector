@@ -266,7 +266,10 @@ These blocks listed below are supported in is datapack. Please post an issue if 
       * mrcd_entity and mrcd_entity_targeted could tag more than one entity when not being a mrcd_entity_bullet
  * v2.6.3
    * Updates
-      * Redone how it checks if the ray has reached the max distance (fixing the bug), plus making it use less commands (~9 commands per block check recursion)
+      * Revied and redone a bunch of code. This optimitzations plus the 2.6.2 changes mean:
+           * calling `ray_tick` runs between 7..45% less commands depending on the ray type and distance traveled. This is because for each block check iteration:
+             * ~22% less commands are used when the ray targets blocks
+             * ~43% less commands are used when the ray targets both blocks and entities
    * Fixes
       * Ray not being calculated properly when going throgh air corners
       * Ray going moving towards negative x and/or y and/or y with long "motion" sometimes iterated forever (caused by inpresisions)
