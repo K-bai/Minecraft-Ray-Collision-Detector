@@ -16,10 +16,10 @@ scoreboard players set #box_z1 mrcd_system 750
 function mrcd:private/complex_cube/main
 
 # Rotation dependant
-execute if block ~ ~ ~ minecraft:lectern[facing=north] run function mrcd:private/types/1_14/lectern/north
-execute if block ~ ~ ~ minecraft:lectern[facing=south] run function mrcd:private/types/1_14/lectern/south
-execute if block ~ ~ ~ minecraft:lectern[facing=east] run function mrcd:private/types/1_14/lectern/east
-execute if block ~ ~ ~ minecraft:lectern[facing=west] run function mrcd:private/types/1_14/lectern/west
+execute if block ~ ~ ~ lectern[facing=north] run function mrcd:private/types/1_14/lectern/north
+execute if block ~ ~ ~ lectern[facing=south] run function mrcd:private/types/1_14/lectern/south
+execute if block ~ ~ ~ lectern[facing=east] run function mrcd:private/types/1_14/lectern/east
+execute if block ~ ~ ~ lectern[facing=west] run function mrcd:private/types/1_14/lectern/west
 
 # Tags
 execute if entity @e[tag=mrcd_touch_mark] run tag @s add mrcd_touch_edge

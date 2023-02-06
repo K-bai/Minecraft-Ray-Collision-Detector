@@ -14,7 +14,5 @@ execute if block ~ ~ ~ #mrcd:melon_stem_like[age=5] run scoreboard players set #
 execute if block ~ ~ ~ #mrcd:melon_stem_like[age=6] run scoreboard players set #box_y1 mrcd_system 875
 execute if block ~ ~ ~ #mrcd:melon_stem_like[age=7] run scoreboard players set #box_y1 mrcd_system 1000
 
-
-
 function mrcd:private/cube/main
 tag @s add mrcd_block_collision_done
