@@ -1,7 +1,7 @@
 # Intro
 Minecraft Ray Collision Detector is a super precise raycast system in vanilla minecraft! This datapack solved the raycast problem perfectly with minimal command cost. It defines the hitbox of most blocks and does some calculations to judge which surface will be touched.
 
-Current datapack version: 2.6.2
+Current datapack version: 2.6.3
 
 Supported minecraft version: 1.16, 1.17, 1.18, 1.19
 
@@ -264,3 +264,15 @@ These blocks listed below are supported in is datapack. Please post an issue if 
       * Ray should not target itself
       * Ray sometimes getting inside complex block when the ray was comming from -xyz (collision not working)
       * mrcd_entity and mrcd_entity_targeted could tag more than one entity when not being a mrcd_entity_bullet
+ * v2.6.3
+   * Updates
+      * Revised and redone a bunch of code. This optimizations plus the 2.6.2 changes mean:
+           * calling `ray_tick` runs between 7..45% less commands depending on the ray type and distance traveled. This is because for each block check iteration:
+             * ~22% less commands are used when the ray targets full blocks (air)
+             * ~38% less commands are used when the ray targets non full blocks (trapdoors, slabs, bells, ...)
+             * ~43% less commands are used when the ray targets both blocks and entities
+   * Fixes
+      * Ray not being calculated properly when going through air corners
+      * Ray going moving towards negative x and/or y and/or y with long "motion" sometimes iterated forever (caused by impressions)
+      * Hanging roots, Lectern, Bamboo[leaves:large], Baners on wall not calc ok
+      * Missing sea pickle, composter

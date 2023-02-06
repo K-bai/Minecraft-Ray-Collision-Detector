@@ -15,15 +15,19 @@
 
 # Cooridantes
 Are stored in scoreboards, each coordinate is indicated by the termination x, y or z. All values are in mblocks (milliblocks)
+- `start_x,y,z`: world coords of the starting cast
 - `block_x,y,z`: point of the ray relative to the corner of the block, range from 0-1000
 - `block_corner_x,y,z`: absolute coordinate of current block from the corner (relative to the world, a.k. minecraft coordinates)
-- `target_x,y,z`: collision point of the ray with the block (relative to the block)
+- `target_x,y,z`: distance from the start to the current target
+- `abs_target_x,y,z`: absolute values of `target_x,y,z`
+- `final_x,y,z`: final position if no block hit
 
 # Motion vector
 Are stored in scoreboards, like in coordinate, they termination x, y or z and are in mblocks (milliblocks). Vectors are writetn from origin, (0,0,0) to desitnation x,y,z
 - `@s`: we use three scoreboards (mrcd_x,y,z) to be able to have multiple motion vectors, one for each entity
 - `total_x,y,z`: motion vector of the current entity we are processing (a.k. max distance to travel each tick)
-- `collision_dx,dy,dz`: distance from the ray point to the collision point
+- `abs_total_x,y,z`: absolute values of `total_x,y,z`
+- `traveled_x,y,z`: from the ray point to the collision point
 
 # Flags
 - `if_reach_target`: indicates if it reaches the target 

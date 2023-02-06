@@ -4,7 +4,6 @@
 
         "beetroots",
         "nether_wart",
-        "kelp",
 
         "lever",
         "tripwire_hook",
@@ -25,9 +24,6 @@
         "#mrcd:melon_stem_like",
         "#mrcd:wall_torches",
         "#mrcd:torches",
-        "#mrcd:wall_coral_like",
-        "#mrcd:coral_plant_like",
-        "#mrcd:coral_fan_like",
         "#mrcd:grass_like",
         "#mrcd:sapling_like",
         "#mrcd:wall_banner_like",
@@ -41,7 +37,6 @@
         "bamboo_sapling",
 
         "tall_grass",
-        "tall_seagrass",
         "large_fern",
         "bubble_column",
         "end_gateway",
@@ -50,6 +45,7 @@
         "water",
         "nether_portal",
 
+        "#mrcd:player_can_pass/1_13",
         {"id": "#mrcd:player_can_pass/1_16", "required": false},
         {"id": "#mrcd:player_can_pass/1_17", "required": false},
         {"id": "#mrcd:player_can_pass/1_19", "required": false}
