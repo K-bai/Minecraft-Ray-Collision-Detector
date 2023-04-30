@@ -3,8 +3,8 @@
 # tellraw @a ["block (",{"score":{"name":"#block_x","objective":"mrcd_system"}},", ",{"score":{"name":"#block_y","objective":"mrcd_system"}},", ",{"score":{"name":"#block_z","objective":"mrcd_system"}}, ") (x, y, z)"]
 # tellraw @a ["block_corner (",{"score":{"name":"#block_corner_x","objective":"mrcd_system"}},", ",{"score":{"name":"#block_corner_y","objective":"mrcd_system"}},", ",{"score":{"name":"#block_corner_z","objective":"mrcd_system"}}, ") (x, y, z)"]
 
-# scoreboard players add n_recurse mrcd_system 1
-# particle end_rod ~ ~ ~ 0 0 0 0 1 force
+# scoreboard players add n_recursion mrcd_system 1
+# particle end_rod ~ ~ ~ 0 0 0 0.01 1 force
 # execute at @s run particle end_rod ~ ~ ~ 0 0 0 0 1 force
 
 
@@ -59,7 +59,12 @@ execute store result score #hit_entity_and_not_bullet mrcd_system run execute if
 # tellraw @a ["target (",{"score":{"name":"#target_x","objective":"mrcd_system"}},", ",{"score":{"name":"#target_y","objective":"mrcd_system"}},", ",{"score":{"name":"#target_z","objective":"mrcd_system"}}, ") (x, y, z)"]
 # tellraw @a ["total (",{"score":{"name":"#total_x","objective":"mrcd_system"}},", ",{"score":{"name":"#total_y","objective":"mrcd_system"}},", ",{"score":{"name":"#total_z","objective":"mrcd_system"}}, ") (x, y, z)"]
 # tellraw @a ["traveled (",{"score":{"name":"#traveled_x","objective":"mrcd_system"}},", ",{"score":{"name":"#traveled_y","objective":"mrcd_system"}},", ",{"score":{"name":"#traveled_z","objective":"mrcd_system"}}, ") (x, y, z)"]
-# tellraw @a ["t<c ",{"score":{"name":"#total_before_collision","objective":"mrcd_system"}}," he&!b ",{"score":{"name":"#hit_entity_and_not_bullet","objective":"mrcd_system"}}]
+# tellraw @a ["he&!b ",{"score":{"name":"#hit_entity_and_not_bullet","objective":"mrcd_system"}}, " t<c ",{"score":{"name":"#total_before_collision","objective":"mrcd_system"}}, " r ",{"score":{"name":"n_recursion","objective":"mrcd_system"}}]
+
+# function mrcd:private/debug/particle_at_target
+
+# execute if score n_recursion mrcd_system matches 30 run scoreboard players set #hit_entity_and_not_bullet mrcd_system 1
+
 
 # === Ray loop end conditions ===
 execute if score #hit_entity_and_not_bullet mrcd_system matches 1 run function mrcd:private/recurse/end/hit_entity

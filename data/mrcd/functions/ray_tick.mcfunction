@@ -61,7 +61,8 @@ scoreboard players set #target_z mrcd_system 0
 execute store result score #detect_entity mrcd_system run execute unless entity @s[tag=!mrcd_entity,tag=!mrcd_entity_targeted]
 
 # === Debug ===
-# scoreboard players set n_recurse mrcd_system 0
+# scoreboard players set n_recursion mrcd_system 0
+# summon marker ~ ~ ~ {Tags:["at_target","init"]}
 
 # === Recurse ===
 tag @s[tag=mrcd_ignore] add mrcd_ignore_keep
@@ -72,3 +73,6 @@ execute at @s run function mrcd:private/recurse
 tag @s[tag=!mrcd_ignore_keep] remove mrcd_ignore
 tag @s remove mrcd_ignore_keep
 tag @e remove mrcd_tick_done
+
+# === Debug ===
+# tellraw @a ["Nº recursions ",{"score":{"name":"n_recursion","objective":"mrcd_system"}}]
