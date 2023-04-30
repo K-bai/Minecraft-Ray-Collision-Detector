@@ -61,10 +61,10 @@ scoreboard players set #target_z mrcd_system 0
 execute store result score #detect_entity mrcd_system run execute unless entity @s[tag=!mrcd_entity,tag=!mrcd_entity_targeted]
 
 # === Debug ===
-# scoreboard players set n_recursion mrcd_system 0
 # summon marker ~ ~ ~ {Tags:["at_target","init"]}
 
 # === Recurse ===
+scoreboard players set n_recursion mrcd_system 0
 tag @s[tag=mrcd_ignore] add mrcd_ignore_keep
 tag @s add mrcd_ignore
 

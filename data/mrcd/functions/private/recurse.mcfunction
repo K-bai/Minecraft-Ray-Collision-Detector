@@ -1,9 +1,10 @@
+scoreboard players add n_recursion mrcd_system 1
+
 # === Debug ===
 # tellraw @a ["------------ BLOCK ------------"]
 # tellraw @a ["block (",{"score":{"name":"#block_x","objective":"mrcd_system"}},", ",{"score":{"name":"#block_y","objective":"mrcd_system"}},", ",{"score":{"name":"#block_z","objective":"mrcd_system"}}, ") (x, y, z)"]
 # tellraw @a ["block_corner (",{"score":{"name":"#block_corner_x","objective":"mrcd_system"}},", ",{"score":{"name":"#block_corner_y","objective":"mrcd_system"}},", ",{"score":{"name":"#block_corner_z","objective":"mrcd_system"}}, ") (x, y, z)"]
 
-# scoreboard players add n_recursion mrcd_system 1
 # particle end_rod ~ ~ ~ 0 0 0 0.01 1 force
 # execute at @s run particle end_rod ~ ~ ~ 0 0 0 0 1 force
 
@@ -63,10 +64,9 @@ execute store result score #hit_entity_and_not_bullet mrcd_system run execute if
 
 # function mrcd:private/debug/particle_at_target
 
-# execute if score n_recursion mrcd_system matches 30 run scoreboard players set #hit_entity_and_not_bullet mrcd_system 1
-
-
 # === Ray loop end conditions ===
+execute if score n_recursion mrcd_system matches 500 run function mrcd:private/recurse/reach_limit
+
 execute if score #hit_entity_and_not_bullet mrcd_system matches 1 run function mrcd:private/recurse/end/hit_entity
 # total_x,y,z < collision_dx,dy,dz ----> Reached the distance limit
 execute if score #hit_entity_and_not_bullet mrcd_system matches 0 if score #total_before_collision mrcd_system matches 1 run function mrcd:private/recurse/end/reach_total
