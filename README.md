@@ -289,6 +289,6 @@ These blocks listed below are supported in is datapack. Please post an issue if 
    * Updates
       * Added support for 1.20
    * Changes
-      * Default recursion limit is 256 (can be changed in the ini.mcfunction file)
+      * Default recursion limit is 256 (can be changed in the `ini.mcfunction` file)
    * Fixes
       * Fixed a bug where the ray would endlessly recurse, freezing the game. This would happen when the ray was passing through the corner of a block hitbox.
