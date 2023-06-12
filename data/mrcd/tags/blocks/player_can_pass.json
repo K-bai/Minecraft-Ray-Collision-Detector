@@ -48,6 +48,7 @@
         "#mrcd:player_can_pass/1_13",
         {"id": "#mrcd:player_can_pass/1_16", "required": false},
         {"id": "#mrcd:player_can_pass/1_17", "required": false},
-        {"id": "#mrcd:player_can_pass/1_19", "required": false}
+        {"id": "#mrcd:player_can_pass/1_19", "required": false},
+        {"id": "#mrcd:player_can_pass/1_20", "required": false}
     ]
 }

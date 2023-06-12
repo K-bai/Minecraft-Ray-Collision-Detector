@@ -41,9 +41,9 @@ scoreboard players operation #traveled_z mrcd_system -= #block_z mrcd_system
 scoreboard players operation #abs_traveled_x mrcd_system = #traveled_x mrcd_system
 scoreboard players operation #abs_traveled_y mrcd_system = #traveled_y mrcd_system
 scoreboard players operation #abs_traveled_z mrcd_system = #traveled_z mrcd_system
-execute if score #abs_traveled_x mrcd_system matches ..-1 run scoreboard players operation #abs_traveled_x mrcd_system *= #const_minus_1 mrcd_system
-execute if score #abs_traveled_y mrcd_system matches ..-1 run scoreboard players operation #abs_traveled_y mrcd_system *= #const_minus_1 mrcd_system
-execute if score #abs_traveled_z mrcd_system matches ..-1 run scoreboard players operation #abs_traveled_z mrcd_system *= #const_minus_1 mrcd_system
+execute if score #abs_traveled_x mrcd_system matches ..-1 run scoreboard players operation #abs_traveled_x mrcd_system *= #-1 mrcd_system
+execute if score #abs_traveled_y mrcd_system matches ..-1 run scoreboard players operation #abs_traveled_y mrcd_system *= #-1 mrcd_system
+execute if score #abs_traveled_z mrcd_system matches ..-1 run scoreboard players operation #abs_traveled_z mrcd_system *= #-1 mrcd_system
 
 execute if score #abs_total_x mrcd_system <= #abs_traveled_x mrcd_system if score #abs_total_y mrcd_system <= #abs_traveled_y mrcd_system if score #abs_total_z mrcd_system <= #abs_traveled_z mrcd_system run scoreboard players set #total_before_collision mrcd_system 1
 execute if score #abs_total_x mrcd_system >= #abs_traveled_x mrcd_system if score #abs_total_y mrcd_system >= #abs_traveled_y mrcd_system if score #abs_total_z mrcd_system >= #abs_traveled_z mrcd_system run scoreboard players set #total_before_collision mrcd_system 0
@@ -65,7 +65,7 @@ execute store result score #hit_entity_and_not_bullet mrcd_system run execute if
 # function mrcd:private/debug/particle_at_target
 
 # === Ray loop end conditions ===
-execute if score n_recursion mrcd_system matches 500 run function mrcd:private/recurse/reach_limit
+execute if score n_recursion mrcd_system > #recursion_limit mrcd_system run function mrcd:private/recurse/reach_limit
 
 execute if score #hit_entity_and_not_bullet mrcd_system matches 1 run function mrcd:private/recurse/end/hit_entity
 # total_x,y,z < collision_dx,dy,dz ----> Reached the distance limit

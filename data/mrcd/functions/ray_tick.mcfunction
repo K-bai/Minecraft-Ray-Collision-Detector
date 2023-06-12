@@ -19,9 +19,9 @@ scoreboard players operation #total_z mrcd_system = @s mrcd_z0
 scoreboard players operation #abs_total_x mrcd_system = @s mrcd_x0
 scoreboard players operation #abs_total_y mrcd_system = @s mrcd_y0
 scoreboard players operation #abs_total_z mrcd_system = @s mrcd_z0
-execute if score #abs_total_x mrcd_system matches ..-1 run scoreboard players operation #abs_total_x mrcd_system *= #const_minus_1 mrcd_system
-execute if score #abs_total_y mrcd_system matches ..-1 run scoreboard players operation #abs_total_y mrcd_system *= #const_minus_1 mrcd_system
-execute if score #abs_total_z mrcd_system matches ..-1 run scoreboard players operation #abs_total_z mrcd_system *= #const_minus_1 mrcd_system
+execute if score #abs_total_x mrcd_system matches ..-1 run scoreboard players operation #abs_total_x mrcd_system *= #-1 mrcd_system
+execute if score #abs_total_y mrcd_system matches ..-1 run scoreboard players operation #abs_total_y mrcd_system *= #-1 mrcd_system
+execute if score #abs_total_z mrcd_system matches ..-1 run scoreboard players operation #abs_total_z mrcd_system *= #-1 mrcd_system
 
 # === Reset travaled distance ===
 scoreboard players set #traveled_x mrcd_system 0
@@ -41,9 +41,9 @@ scoreboard players operation #block_z mrcd_system = #start_z mrcd_system
 scoreboard players operation #block_corner_x mrcd_system = #start_x mrcd_system
 scoreboard players operation #block_corner_y mrcd_system = #start_y mrcd_system
 scoreboard players operation #block_corner_z mrcd_system = #start_z mrcd_system
-scoreboard players operation #block_x mrcd_system %= #const_1000 mrcd_system
-scoreboard players operation #block_y mrcd_system %= #const_1000 mrcd_system
-scoreboard players operation #block_z mrcd_system %= #const_1000 mrcd_system
+scoreboard players operation #block_x mrcd_system %= #1000 mrcd_system
+scoreboard players operation #block_y mrcd_system %= #1000 mrcd_system
+scoreboard players operation #block_z mrcd_system %= #1000 mrcd_system
 scoreboard players operation #block_corner_x mrcd_system -= #block_x mrcd_system
 scoreboard players operation #block_corner_y mrcd_system -= #block_y mrcd_system 
 scoreboard players operation #block_corner_z mrcd_system -= #block_z mrcd_system
@@ -64,12 +64,14 @@ execute store result score #detect_entity mrcd_system run execute unless entity 
 # summon marker ~ ~ ~ {Tags:["at_target","init"]}
 
 # === Recurse ===
+execute at @s run summon marker ~ ~ ~ {Tags:[new_pos]}
 scoreboard players set n_recursion mrcd_system 0
 tag @s[tag=mrcd_ignore] add mrcd_ignore_keep
 tag @s add mrcd_ignore
 
 execute at @s run function mrcd:private/recurse
 
+kill @e[type=marker,tag=new_pos,limit=1]
 tag @s[tag=!mrcd_ignore_keep] remove mrcd_ignore
 tag @s remove mrcd_ignore_keep
 tag @e remove mrcd_tick_done

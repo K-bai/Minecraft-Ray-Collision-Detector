@@ -1,10 +1,4 @@
-scoreboard players operation #block_x mrcd_system = #target_x mrcd_system
-scoreboard players operation #block_y mrcd_system = #target_y mrcd_system
 scoreboard players set #block_z mrcd_system 1000
-
-execute if score #target_x mrcd_system matches -1 run scoreboard players set #block_x mrcd_system 0
-execute if score #target_y mrcd_system matches -1 run scoreboard players set #block_y mrcd_system 0
-
 scoreboard players remove #block_corner_z mrcd_system 1000
 
-execute positioned ~ ~ ~-1 run function mrcd:private/recurse
+execute as @e[type=marker,tag=new_pos,limit=1] at @s run tp @s ~ ~ ~-1

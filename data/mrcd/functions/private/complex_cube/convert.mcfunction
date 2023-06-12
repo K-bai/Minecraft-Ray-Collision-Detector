@@ -18,13 +18,13 @@ scoreboard players operation #tmp_x mrcd_system = #target_x mrcd_system
 scoreboard players operation #tmp_y mrcd_system = #target_y mrcd_system
 scoreboard players operation #tmp_z mrcd_system = #target_z mrcd_system
 
-scoreboard players operation #target_x mrcd_system %= #const_1000 mrcd_system
-scoreboard players operation #target_y mrcd_system %= #const_1000 mrcd_system
-scoreboard players operation #target_z mrcd_system %= #const_1000 mrcd_system
+scoreboard players operation #target_x mrcd_system %= #1000 mrcd_system
+scoreboard players operation #target_y mrcd_system %= #1000 mrcd_system
+scoreboard players operation #target_z mrcd_system %= #1000 mrcd_system
 
-scoreboard players operation #tmp_x mrcd_system -= #const_1000 mrcd_system
-scoreboard players operation #tmp_y mrcd_system -= #const_1000 mrcd_system
-scoreboard players operation #tmp_z mrcd_system -= #const_1000 mrcd_system
+scoreboard players operation #tmp_x mrcd_system -= #1000 mrcd_system
+scoreboard players operation #tmp_y mrcd_system -= #1000 mrcd_system
+scoreboard players operation #tmp_z mrcd_system -= #1000 mrcd_system
 execute if score #tmp_x mrcd_system >= #block_corner_x mrcd_system run scoreboard players set #target_x mrcd_system 1000
 execute if score #tmp_y mrcd_system >= #block_corner_y mrcd_system run scoreboard players set #target_y mrcd_system 1000
 execute if score #tmp_z mrcd_system >= #block_corner_z mrcd_system run scoreboard players set #target_z mrcd_system 1000

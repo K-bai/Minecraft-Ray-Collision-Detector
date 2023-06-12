@@ -3,7 +3,7 @@ Minecraft Ray Collision Detector is a super precise raycast system in vanilla mi
 
 Current datapack version: 2.6.3
 
-Supported minecraft version: 1.16, 1.17, 1.18, 1.19
+Supported minecraft version: 1.16, 1.17, 1.18, 1.19, 1.20
 
 # How to use
 Set scoreboard `mrcd_x0`, `mrcd_y0`, `mrcd_z0` for any ray (entity used as the ray marker, usually area_effect_cloud or markers). These three scoreboards stand for how many milliblocks the ray can fly in three dimensions respectively each time you call `function mrcd:ray_tick` as the ray. If it **touches a block**, it will have the tags `mrcd_touch_edge` and `mrcd_touch_DIRECTION`. You can recognize which surface it touched from those tags.
@@ -87,6 +87,13 @@ These blocks listed below are supported in is datapack. Please post an issue if 
     * minecraft:frogspawn
     * minecraft:sculk_shrieker
     * minecraft:mangrove_propagule
+    * minecraft:sniffer_egg
+    * minecraft:calibrated_sculk_sensor
+    * minecraft:decorated_pot
+    * minecraft:piglin_head
+    * minecraft:piglin_wall_head
+    * minecraft:torchflower_crop
+    * minecraft:pitcher_crop
     * #minecraft:slabs
     * #minecraft:pressure_plates
     * #minecraft:wall_signs
@@ -97,9 +104,11 @@ These blocks listed below are supported in is datapack. Please post an issue if 
     * #minecraft:rails
     * #minecraft:carpets
     * #minecraft:small_flowers
+    * #minecraft:tall_flowers
     * #minecraft:campfires
     * #minecraft:candles
     * #minecraft:cave_vinescave
+    * #minecraft:all_hanging_signs
     * #mrcd:mushroom
         * red mushroom and brown mushroom
     * #mrcd:standing_sign_like
@@ -267,12 +276,19 @@ These blocks listed below are supported in is datapack. Please post an issue if 
  * v2.6.3
    * Updates
       * Revised and redone a bunch of code. This optimizations plus the 2.6.2 changes mean:
-           * calling `ray_tick` runs between 7..45% less commands depending on the ray type and distance traveled. This is because for each block check iteration:
-             * ~22% less commands are used when the ray targets full blocks (air)
-             * ~38% less commands are used when the ray targets non full blocks (trapdoors, slabs, bells, ...)
-             * ~43% less commands are used when the ray targets both blocks and entities
+           * calling `ray_tick` runs between 23..52% less commands depending on the ray type and distance traveled. This is because for each block check iteration:
+             * ~26% less commands are used when the ray targets full blocks (air)
+             * ~45% less commands are used when the ray targets non full blocks (trapdoors, slabs, bells, ...)
+             * ~47% less commands are used when the ray targets both blocks and entities
    * Fixes
       * Ray not being calculated properly when going through air corners
       * Ray going moving towards negative x and/or y and/or y with long "motion" sometimes iterated forever (caused by impressions)
       * Hanging roots, Lectern, Bamboo[leaves:large], Baners on wall not calc ok
       * Missing sea pickle, composter
+ * v2.7
+   * Updates
+      * Added support for 1.20
+   * Changes
+      * Default recursion limit is 256 (can be changed in the ini.mcfunction file)
+   * Fixes
+      * Fixed a bug where the ray would endlessly recurse, freezing the game. This would happen when the ray was passing through the corner of a block hitbox.

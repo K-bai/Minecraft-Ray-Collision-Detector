@@ -5,6 +5,7 @@ scoreboard objectives add mrcd_z0 dummy ["mrcd vector z"]
 scoreboard objectives add mrcd_system dummy ["mrcd system"]
 scoreboard players set #installed mrcd_system 1
 
+scoreboard players set #recursion_limit mrcd_system 256
 
 scoreboard players set #n2 mrcd_system 2
 scoreboard players set #n16 mrcd_system 16
@@ -22,6 +23,7 @@ scoreboard players set #n3129871 mrcd_system 3129871
 scoreboard players set #n42317861 mrcd_system 42317861
 scoreboard players set #n116129781 mrcd_system 116129781
 
-scoreboard players set #const_2 mrcd_system 2
-scoreboard players set #const_1000 mrcd_system 1000
-scoreboard players set #const_minus_1 mrcd_system -1
+scoreboard players set #2 mrcd_system 2
+scoreboard players set #4 mrcd_system 4
+scoreboard players set #1000 mrcd_system 1000
+scoreboard players set #-1 mrcd_system -1
