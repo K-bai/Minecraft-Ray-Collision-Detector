@@ -6,24 +6,63 @@ Current datapack version: 2.7
 Supported minecraft version: 1.16, 1.17, 1.18, 1.19, 1.20
 
 # How to use
-Set scoreboard `mrcd_x0`, `mrcd_y0`, `mrcd_z0` for any ray (entity used as the ray marker, usually area_effect_cloud or markers). These three scoreboards stand for how many milliblocks the ray can fly in three dimensions respectively each time you call `function mrcd:ray_tick` as the ray. If it **touches a block**, it will have the tags `mrcd_touch_edge` and `mrcd_touch_DIRECTION`. You can recognize which surface it touched from those tags.
 
-If you want a ray that can **pass those blocks** that a player can pass, you should tag the ray `mrcd_bullet`.
+## Basics
+1. **Set the motion vector:** You must first indicate how many milliblocks the ray entity (usually area_effect_cloud or marker) will travell in a *ray_tick*. To do so store the (x, y, z) components of the vector in the entity's scoreboards `mrcd_x0`, `mrcd_y0`, `mrcd_z0`.
+2. **Run a ray_tick:** Call `function mrcd:ray_tick` as the ray entity.
+3. **Detect block hit:** If the ray hits a block it will get the tags `mrcd_touch_edge` and `mrcd_touch_<direction>`, where `<direction>` indicates which face has been hit and is one of `x_plus`, `x_minus`, `y_plus`, `y_minus`, `z_plus`, `z_minus`.
+4. Repeat 2 and 3.
 
-If you want a ray that can **touch entities** (stops after one found), you should tag the ray `mrcd_entity` and **rotate the AEC as the speed direction**. If it touched an entity, it will have the tag `mrcd_touch_entity`, and the touched entity will be tagged `mrcd_target_entity`. Note that some entities like player and projectiles are ignored by default. You can remove them in entity types tag (`#mrcd:ignore`) to change it.
+*Note: when calling `function mrcd:ray_tick` the ray first loses all previous output tags so once the calculations are done only the correct tags are left.*
 
-If you want a ray that can **touch a specific entity or group of entities** (stops after one found), you should tag it/them with `mrcd_target`, the ray `mrcd_entity_targeted` and **rotate the AEC as the speed direction**. If it touched a tagged entity, it will have the tag `mrcd_touch_entity`, and the touched entity will be tagged `mrcd_target_entity`. Any other non tagged entity that hits, will be ignored and the ray will pass through. This method can target any entity, even those that are in the `#mrcd:ignore` tag list. Also, you can tag an entity with `mrcd_ignore` to also be ignored.
+## Advanced ray behaviour
+- **Pass any block a player can:** tag the ray with `mrcd_bullet`.
+- **Hit the first entity it finds:**: tag the ray with `mrcd_entity` and rotate it facing the motion direction. 
+    - If it thouches an entity, the ray will stop there and get the tag `mrcd_touch_entity`. The touched entity will be tagged `mrcd_target_entity`. 
+    - Note that some entities like player and projectiles are ignored by default. You can remove them by editing the entity types tag `#mrcd:ignore`.
+- **Hit the first specific entity or group of entities:** tag the ray with `mrcd_entity_targeted`, rotate it facing the motion direction** and tag the target/s with `mrcd_target`.
+    - If it thouches an entity, the ray will stop there and get the tag `mrcd_touch_entity`. The touched entity will be tagged `mrcd_target_entity`. Any non `mrcd_target` tagged entity will be ignored and the ray will pass through. 
+    - This method can target any entity, even those that are in the `#mrcd:ignore` tag list. Also, you can tag an entity with `mrcd_ignore` to also be ignored.
+- **Hit multiple entities (don't stop after one found):** settup the ray as a `mrcd_entity` or `mrcd_entity_targeted`, add the tag `mrcd_entity_bullet` and rotate the  it facing the motion direction. 
+    - If it thouches an entity, the ray will continue but get the tag `mrcd_touch_entity`. The touched entity will be tagged `mrcd_target_entity`.
 
-If you want a ray that can **touch multiple entities** (doesn't stops after one found), you should tag the ray `mrcd_entity` and `mrcd_entity_bullet` and **rotate the AEC as the speed direction** (this is also works with `mrcd_entity_targeted`). If it touched an entity, it will have the tag `mrcd_touch_entity`, and the touched entity will be tagged `mrcd_target_entity`.
-
-Logically tags can be combined following this strucuture: <block_handling>,<entity_handeling>,<entity_extra>
+In summary, tags can be combined following this strucuture: <block_handling>,<entity_handling1>,<entity_extra>
 * block_handling: none or mrcd_bullet
-* entity_handeling: none or mrcd_entity or mrcd_entity_targeted
+* entity_handling: none or mrcd_entity or mrcd_entity_targeted
 * entity_extra: none or mrcd_entity_bullet
 
-To see some basic working examples, check the folder **example**. You simply need to run each tick the function `mrcd:example/tick` and give yourself the needed items with the function `mrcd:example/give`.
+*⚠️ Remember to remove the result tags when needed. For example: if we check for an entity hit we must remove the tag mrcd_target_entity after the hitting it, so the new cast doesn't think that entity was hit.*
 
-*⚠️ Rememver to remove the result tags when needed. For example: if we check for an entity hit we must remove the tag mrcd_target_entity after the hitting it, so the new cast don't think that entity was hit.*
+## Example
+We use oriented relative coordinates and some math to eassily assing the speed (this case, 0.5 b/t). Since it lasts for 10 ticks (Duration), it will travel at max 5 blocks.
+
+```mcfunction
+# Summon the ray where it would end after a ray_tick (0.5 blocks)
+execute at @s anchored eyes run summon area_effect_cloud ^ ^ ^.5 {Tags:["test_mark","init","mrcd_ignore"],Duration:10}
+
+# We save the end coords of the motion vector in mblocks
+execute as @e[tag=init,limit=1] store result score @s mrcd_x0 run data get entity @s Pos[0] 1000
+execute as @e[tag=init,limit=1] store result score @s mrcd_y0 run data get entity @s Pos[1] 1000
+execute as @e[tag=init,limit=1] store result score @s mrcd_z0 run data get entity @s Pos[2] 1000
+
+# # We tp to the starting position (and placed it on the player eyes)
+execute at @s anchored eyes run tp @e[tag=init,limit=1] ^ ^ ^ ~ ~
+
+# We save the start coords of the motion vector position in mblocks
+execute store result score #var0 mrcd_system run data get entity @e[tag=init,limit=1] Pos[0] 1000
+execute store result score #var1 mrcd_system run data get entity @e[tag=init,limit=1] Pos[1] 1000
+execute store result score #var2 mrcd_system run data get entity @e[tag=init,limit=1] Pos[2] 1000
+
+# We calculate the motion vector (end - start)
+scoreboard players operation @e[tag=init,limit=1] mrcd_x0 -= #var0 mrcd_system
+scoreboard players operation @e[tag=init,limit=1] mrcd_y0 -= #var1 mrcd_system
+scoreboard players operation @e[tag=init,limit=1] mrcd_z0 -= #var2 mrcd_system
+
+# Clear tag
+tag @e[tag=init] remove init
+```
+
+To see some more working examples, check the folder **example**. You simply need to run the function `mrcd:example/tick` each tick and give yourself the needed items with the function `mrcd:example/give`.
 
 # How block detection works
 ## Before calculations
@@ -37,7 +76,8 @@ Sencondly, we find which block the marker is in, and determine which plane of th
 Finally, move the marker to #targetx,y,z!
 
 # Block Support
-
+<details>
+  <summary>Block Support</summary>    
 These blocks listed below are supported in is datapack. Please post an issue if you find some unsupported blocks and bugs. *All blocks are listed using the latest minecraft block tags*
 
 * any full block
@@ -184,10 +224,11 @@ These blocks listed below are supported in is datapack. Please post an issue if 
         * sticky piston and normal piston
     * #mrcd:lanterns
         * lantern and soul lantern
-
+</details>
 
 # Change Log
-
+<details>
+  <summary>Show</summary>
 * v1.0
 * v1.1
     * Add sweet berry bush support.
@@ -292,3 +333,7 @@ These blocks listed below are supported in is datapack. Please post an issue if 
       * Default recursion limit is 256 (can be changed in the `ini.mcfunction` file)
    * Fixes
       * Fixed a bug where the ray would endlessly recurse, freezing the game. This would happen when the ray was passing through the corner of a block hitbox.
+ * v2.7.1
+   * Updates
+      * Better entity hitbox hit precision
+</details>
