@@ -229,6 +229,7 @@ These blocks listed below are supported in is datapack. Please post an issue if 
 # Change Log
 <details>
   <summary>Show</summary>
+
 * v1.0
 * v1.1
     * Add sweet berry bush support.
