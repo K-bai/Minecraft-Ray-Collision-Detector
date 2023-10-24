@@ -19,7 +19,9 @@ execute as @a[nbt={SelectedItem:{id:"minecraft:feather"}}] at @s run function mr
 execute as @e[tag=test_mark] at @s run function mrcd:example/tick_rays
 
 # Clear glowing after x seconds
-effect clear @e[nbt={ActiveEffects:[{Id:24,Duration:19}]}] glowing
+effect clear @e[nbt={active_effects:[{id:"minecraft:glowing",duration:19}]}] glowing
+# pre 1.20.2
+# effect clear @e[nbt={ActiveEffects:[{Id:24,Duration:19}]}] glowing 
 
 # Remove target entities for entity_targeted ray
 tag @e[type=armor_stand] remove mrcd_target
