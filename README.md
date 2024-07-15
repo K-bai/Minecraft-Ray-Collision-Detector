@@ -337,4 +337,8 @@ These blocks listed below are supported in is datapack. Please post an issue if 
  * v2.7.1
    * Updates
       * Better entity hitbox hit precision
+ * v2.7.2
+   * Fixes
+      * Fixed entity_bullet example not fully working
+      * trapdoors, wall_torches not working
 </details>

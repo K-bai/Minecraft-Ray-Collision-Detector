@@ -29,4 +29,4 @@ execute if entity @s[tag=mrcd_touch_entity] at @s run particle small_flame ~ ~ ~
 
 # Once hited remove
 kill @s[tag=mrcd_touch_edge]
-kill @s[tag=mrcd_touch_entity]
+kill @s[tag=mrcd_touch_entity,tag=!mrcd_entity_bullet]
