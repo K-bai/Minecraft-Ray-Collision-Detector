@@ -1,0 +1,33 @@
+{
+    "values": [
+        "piston_head",
+        "brewing_stand",
+        "hopper",
+        "chorus_plant",
+        "cauldron",
+
+        "#walls",
+        "#fences",
+        "#beds",
+        "#anvil",
+        "#stairs",
+        "#campfires",
+
+        "cocoa",
+        "daylight_detector",
+        "enchanting_table",
+        "end_portal_frame",
+        "ladder",
+        "snow",
+        "cactus",
+        "cake",
+        "ender_chest",
+        "chain",
+        "sculk_shrieker",
+
+        "#trapdoors",
+        "#flower_pots",
+        "#doors",
+        "#slabs"
+    ]
+}

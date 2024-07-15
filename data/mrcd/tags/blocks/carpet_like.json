@@ -1,7 +1,0 @@
-{
-    "values": [
-        {"id": "#wool_carpets", "required": false},
-        {"id": "#carpets", "required": false},
-        {"id": "moss_carpet", "required": false}
-    ]
-}

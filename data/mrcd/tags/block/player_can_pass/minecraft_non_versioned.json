@@ -1,0 +1,20 @@
+{
+    "values": [
+        "redstone_wire",
+
+        "beetroots",
+        "nether_wart",
+        "lever",
+        "tripwire_hook",
+        "lily_pad",
+        "wheat",
+        "sugar_cane",
+        "tripwire",
+        
+        "#wall_signs",
+        "#buttons",
+        "#rails",
+        "#small_flowers",
+        "#pressure_plates"
+    ]
+}

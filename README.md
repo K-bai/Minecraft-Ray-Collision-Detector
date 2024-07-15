@@ -1,9 +1,11 @@
 # Intro
 Minecraft Ray Collision Detector is a super precise raycast system in vanilla minecraft! This datapack solved the raycast problem perfectly with minimal command cost. It defines the hitbox of most blocks and does some calculations to judge which surface will be touched.
 
-Current datapack version: 2.7.1
+Current datapack version: 3.0
 
-Supported minecraft version: 1.16, 1.17, 1.18, 1.19, 1.20
+Supported minecraft version: 
+ - Release 2.7.2: 1.16, 1.17, 1.18, 1.19, 1.20, 
+ - Release 3.0: 1.21
 
 # How to use
 
@@ -181,7 +183,7 @@ These blocks listed below are supported in is datapack. Please post an issue if 
         * all kinds of corals
     * #mrcd:coral_fan_like
         * all kinds of corals
-    * #mrcd:grass_like
+    * #mrcd:short_grass_like
         * grass, fern and dead bush
     * #mrcd:sapling_like
         * all kinds of saplings and seagrass
@@ -337,4 +339,10 @@ These blocks listed below are supported in is datapack. Please post an issue if 
  * v2.7.1
    * Updates
       * Better entity hitbox hit precision
+ * v2.7.2
+   * Fixes
+      * Trapdoors not working
+ * v3.0
+   * Updates
+      * Added support for 1.21
 </details>

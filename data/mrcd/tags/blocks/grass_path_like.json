@@ -1,7 +1,0 @@
-{
-    "values":[
-        {"id": "grass_path", "required": false},
-        {"id": "dirt_path", "required": false},
-        "farmland"
-    ]
-}
