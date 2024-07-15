@@ -341,7 +341,8 @@ These blocks listed below are supported in is datapack. Please post an issue if 
       * Better entity hitbox hit precision
  * v2.7.2
    * Fixes
-      * Trapdoors not working
+      * Fixed entity_bullet example not fully working
+      * trapdoors, wall_torches not working
  * v3.0
    * Updates
       * Added support for 1.21
