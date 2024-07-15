@@ -168,7 +168,7 @@ These blocks listed below are supported in is datapack. Please post an issue if 
     * #mrcd:fence_gate_like
         * all kinds of fence gates
     * #mrcd:skull_like
-        * all kinds of skulls, including dragon head
+        * all kinds of skulls, including dragon head, and heavy_core
     * #mrcd:wall_skull_like
         * all kinds of skulls, including dragon head
     * #mrcd:wall_torches

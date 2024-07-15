@@ -5,6 +5,7 @@
         "player_head",
         "zombie_head",
         "creeper_head",
-        "dragon_head"
+        "dragon_head",
+        "heavy_core"
     ]
 }
