@@ -347,6 +347,7 @@ These blocks listed below are supported in is datapack. Please post an issue if 
  * v3.0
    * Updates
       * Added support for 1.21
+      * Optimized execution by using return in block sorting
       * Added nether_portal
    * Fixes
       * Fixed chains
