@@ -15,4 +15,3 @@ execute if block ~ ~ ~ wheat[age=6] run scoreboard players set #box_y1 mrcd_syst
 execute if block ~ ~ ~ wheat[age=7] run scoreboard players set #box_y1 mrcd_system 1000
 
 function mrcd:private/cube/main
-tag @s add mrcd_block_collision_done

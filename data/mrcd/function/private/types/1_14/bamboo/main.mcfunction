@@ -11,4 +11,4 @@ execute if block ~ ~ ~ bamboo[leaves=none] run function mrcd:private/types/1_14/
 execute if block ~ ~ ~ bamboo[leaves=small] run function mrcd:private/types/1_14/bamboo/small
 execute if block ~ ~ ~ bamboo[leaves=large] run function mrcd:private/types/1_14/bamboo/large
 
-tag @s add mrcd_block_collision_done
+

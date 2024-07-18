@@ -18,4 +18,3 @@ execute if block ~ ~ ~ redstone_wire[west=up] run function mrcd:private/types/re
 execute if entity @e[tag=mrcd_touch_mark] run tag @s add mrcd_touch_edge
 execute if entity @e[tag=mrcd_touch_mark] run tag @s add mrcd_touch_edge_complex
 
-tag @s add mrcd_block_collision_done

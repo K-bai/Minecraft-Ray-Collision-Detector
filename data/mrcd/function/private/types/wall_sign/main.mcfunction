@@ -4,4 +4,3 @@ execute if block ~ ~ ~ #minecraft:wall_signs[facing=east] run function mrcd:priv
 execute if block ~ ~ ~ #minecraft:wall_signs[facing=west] run function mrcd:private/types/wall_sign/west
 
 function mrcd:private/cube/main
-tag @s add mrcd_block_collision_done

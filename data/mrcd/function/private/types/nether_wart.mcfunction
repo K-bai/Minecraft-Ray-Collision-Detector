@@ -11,4 +11,3 @@ execute if block ~ ~ ~ nether_wart[age=2] run scoreboard players set #box_y1 mrc
 execute if block ~ ~ ~ nether_wart[age=3] run scoreboard players set #box_y1 mrcd_system 875
 
 function mrcd:private/cube/main
-tag @s add mrcd_block_collision_done

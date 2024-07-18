@@ -3,4 +3,3 @@ execute unless block ~ ~ ~ pitcher_crop[age=0] if block ~ ~ ~ pitcher_crop[half=
 execute unless block ~ ~ ~ pitcher_crop[age=0] if block ~ ~ ~ pitcher_crop[half=upper] run function mrcd:private/types/1_20/pitcher_crop/upper
 
 function mrcd:private/cube/main
-tag @s add mrcd_block_collision_done

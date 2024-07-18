@@ -4,4 +4,3 @@ execute if block ~ ~ ~ #mrcd:wall_banner_like[facing=east] run function mrcd:pri
 execute if block ~ ~ ~ #mrcd:wall_banner_like[facing=west] run function mrcd:private/types/wall_banner/west
 
 function mrcd:private/cube/main
-tag @s add mrcd_block_collision_done

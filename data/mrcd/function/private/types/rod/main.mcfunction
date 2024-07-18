@@ -8,4 +8,4 @@ execute if block ~ ~ ~ #mrcd:rod_like[facing=north] run function mrcd:private/ty
 execute if block ~ ~ ~ #mrcd:rod_like[facing=south] run function mrcd:private/types/rod/north_south
 
 function mrcd:private/cube/main
-tag @s add mrcd_block_collision_done
+

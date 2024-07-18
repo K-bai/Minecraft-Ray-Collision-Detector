@@ -3,4 +3,3 @@ execute if block ~ ~ ~ #wall_hanging_signs[facing=south] run function mrcd:priva
 execute if block ~ ~ ~ #wall_hanging_signs[facing=east] run function mrcd:private/types/1_20/wall_hanging_signs/west/main
 execute if block ~ ~ ~ #wall_hanging_signs[facing=west] run function mrcd:private/types/1_20/wall_hanging_signs/west/main
 
-tag @s add mrcd_block_collision_done

@@ -4,4 +4,3 @@ execute if block ~ ~ ~ piglin_wall_head[facing=east] run function mrcd:private/t
 execute if block ~ ~ ~ piglin_wall_head[facing=west] run function mrcd:private/types/1_20/piglin_wall_head/west
 
 function mrcd:private/cube/main
-tag @s add mrcd_block_collision_done

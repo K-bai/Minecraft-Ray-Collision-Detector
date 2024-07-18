@@ -4,4 +4,4 @@ execute if block ~ ~ ~ sea_pickle[pickles=3] run function mrcd:private/types/1_1
 execute if block ~ ~ ~ sea_pickle[pickles=4] run function mrcd:private/types/1_13/sea_pickle/4
 
 function mrcd:private/cube/main
-tag @s add mrcd_block_collision_done
+

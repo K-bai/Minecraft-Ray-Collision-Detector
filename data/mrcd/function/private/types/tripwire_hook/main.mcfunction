@@ -4,4 +4,3 @@ execute if block ~ ~ ~ tripwire_hook[facing=east] run function mrcd:private/type
 execute if block ~ ~ ~ tripwire_hook[facing=west] run function mrcd:private/types/tripwire_hook/west
 
 function mrcd:private/cube/main
-tag @s add mrcd_block_collision_done

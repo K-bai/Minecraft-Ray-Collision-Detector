@@ -11,4 +11,3 @@ execute if block ~ ~ ~ #minecraft:rails[shape=ascending_north] run scoreboard pl
 execute if block ~ ~ ~ #minecraft:rails[shape=ascending_south] run scoreboard players set #box_y1 mrcd_system 500
 
 function mrcd:private/cube/main
-tag @s add mrcd_block_collision_done

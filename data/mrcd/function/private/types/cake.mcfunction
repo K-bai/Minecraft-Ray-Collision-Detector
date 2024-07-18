@@ -14,4 +14,3 @@ execute if block ~ ~ ~ cake[bites=5] run scoreboard players set #box_x0 mrcd_sys
 execute if block ~ ~ ~ cake[bites=6] run scoreboard players set #box_x0 mrcd_system 813
 
 function mrcd:private/cube/main
-tag @s add mrcd_block_collision_done

@@ -16,4 +16,4 @@ scoreboard players operation #box_z0 mrcd_system += #var1 mrcd_system
 scoreboard players operation #box_z1 mrcd_system += #var1 mrcd_system
 
 function mrcd:private/cube/main
-tag @s add mrcd_block_collision_done
+

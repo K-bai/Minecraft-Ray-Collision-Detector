@@ -6,4 +6,3 @@ execute if block ~ ~ ~ #minecraft:trapdoors[facing=east,open=true] run function 
 execute if block ~ ~ ~ #minecraft:trapdoors[facing=west,open=true] run function mrcd:private/types/trapdoor/west
 
 function mrcd:private/cube/main
-tag @s add mrcd_block_collision_done

@@ -4,4 +4,3 @@ execute if block ~ ~ ~ #mrcd:fence_gate_like[facing=east] run function mrcd:priv
 execute if block ~ ~ ~ #mrcd:fence_gate_like[facing=west] run function mrcd:private/types/fence_gate/east_west
 
 function mrcd:private/cube/main
-tag @s add mrcd_block_collision_done

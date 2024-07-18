@@ -12,4 +12,3 @@ execute if block ~ ~ ~ beetroots[age=3] run scoreboard players set #box_y1 mrcd_
 
 
 function mrcd:private/cube/main
-tag @s add mrcd_block_collision_done

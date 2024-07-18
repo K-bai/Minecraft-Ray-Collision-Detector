@@ -4,4 +4,4 @@ execute if block ~ ~ ~ #candles[candles=3] run function mrcd:private/types/1_17/
 execute if block ~ ~ ~ #candles[candles=4] run function mrcd:private/types/1_17/candle/4
 
 function mrcd:private/cube/main
-tag @s add mrcd_block_collision_done
+

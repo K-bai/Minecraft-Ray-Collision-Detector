@@ -3,4 +3,3 @@ execute if block ~ ~ ~ #minecraft:doors[open=true,hinge=right] run function mrcd
 execute if block ~ ~ ~ #minecraft:doors[open=true,hinge=left] run function mrcd:private/types/door/closed/left
 
 function mrcd:private/cube/main
-tag @s add mrcd_block_collision_done

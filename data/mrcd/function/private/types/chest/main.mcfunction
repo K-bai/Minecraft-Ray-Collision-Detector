@@ -9,4 +9,3 @@ execute if block ~ ~ ~ #mrcd:big_chest[type=right] run function mrcd:private/typ
 execute if block ~ ~ ~ #mrcd:big_chest[type=left] run function mrcd:private/types/chest/big/left
 
 function mrcd:private/cube/main
-tag @s add mrcd_block_collision_done

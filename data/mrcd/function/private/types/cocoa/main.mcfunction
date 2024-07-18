@@ -4,4 +4,3 @@ execute if block ~ ~ ~ cocoa[facing=east] run function mrcd:private/types/cocoa/
 execute if block ~ ~ ~ cocoa[facing=west] run function mrcd:private/types/cocoa/west/main
 function mrcd:private/cube/main
 
-tag @s add mrcd_block_collision_done

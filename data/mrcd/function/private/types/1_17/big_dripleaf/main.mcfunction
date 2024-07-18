@@ -11,4 +11,4 @@ execute if entity @s[tag=!mrcd_bullet] if block ~ ~ ~ big_dripleaf[facing=west] 
 
 execute if entity @e[tag=mrcd_touch_mark] run tag @s add mrcd_touch_edge
 execute if entity @e[tag=mrcd_touch_mark] run tag @s add mrcd_touch_edge_complex
-tag @s add mrcd_block_collision_done
+

@@ -15,4 +15,4 @@ execute if block ~ ~ ~ snow[layers=7] run scoreboard players set #box_y1 mrcd_sy
 execute if block ~ ~ ~ snow[layers=8] run scoreboard players set #box_y1 mrcd_system 1000
 
 function mrcd:private/cube/main
-tag @s add mrcd_block_collision_done
+

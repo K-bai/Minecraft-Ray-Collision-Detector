@@ -4,4 +4,3 @@ execute if block ~ ~ ~ #mrcd:wall_coral_like[facing=east] run function mrcd:priv
 execute if block ~ ~ ~ #mrcd:wall_coral_like[facing=west] run function mrcd:private/types/1_13/wall_coral/west
 
 function mrcd:private/cube/main
-tag @s add mrcd_block_collision_done

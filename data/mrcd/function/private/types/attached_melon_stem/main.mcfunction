@@ -4,4 +4,4 @@ execute if block ~ ~ ~ #mrcd:attached_melon_stem_like[facing=east] run function 
 execute if block ~ ~ ~ #mrcd:attached_melon_stem_like[facing=west] run function mrcd:private/types/attached_melon_stem/west
 
 function mrcd:private/cube/main
-tag @s add mrcd_block_collision_done
+

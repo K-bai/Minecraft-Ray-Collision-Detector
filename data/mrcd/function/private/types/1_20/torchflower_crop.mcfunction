@@ -7,4 +7,3 @@ execute if block ~ ~ ~ torchflower_crop[age=1] run scoreboard players set #box_y
 scoreboard players set #box_z1 mrcd_system 687
 
 function mrcd:private/cube/main
-tag @s add mrcd_block_collision_done

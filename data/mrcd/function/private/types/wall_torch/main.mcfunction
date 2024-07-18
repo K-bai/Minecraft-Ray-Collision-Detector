@@ -4,4 +4,3 @@ execute if block ~ ~ ~ #mrcd:wall_torches[facing=east] run function mrcd:private
 execute if block ~ ~ ~ #mrcd:wall_torches[facing=west] run function mrcd:private/types/wall_torch/west
 
 function mrcd:private/cube/main
-tag @s add mrcd_block_collision_done

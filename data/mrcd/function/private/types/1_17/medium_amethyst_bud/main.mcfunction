@@ -6,4 +6,4 @@ execute if block ~ ~ ~ medium_amethyst_bud[facing=east] run function mrcd:privat
 execute if block ~ ~ ~ medium_amethyst_bud[facing=west] run function mrcd:private/types/1_17/medium_amethyst_bud/west
 
 function mrcd:private/cube/main
-tag @s add mrcd_block_collision_done
+

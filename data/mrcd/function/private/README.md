@@ -6,7 +6,6 @@
 - `mrcd_entity_bullet`: modifies mrcd_entity and mrcd_entity_targeted. When entity is found, they keep going
 
 ## Internal tags
-- `mrcd_block_collision_done`: indicates that the block collision has been done (but not if it has collided)
 - `mrcd_touch_edge`: indicates that the rays has collided with a block
 - `mrcd_touch_edge_complex`: indicates that the rays has collided with a complex block (not a square, for example a slab)
 - `mrcd_touch_entity`: indicates that the rays has collided with an entity

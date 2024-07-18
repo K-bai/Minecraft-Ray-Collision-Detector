@@ -7,4 +7,3 @@ scoreboard players set #box_z1 mrcd_system 875
 
 
 function mrcd:private/cube/main
-tag @s add mrcd_block_collision_done
