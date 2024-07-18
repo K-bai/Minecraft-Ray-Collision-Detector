@@ -2,6 +2,7 @@
 execute if entity @s[tag=!mrcd_block_collision_done] if block ~ ~ ~ redstone_wire run function mrcd:private/types/redstone_wire/main
 
 # Simple blocks
+execute if entity @s[tag=!mrcd_block_collision_done] if block ~ ~ ~ fire run function mrcd:private/types/fire/main
 execute if entity @s[tag=!mrcd_block_collision_done] if block ~ ~ ~ beetroots run function mrcd:private/types/beetroots
 execute if entity @s[tag=!mrcd_block_collision_done] if block ~ ~ ~ nether_wart run function mrcd:private/types/nether_wart
 execute if entity @s[tag=!mrcd_block_collision_done] if block ~ ~ ~ lever run function mrcd:private/types/lever/main

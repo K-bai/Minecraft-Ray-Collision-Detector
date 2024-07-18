@@ -342,7 +342,7 @@ These blocks listed below are supported in is datapack. Please post an issue if 
  * v2.7.2
    * Fixes
       * Fixed entity_bullet example not fully working
-      * trapdoors, wall_torches not working
+      * trapdoors, wall_torches, wall_coral, pointed_dripstone[tip_up], fire, bell[single_wall] not working
  * v3.0
    * Updates
       * Added support for 1.21

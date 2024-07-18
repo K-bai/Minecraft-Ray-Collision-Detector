@@ -1,8 +1,7 @@
 {
     "values":[
         "vine",
-        "fire",
-        "glow_lichen",
-        "sculk_vein"
+        {"id": "glow_lichen", "required": false},
+        {"id": "sculk_vein", "required": false}
     ]
 }
