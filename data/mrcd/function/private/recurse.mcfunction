@@ -10,17 +10,9 @@ scoreboard players add n_recursion mrcd_system 1
 
 
 # === Block Collision Test ===
-tag @s[tag=mrcd_block_collision_done] remove mrcd_block_collision_done
 # Skip if current block is air
-execute if block ~ ~ ~ #mrcd:air_like run tag @s add mrcd_block_collision_done
-# Skip if the marker type is bullet and current block can be passed by player
-execute if entity @s[tag=!mrcd_block_collision_done,tag=mrcd_bullet] if block ~ ~ ~ #mrcd:player_can_pass run tag @s add mrcd_block_collision_done
-# Test if current block can't be passed by player
-execute if entity @s[tag=!mrcd_block_collision_done] unless block ~ ~ ~ #mrcd:player_can_pass run function mrcd:private/sort/solid
-# Test if current block can be passed by player
-execute if entity @s[tag=!mrcd_block_collision_done] if block ~ ~ ~ #mrcd:player_can_pass run function mrcd:private/sort/player_can_pass
-# Test if current block is undefined (treated as a full block)
-execute if entity @s[tag=!mrcd_block_collision_done] run function mrcd:private/types/full_block
+execute unless block ~ ~ ~ #mrcd:air_like run function mrcd:private/recurse/block_collision/main
+
 # Move #target_x,y,z coord to the edge of the block if marker doesn't touch the hitbox of the block
 execute if entity @s[tag=!mrcd_touch_edge] run function mrcd:private/types/air/main
 
@@ -51,8 +43,7 @@ execute if score #abs_total_x mrcd_system >= #abs_traveled_x mrcd_system if scor
 
 # === Entity Collision Test ===
 # If is mrcd_entity or mrcd_entity_targeted and there is a entity hitbox in this block
-execute if score #detect_entity mrcd_system matches 1 align xyz run function mrcd:private/recurse/entity_collision/start
-execute store result score #hit_entity_and_not_bullet mrcd_system run execute if entity @s[tag=mrcd_touch_entity,tag=!mrcd_entity_bullet]
+execute if score #detect_entity mrcd_system matches 1 align xyz run function mrcd:private/recurse/entity_collision/main
 
 
 # === Debug ===
@@ -60,7 +51,7 @@ execute store result score #hit_entity_and_not_bullet mrcd_system run execute if
 # tellraw @a ["target (",{"score":{"name":"#target_x","objective":"mrcd_system"}},", ",{"score":{"name":"#target_y","objective":"mrcd_system"}},", ",{"score":{"name":"#target_z","objective":"mrcd_system"}}, ") (x, y, z)"]
 # tellraw @a ["total (",{"score":{"name":"#total_x","objective":"mrcd_system"}},", ",{"score":{"name":"#total_y","objective":"mrcd_system"}},", ",{"score":{"name":"#total_z","objective":"mrcd_system"}}, ") (x, y, z)"]
 # tellraw @a ["traveled (",{"score":{"name":"#traveled_x","objective":"mrcd_system"}},", ",{"score":{"name":"#traveled_y","objective":"mrcd_system"}},", ",{"score":{"name":"#traveled_z","objective":"mrcd_system"}}, ") (x, y, z)"]
-# tellraw @a ["he&!b ",{"score":{"name":"#hit_entity_and_not_bullet","objective":"mrcd_system"}}, " t<c ",{"score":{"name":"#total_before_collision","objective":"mrcd_system"}}, " r ",{"score":{"name":"n_recursion","objective":"mrcd_system"}}]
+# tellraw @a [" t<c ",{"score":{"name":"#total_before_collision","objective":"mrcd_system"}}, " r ",{"score":{"name":"n_recursion","objective":"mrcd_system"}}]
 
 # function mrcd:private/debug/particle_at_target
 
@@ -68,7 +59,7 @@ execute store result score #hit_entity_and_not_bullet mrcd_system run execute if
 # if max recursions
 execute if score n_recursion mrcd_system > #recursion_limit mrcd_system run return run function mrcd:private/recurse/reach_limit
 # else if hit entity
-execute if score #hit_entity_and_not_bullet mrcd_system matches 1 run return run function mrcd:private/recurse/end/hit_entity
+execute if entity @s[tag=mrcd_touch_entity,tag=!mrcd_entity_bullet] run return run function mrcd:private/recurse/end/hit_entity
 # else if Reached the distance limit ---> (and no entity hit and total_x,y,z < collision_dx,dy,dz)
 execute if score #total_before_collision mrcd_system matches 1 run return run function mrcd:private/recurse/end/reach_total
 # else if collided with a block ---> (and no entity hit and total_x,y,z >= collision_dx,dy,dz)

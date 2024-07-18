@@ -88,6 +88,7 @@ These blocks listed below are supported in is datapack. Please post an issue if 
     * minecraft:sugar_cane
     * minecraft:cocoa
     * minecraft:beetroots
+    * minecraft:nether_portal
     * minecraft:nether_wart
     * minecraft:kelp
     * minecraft:lever
@@ -346,4 +347,7 @@ These blocks listed below are supported in is datapack. Please post an issue if 
  * v3.0
    * Updates
       * Added support for 1.21
+      * Added nether_portal
+   * Fixes
+      * Fixed chains
 </details>
