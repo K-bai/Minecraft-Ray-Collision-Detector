@@ -1,6 +1,0 @@
-{
-    "values": [
-        "end_rod",
-        {"id": "lightning_rod", "required": false}
-    ]
-}

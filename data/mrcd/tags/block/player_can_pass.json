@@ -1,0 +1,21 @@
+{
+    "values":[
+        "tall_grass",
+        "large_fern",
+        "bubble_column",
+        "end_gateway",
+        "kelp_plant",
+        "lava",
+        "water",
+
+        "#mrcd:player_can_pass/minecraft_non_versioned",
+        "#mrcd:player_can_pass/mrcd_non_versioned",
+
+        "#mrcd:player_can_pass/1_13",
+        "#mrcd:player_can_pass/1_14",
+        "#mrcd:player_can_pass/1_16",
+        "#mrcd:player_can_pass/1_17",
+        "#mrcd:player_can_pass/1_19",
+        "#mrcd:player_can_pass/1_20"
+    ]
+}

@@ -1,6 +1,0 @@
-{
-    "values": [
-        "campfire",
-        {"id":"#campfires", "required": false}
-    ]
-}

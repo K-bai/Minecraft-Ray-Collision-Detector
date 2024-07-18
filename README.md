@@ -1,9 +1,11 @@
 # Intro
 Minecraft Ray Collision Detector is a super precise raycast system in vanilla minecraft! This datapack solved the raycast problem perfectly with minimal command cost. It defines the hitbox of most blocks and does some calculations to judge which surface will be touched.
 
-Current datapack version: 2.7.2
+Current datapack version: 3.0
 
-Supported minecraft version: 1.16, 1.17, 1.18, 1.19, 1.20
+Supported minecraft version: 
+ - Release 2.7.2: 1.16, 1.17, 1.18, 1.19, 1.20, 
+ - Release 3.0: 1.21
 
 # How to use
 
@@ -86,6 +88,7 @@ These blocks listed below are supported in is datapack. Please post an issue if 
     * minecraft:sugar_cane
     * minecraft:cocoa
     * minecraft:beetroots
+    * minecraft:nether_portal
     * minecraft:nether_wart
     * minecraft:kelp
     * minecraft:lever
@@ -166,7 +169,7 @@ These blocks listed below are supported in is datapack. Please post an issue if 
     * #mrcd:fence_gate_like
         * all kinds of fence gates
     * #mrcd:skull_like
-        * all kinds of skulls, including dragon head
+        * all kinds of skulls, including dragon head, and heavy_core
     * #mrcd:wall_skull_like
         * all kinds of skulls, including dragon head
     * #mrcd:wall_torches
@@ -181,7 +184,7 @@ These blocks listed below are supported in is datapack. Please post an issue if 
         * all kinds of corals
     * #mrcd:coral_fan_like
         * all kinds of corals
-    * #mrcd:grass_like
+    * #mrcd:short_grass_like
         * grass, fern and dead bush
     * #mrcd:sapling_like
         * all kinds of saplings and seagrass
@@ -341,4 +344,11 @@ These blocks listed below are supported in is datapack. Please post an issue if 
    * Fixes
       * Fixed entity_bullet example not fully working
       * trapdoors, wall_torches, wall_coral, pointed_dripstone[tip_up], fire, bell[single_wall] not working
+ * v3.0
+   * Updates
+      * Added support for 1.21
+      * Optimized execution by using return in block sorting
+      * Added nether_portal
+   * Fixes
+      * Fixed chains
 </details>

@@ -1,6 +1,0 @@
-{
-    "values": [
-        "lantern",
-        {"id":"soul_lantern", "required": false}
-    ]
-}

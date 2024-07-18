@@ -1,0 +1,11 @@
+{
+    "values":[
+        "#mrcd:solid/minecraft_non_versioned",
+        "#mrcd:solid/mrcd_non_versioned",
+
+        "#mrcd:solid/1_13",
+        "#mrcd:solid/1_14",
+        "#mrcd:solid/1_17",
+        "#mrcd:solid/1_20"
+    ]
+}
