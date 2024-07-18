@@ -2,7 +2,7 @@ execute if block ~ ~ ~ pointed_dripstone[thickness=base] run function mrcd:priva
 execute if block ~ ~ ~ pointed_dripstone[thickness=middle] run function mrcd:private/types/1_17/pointed_dripstone/middle
 execute if block ~ ~ ~ pointed_dripstone[thickness=frustum] run function mrcd:private/types/1_17/pointed_dripstone/frustum
 execute if block ~ ~ ~ pointed_dripstone[thickness=tip_merge] run function mrcd:private/types/1_17/pointed_dripstone/tip_merge
-execute if block ~ ~ ~ pointed_dripstone[thickness=tip,vertical_direction=up] run function mrcd:private/1_17/types/pointed_dripstone/tip_up
+execute if block ~ ~ ~ pointed_dripstone[thickness=tip,vertical_direction=up] run function mrcd:private/types/1_17/pointed_dripstone/tip_up
 execute if block ~ ~ ~ pointed_dripstone[thickness=tip,vertical_direction=down] run function mrcd:private/types/1_17/pointed_dripstone/tip_down
 
 scoreboard players operation #var0 mrcd_system = #block_corner_x mrcd_system
