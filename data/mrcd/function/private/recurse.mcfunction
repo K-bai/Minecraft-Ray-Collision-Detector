@@ -5,8 +5,8 @@ scoreboard players add n_recursion mrcd_system 1
 # tellraw @a ["block (",{"score":{"name":"#block_x","objective":"mrcd_system"}},", ",{"score":{"name":"#block_y","objective":"mrcd_system"}},", ",{"score":{"name":"#block_z","objective":"mrcd_system"}}, ") (x, y, z)"]
 # tellraw @a ["block_corner (",{"score":{"name":"#block_corner_x","objective":"mrcd_system"}},", ",{"score":{"name":"#block_corner_y","objective":"mrcd_system"}},", ",{"score":{"name":"#block_corner_z","objective":"mrcd_system"}}, ") (x, y, z)"]
 
-# particle end_rod ~ ~ ~ 0 0 0 0.01 1 force
-# execute at @s run particle end_rod ~ ~ ~ 0 0 0 0 1 force
+# particle wax_off ~ ~ ~ 0 0 0 0.01 1 force
+# execute at @s run particle wax_on ~ ~ ~ 0 0 0 0.01 1 force
 
 
 # === Block Collision Test ===
@@ -42,8 +42,8 @@ execute if score #abs_total_x mrcd_system >= #abs_traveled_x mrcd_system if scor
 
 
 # === Entity Collision Test ===
-# If is mrcd_entity or mrcd_entity_targeted and there is a entity hitbox in this block
-execute if score #detect_entity mrcd_system matches 1 align xyz run function mrcd:private/recurse/entity_collision/main
+# If is mrcd_entity or mrcd_entity_targeted
+execute if score #detect_entity mrcd_system matches 1.. align xyz run function mrcd:private/recurse/entity_collision/main
 
 
 # === Debug ===

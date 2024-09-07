@@ -1,11 +1,11 @@
 # Intro
 Minecraft Ray Collision Detector is a super precise raycast system in vanilla minecraft! This datapack solved the raycast problem perfectly with minimal command cost. It defines the hitbox of most blocks and does some calculations to judge which surface will be touched.
 
-Current datapack version: 3.0
+Current datapack version: 3.1
 
 Supported minecraft version: 
  - Release 2.7.2: 1.16, 1.17, 1.18, 1.19, 1.20, 
- - Release 3.0: 1.21
+ - Release 3.1: 1.21
 
 # How to use
 
@@ -19,13 +19,13 @@ Supported minecraft version:
 
 ## Advanced ray behaviour
 - **Pass any block a player can:** tag the ray with `mrcd_bullet`.
-- **Hit the first entity it finds:**: tag the ray with `mrcd_entity` and rotate it facing the motion direction. 
+- **Hit the first entity it finds:**: tag the ray with `mrcd_entity`. 
     - If it thouches an entity, the ray will stop there and get the tag `mrcd_touch_entity`. The touched entity will be tagged `mrcd_target_entity`. 
     - Note that some entities like player and projectiles are ignored by default. You can remove them by editing the entity types tag `#mrcd:ignore`.
-- **Hit the first specific entity or group of entities:** tag the ray with `mrcd_entity_targeted`, rotate it facing the motion direction** and tag the target/s with `mrcd_target`.
+- **Hit the first specific entity or group of entities:** tag the ray with `mrcd_entity_targeted` and tag the target/s with `mrcd_target`.
     - If it thouches an entity, the ray will stop there and get the tag `mrcd_touch_entity`. The touched entity will be tagged `mrcd_target_entity`. Any non `mrcd_target` tagged entity will be ignored and the ray will pass through. 
     - This method can target any entity, even those that are in the `#mrcd:ignore` tag list. Also, you can tag an entity with `mrcd_ignore` to also be ignored.
-- **Hit multiple entities (don't stop after one found):** settup the ray as a `mrcd_entity` or `mrcd_entity_targeted`, add the tag `mrcd_entity_bullet` and rotate the  it facing the motion direction. 
+- **Hit multiple entities (don't stop after one found):** settup the ray as a `mrcd_entity` or `mrcd_entity_targeted` and add the tag `mrcd_entity_bullet`. 
     - If it thouches an entity, the ray will continue but get the tag `mrcd_touch_entity`. The touched entity will be tagged `mrcd_target_entity`.
 
 In summary, tags can be combined following this strucuture: <block_handling>,<entity_handling1>,<entity_extra>
@@ -351,4 +351,7 @@ These blocks listed below are supported in is datapack. Please post an issue if 
       * Added nether_portal
    * Fixes
       * Fixed chains
+ * v3.1
+   * Updates
+      * Hitbox collision is no longer dependant on the ray (entity) facing direction. Now it's dependant on the ray vector
 </details>

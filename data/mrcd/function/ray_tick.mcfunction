@@ -57,8 +57,9 @@ scoreboard players set #target_y mrcd_system 0
 scoreboard players set #target_z mrcd_system 0
 
 # === Init flags ===
-# if mrcd_entity or mrcd_entity_targeted = not(mrcd_entity and mrcd_entity_targeted)
-execute store result score #detect_entity mrcd_system run execute unless entity @s[tag=!mrcd_entity,tag=!mrcd_entity_targeted]
+scoreboard players set #detect_entity mrcd_system 0
+execute if entity @s[tag=mrcd_entity] run scoreboard players set #detect_entity mrcd_system 1
+execute if entity @s[tag=mrcd_entity_targeted] run scoreboard players set #detect_entity mrcd_system 2
 
 # === Debug ===
 # summon marker ~ ~ ~ {Tags:["at_target","init"]}

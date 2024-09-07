@@ -1,2 +1,3 @@
-execute if entity @s[tag=mrcd_entity,tag=!mrcd_entity_targeted] run return run execute if entity @e[type=!#mrcd:ignore,tag=!mrcd_ignore,dx=0,limit=1] run function mrcd:private/recurse/entity_collision/main_
-execute if entity @s[tag=mrcd_entity_targeted] run return run execute if entity @e[tag=mrcd_target,tag=!mrcd_ignore,dx=0,limit=1] run function mrcd:private/recurse/entity_collision/main_
+# If there is a entity hitbox in this block (and this hitbox was not previously considered in the iteration
+execute if entity @s[tag=!mrcd_entity_targeted] run return run execute if entity @e[type=!#mrcd:ignore,tag=!mrcd_ignore,tag=!mrcd_target_entity,dx=0,limit=1] run function mrcd:private/recurse/entity_collision/main_
+execute if entity @s[tag=mrcd_entity_targeted] run return run execute if entity @e[tag=mrcd_target,tag=!mrcd_ignore,tag=!mrcd_target_entity,dx=0,limit=1] run function mrcd:private/recurse/entity_collision/main_
