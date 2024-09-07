@@ -353,5 +353,5 @@ These blocks listed below are supported in is datapack. Please post an issue if 
       * Fixed chains
  * v3.1
    * Updates
-      * Hitbox collision is no longer dependant on the ray (entity) facing direction. Now it's dependant on the ray vector
+      * Hitbox collision is no longer dependent on the ray (entity) facing direction. Now it's dependent on the ray vector
 </details>
